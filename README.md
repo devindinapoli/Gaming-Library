@@ -15,6 +15,6 @@
  
  > Devin Dinapoli aka Dr. DEV-in
  
- > Max R
+ > Maxwell Robb
  
  > Jeffrey Easley 
