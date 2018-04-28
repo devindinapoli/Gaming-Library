@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const db = require("./models");
-const passport = require(".config/passport.js")(passport);
+
+const passport = require("passport");
+require("./config/passport.js")(passport);
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,7 +20,7 @@ app.use(express.static(__dirname + "/public"));
 
 // Required for passport
 app.use(passport.initialize());
-app.use(passport.session()); 
+app.use(passport.session());
 
 require("./controllers/controller.js")(app, passport);
 
