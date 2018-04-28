@@ -17,4 +17,4 @@
  
  > Maxwell Robb
  
- > Jeffrey Easley 
+ > Jeffrey Easley aka Easy E 
