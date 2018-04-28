@@ -43,5 +43,3 @@ _Use steamworks api to automatically add to users collection_
  > Andrew Knowles aka Andy Boi
  
  > Devin Dinapoli aka Dr. DEV-in
- 
-
