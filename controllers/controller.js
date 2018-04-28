@@ -1,8 +1,23 @@
 // Dependencies
-import express from "express";
-import path from "path";
-import db from "../models";
+const express = require("express");
+const path = require("path");
+const db = require("../models");
 
-const router = express.Router();
+var router = express.Router();
 
-// Routes
+// HTML Routes
+module.exports = function(app) {
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  app.get("/signIn", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signIn.html"));
+  });
+
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  });
+};
+
+//API Routes
