@@ -12,6 +12,7 @@
 _Overview_
 
 `Build a website that allows users to sign up, save, manage and update their video game collection.`
+
 ---
 > ## **Tools and Technology used to achieve our goals:**
 
