@@ -1,7 +1,7 @@
 {
   "name": "project-03",
   "version": "1.0.0",
-  "description": "",
+  "description": "# **Project 3**",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/devindinapoli/Project-03.git"
   },
-  "author": "",
+  "author": "Sergio Burca, Jeffrey Easley, Maxwell Robb, Andrew Knowles,Devin Dinapoli",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/devindinapoli/Project-03/issues"
@@ -26,5 +26,11 @@
     "passport": "^0.4.0",
     "request": "^2.85.0",
     "semantic-ui": "^2.3.1"
-  }
+  },
+  "keywords": [
+    "game",
+    "fun",
+    "collection",
+    "pew-pew"
+  ]
 }
