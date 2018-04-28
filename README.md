@@ -17,7 +17,7 @@ _Overview_
 > **`Stretch Goals`**
 _Use steamworks api to automatically add to users collection_
 
-[![API](public/assets/images/ReadMe/api.png)](https://www.igdb.com/api)[![Steam](public/assets/images/ReadMe/steam.png)](http://google.com.au/)
+[![API](public/assets/images/ReadMe/api.png)](https://www.igdb.com/api)[![Steam](public/assets/images/ReadMe/stm.png)](http://google.com.au/)
 * `(note: not every user might use steam)` 
 
 
