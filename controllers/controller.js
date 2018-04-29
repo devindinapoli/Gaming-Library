@@ -36,7 +36,16 @@ module.exports = function(app, passport) {
     req.logout();
     res.redirect("/");
   });
+
+  //-----------Sign up----------------------------------------------//
+    app.post("/signup", passport.authenticate("local-signup", {
+        successRedirect: "/profile",
+        failureRedirect: "/signup",
+        failureFlash: true
+    }));
+
 };
+
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
