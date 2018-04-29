@@ -7,48 +7,31 @@ var router = express.Router();
 
 // app/routes.js
 module.exports = function(app, passport) {
+
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/signIn", function(req, res) {
+  app.get("/profile", isLoggedIn, function(req, res) {
+    res.sendFile(
+      path.join(__dirname, "../public/profile.html", {
+        user: req.user
+      })
+    );
+  });
+
+  //--------------Log in/out Routes----------------------------------//
+  app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
-  app.get("/profile", function(req, res) {
-    res.sendFile(
-      path.join(__dirname, "../public/profile.html", {
-        user: req.user
-      })
-    );
-  });
-
-  // process the signup form
-  app.post(
-    "/signup",
-    passport.authenticate("local-signup", {
+  app.post( "/login",
+    passport.authenticate("local", {
       successRedirect: "/profile", // redirect to the secure profile section
       failureRedirect: "/", // redirect back to the signup page if there is an error
-      failureFlash: true // allow flash messages
     })
   );
 
-  // =====================================
-  // PROFILE SECTION =========================
-  // =====================================
-  // we will want this protected so you have to be logged in to visit
-  // we will use route middleware to verify this (the isLoggedIn function)
-  app.get("/profile", function(req, res) {
-    res.sendFile(
-      path.join(__dirname, "../public/profile.html", {
-        user: req.user
-      })
-    );
-  });
-
-  // =====================================
-  // LOGOUT ==============================
-  // =====================================
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
