@@ -35,6 +35,49 @@ module.exports = function(app, passport) {
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+  app.get("/signIn", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signIn.html"));
+  });
+
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  });
+
+  app.post("/submit", function(req, res) {
+    db.User.create(req.body)
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.post("/submitGame", function(req, res) {
+    db.Game.create(req.body)
+      .then(function(dbGame) {
+        return db.User.findOneAndUpdate(
+          {},
+          { $push: { games: dbGame._id } },
+          { new: true }
+        );
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.get("/user", function(req, res) {
+    db.User.find({})
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   //-----------Sign up----------------------------------------------//
@@ -44,7 +87,7 @@ module.exports = function(app, passport) {
         failureFlash: true
     }));
 
-};
+})};
 
 
 // route middleware to make sure
