@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" type="text/css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" type="text/css"> -->
+<!--  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js">
+<!--  -->
     <title>Profile</title>
 </head>
 
@@ -31,28 +35,25 @@
     </div>
 
     <!-- Game container -->
-    <div class="column">
+    <!-- <div class="ui two column grid">
         <div class="ui red segment">
-            <div class="header">
-                <h1>
-                U-Zar
-                </h1>
-            </div>
-            <div class="ui medium bordered circular image">
+            <div class="ui medium bordered image">
+                <h1>U-Zar</h1>
                 <img src="assets/images/gamelogo.jpg">
-            </div>
-            <div class="content">
-                <a class="header">User</a>
-                <div class="meta">
-                    <span class="date">Joined in 2013</span>
+                <div class="content">
+                    <a class="header">User</a>
+                    <div class="meta">
+                        <span class="date">Joined in 2013</span>
+                    </div>
+                    <div class="description">
+                        <h4>Some Info about the Use.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis a minima esse, ipsum dolorum adipisci
+                            eum sed repudiandae blanditiis aspernatur perspiciatis consequuntur quibusdam quo ad maxime,
+                            libero voluptatum nostrum quaerat.</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <h4>Some Info about the Use.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis a minima esse, ipsum dolorum adipisci
-                        eum sed repudiandae blanditiis aspernatur perspiciatis consequuntur quibusdam quo ad maxime, libero
-                        voluptatum nostrum quaerat.</p>
-                </div>
             </div>
+
             <div class="extra content">
                 <a>
                     <i class="game icon"></i>Game collection</a>
@@ -111,8 +112,74 @@
 
             </div>
         </div>
-        <!-- User card -->
+    </div> -->
+    <!-- User card -->
+
+
+    <div class="ui grid">
+        <div class="five wide column">
+            <div class="ui segment">
+                <img src="./assets/images/ReadMe/Git2.png">
+                <img>
+            </div>
+        </div>
+        <div class="nine wide stretched column">
+
+            <div class="ui segment">
+                <img src="./assets/images/ReadMe/Git2.png">
+            </div>
+        </div>
+        <!-- <div class="column">
+            <div class="ui segment">
+                <img src="./assets/images/ReadMe/Git2.png">
+                <img>
+            </div>
+        </div> -->
     </div>
+    <div class="ui vertical menu">
+        <div class="ui selection dropdown item">
+            Categories
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item">Electronics</a>
+                <a class="item">Automotive</a>
+                <a class="item">Home</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui selection dropdown">
+        <input type="hidden" name="user">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Friend</div>
+        <div class="menu">
+            <div class="item" data-value="jenny">
+                <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg"> Jenny Hess
+            </div>
+            <div class="item" data-value="elliot">
+                <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg"> Elliot Fu
+            </div>
+            <div class="item" data-value="stevie">
+                <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg"> Stevie Feliciano
+            </div>
+            <div class="item" data-value="christian">
+                <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg"> Christian
+            </div>
+            <div class="item" data-value="matt">
+                <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg"> Matt
+            </div>
+            <div class="item" data-value="justen">
+                <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg"> Justen Kitsune
+            </div>
+        </div>
+    </div>
+    
+
+ 
+    <script>
+    $('.ui.dropdown').dropdown('show');
+    </script>
+    <!-- src="assets/js/game.js -->
 </body>
 
 </html>
