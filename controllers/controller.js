@@ -43,6 +43,7 @@ module.exports = function(app, passport) {
     res.sendFile(path.join(__dirname, "../public/profile.html"));
   });
 
+// User update routes-----------------------------------------------------//
   app.post("/submit", function(req, res) {
     db.User.create(req.body)
       .then(function(dbUser) {
@@ -67,7 +68,7 @@ module.exports = function(app, passport) {
       })
       .catch(function(err) {
         res.json(err);
-      });
+      })});
   });
 
   app.get("/user", function(req, res) {
@@ -87,7 +88,7 @@ module.exports = function(app, passport) {
         failureFlash: true
     }));
 
-})};
+};
 
 
 // route middleware to make sure
