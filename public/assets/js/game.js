@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function () {
   $('.ui.rating').rating({
     initialRating: 3,
@@ -33,3 +34,5 @@ $(document).ready(function () {
     }
   });
 });
+=======
+>>>>>>> 59f0c33fdcfba28d480864a59660d4154da27111
