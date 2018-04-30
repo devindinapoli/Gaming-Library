@@ -5,7 +5,8 @@ body {
   height: 100%;
   font-family: 'Cabin Sketch', cursive;
   font-size: 25px;
-  background-color: khaki;
+  /* background-color: khaki; */
+  background-image: url("../images/grl.jpg")
 }
 
 .uzarLgnCntrd {
