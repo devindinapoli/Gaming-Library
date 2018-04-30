@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" type="text/css">
+    <!--  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Stylish" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
     <title>Games Website</title>
-
 </head>
 
 <body>
@@ -17,7 +21,7 @@
         <!-- Nav Bar -->
         <div class="ui menu">
             <a class="item home" href="/">Home</a>
-            <a class="item signup" href="/signIn">Log In</a>
+            <a class="item signup" href="#" id="modal1">Log In</a>
             <a class="item profile" href="/profile">Profile</a>
             <div class="ui action input">
                 </button>
@@ -29,14 +33,51 @@
             <!-- <div class="five wide column"></div> -->
             <!-- <div class="six wide column"> -->
             <div class="ui action input">
-                <input type="text" placeholder="Search..." id="search">
-                <button class="ui icon button gameSearch">
+                <input type="text" placeholder="Search..." id="gameSearch">
+                <button class="ui icon button" id="search">
                     <i class="search icon"></i>
                 </button>
             </div>
             <!-- </div> -->
             <!-- <div class="five wide column"></div> -->
         </div>
+
+        </br>
+        </br>
+
+        <div class="ui modal modal1">
+            <!-- e-mail
+        password
+        name -->
+            <i class="close icon"></i>
+            <div class="header">
+                Profile Picture
+            </div>
+            <div class="image content">
+                <div class="ui medium image">
+                    <!-- <img src="/images/avatar/large/chris.jpg"> -->
+                </div>
+                <div class="ui input">
+                    <input type="text" placeholder="Name...">
+                </div>
+                <div class="ui input">
+                    <input type="text" placeholder="Email...">
+                </div>
+                <div class="ui input">
+                    <input type="text" placeholder="Password...">
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Cancel
+                </div>
+                <div class="ui positive right labeled icon button">
+                    Login
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+
 
         <div class="ui link cards centered grid">
             <div class="card">
@@ -51,6 +92,8 @@
                     <div class="description">
                         Super fun game!
                     </div>
+                    <!-- button for adding game to profile -->
+                    <button class="ui button">Add</button>
                 </div>
                 <div class="extra content">
                     <span class="right floated">
@@ -74,6 +117,7 @@
                     <div class="description">
                         Incredible game everyone loves!
                     </div>
+                    <button class="ui button">Add</button>
                 </div>
                 <div class="extra content">
                     <span class="right floated">
@@ -97,6 +141,7 @@
                     <div class="description">
                         Everyone loves this game!
                     </div>
+                    <button class="ui button">Add</button>
                 </div>
                 <div class="extra content">
                     <span class="right floated">
@@ -113,6 +158,8 @@
     </div>
 
     <script src="app.js"></script>
+    <script type="text/javascript">
+    </script>
 
 </body>
 
