@@ -32,7 +32,8 @@
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
     "request": "^2.85.0",
-    "semantic-ui": "^2.3.1"
+    "semantic-ui": "^2.3.1",
+    "semantic-ui-dropdown": "^2.3.1"
   },
   "keywords": [
     "game",

@@ -7,6 +7,8 @@ const flash = require("connect-flash");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const db = require("./models");
+const igdb = require('igdb-api-node').default;
+const client = igdb('b7912e5f95234cfe1069d1790bd62eb7');
 var passport = require('passport');
 
 require("./config/passport")(passport);
@@ -29,7 +31,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 // Import Routes
-require("./controllers/controller.js")(app, passport);
+require("./controllers/controller.js")(app, passport, igdb, client);
 
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/VGDB";

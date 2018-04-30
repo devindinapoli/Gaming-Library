@@ -3,10 +3,11 @@ const express = require("express");
 const path = require("path");
 const db = require("../models");
 
+
 var router = express.Router();
 
 // app/routes.js
-module.exports = function(app, passport) {
+module.exports = function(app, passport, igdb, client) {
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
@@ -81,12 +82,22 @@ module.exports = function(app, passport) {
       });
   });
 
-  //-----------Sign up----------------------------------------------//
-    app.post("/signup", passport.authenticate("local-signup", {
-        successRedirect: "/profile",
-        failureRedirect: "/signup",
-        failureFlash: true
-    }));
+  //-----------IGDB Routes----------------------------------------------//
+    app.get("/search", function(req, res) { //currently this handles routes for searching games by title
+        client.games({
+            limit: 10, // limit results for testing.
+            offset: 0,
+            order: 'release_dates.date:desc',
+            search: req.query.title    },[
+            'name',
+            'first_release_date',
+            'rating',
+            'summary'
+        ]).then(function(results) {
+            res.json( results.body);
+        });
+    
+    });
 
 };
 
