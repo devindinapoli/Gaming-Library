@@ -1,10 +1,35 @@
-body > .grid {
-    height: 100%;
-    background: whitesmoke;
-  }
-   .image {
-    margin-top: -100px;
-  }
-  .column {
-    max-width: 450px;
-  } 
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 25px;
+  background-color: khaki;
+}
+
+.uzarLgnCntrd {
+  height: 100%;
+  background: whitesmoke;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 25px;
+}
+
+.uzarimg {
+  margin-top: -100px;
+}
+
+.uzarlogin {
+  max-width: 450px;
+}
+
+.container{
+  margin: 40px;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
