@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" type="text/css">
     <title>Games Website</title>
 
@@ -15,10 +16,11 @@
 
         <!-- Nav Bar -->
         <div class="ui menu">
-            <a class="item home" href="index.html">Home</a>
-            <a class="item signup" href="signIn.html">Log In</a>
-            <a class="item profile" href="profile.html">Profile</a>
-            <div class="ui action input"></button>
+            <a class="item home" href="/">Home</a>
+            <a class="item signup" href="/signIn">Log In</a>
+            <a class="item profile" href="/profile">Profile</a>
+            <div class="ui action input">
+                </button>
             </div>
         </div>
         </br>
@@ -27,8 +29,8 @@
             <!-- <div class="five wide column"></div> -->
             <!-- <div class="six wide column"> -->
             <div class="ui action input">
-                <input type="text" placeholder="Search...">
-                <button class="ui icon button">
+                <input type="text" placeholder="Search..." id="search">
+                <button class="ui icon button gameSearch">
                     <i class="search icon"></i>
                 </button>
             </div>
@@ -109,6 +111,8 @@
         </div>
 
     </div>
+
+    <script src="app.js"></script>
 
 </body>
 
