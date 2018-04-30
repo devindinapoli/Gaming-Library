@@ -16,9 +16,9 @@
 <body>
     <!-- Nav Bar -->
     <div class="ui menu">
-        <a class="item home" href="index.html">Home</a>
-        <a class="item signup" href="signIn.html">Log In</a>
-        <a class="item profile" href="profile.html">Profile</a>
+        <a class="item home" href="/">Home</a>
+        <a class="item signup" href="/signIn">Log In</a>
+        <a class="item profile" href="/profile">Profile</a>
         <div class="ui action input"></div>
         <!-- Right Menu -->
         <div class="right menu">
@@ -37,8 +37,12 @@
     <!-- Game container -->
     <!-- <div class="ui two column grid">
         <div class="ui red segment">
-            <div class="ui medium bordered image">
-                <h1>U-Zar</h1>
+            <div class="header">
+                <h1>
+                    U-Zar
+                </h1>
+            </div>
+            <div class="ui medium bordered circular image">
                 <img src="assets/images/gamelogo.jpg">
                 <div class="content">
                     <a class="header">User</a>
@@ -136,46 +140,7 @@
             </div>
         </div> -->
     </div>
-    <div class="ui vertical menu">
-        <div class="ui selection dropdown item">
-            Categories
-            <i class="dropdown icon"></i>
-            <div class="menu">
-                <a class="item">Electronics</a>
-                <a class="item">Automotive</a>
-                <a class="item">Home</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui selection dropdown">
-        <input type="hidden" name="user">
-        <i class="dropdown icon"></i>
-        <div class="default text">Select Friend</div>
-        <div class="menu">
-            <div class="item" data-value="jenny">
-                <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg"> Jenny Hess
-            </div>
-            <div class="item" data-value="elliot">
-                <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg"> Elliot Fu
-            </div>
-            <div class="item" data-value="stevie">
-                <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg"> Stevie Feliciano
-            </div>
-            <div class="item" data-value="christian">
-                <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg"> Christian
-            </div>
-            <div class="item" data-value="matt">
-                <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg"> Matt
-            </div>
-            <div class="item" data-value="justen">
-                <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg"> Justen Kitsune
-            </div>
-        </div>
-    </div>
     
-
- 
     <script>
     $('.ui.dropdown').dropdown('show');
     </script>
