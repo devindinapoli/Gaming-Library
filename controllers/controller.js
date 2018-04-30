@@ -12,11 +12,11 @@ module.exports = function(app, passport, igdb, client) {
   });
 
   app.get("/profile", isLoggedIn, function(req, res) {
-    res.sendFile(
-      path.join(__dirname, "../public/profile.html", {
-        user: req.user
-      })
-    );
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  });
+  
+  app.get("/currentuser", function(req, res) {
+      res.json(req.user);
   });
 
   //--------------Log in/out Routes----------------------------------//
@@ -25,21 +25,33 @@ module.exports = function(app, passport, igdb, client) {
   });
 
   app.post( "/login",
-    passport.authenticate("local", {
-      successRedirect: "/profile", // redirect to the secure profile section
-      failureRedirect: "/", // redirect back to the signup page if there is an error
+    passport.authenticate("local-login", {
+      successRedirect: "/profile", 
+      failureRedirect: "/login",
+      failureflash: true
     })
   );
+
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signIn.html"));
+  });
+
+  app.post( "/signup",
+  passport.authenticate("local-signup", {
+    successRedirect: "/profile", 
+    failureRedirect: "/login",
+    failureflash: true
+  })
+);
 
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
-  app.get("/signIn", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
-  app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+
+  app.get("/profile", isLoggedIn, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"), {user: req.user});
   });
 
 // User update routes-----------------------------------------------------//
@@ -67,7 +79,7 @@ module.exports = function(app, passport, igdb, client) {
       })
       .catch(function(err) {
         res.json(err);
-      })});
+      })
   });
 
   app.get("/user", function(req, res) {
