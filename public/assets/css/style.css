@@ -3,18 +3,17 @@
 }
 body {
   height: 100%;
-  font-family: 'Cabin Sketch', cursive;
   font-size: 25px;
   /* background-color: khaki; */
-  background-image: url("../images/Astro-Gaming-Background-HD.jpg")
+  background-image: url("../images/Astro-Gaming-Background-HD.jpg");
 }
 
-.uzarLgnCntrd {
+/* .uzarLgnCntrd {
   height: 100%;
   background: whitesmoke;
-  font-family: 'Cabin Sketch', cursive;
+  font-family: "Cabin Sketch", cursive;
   font-size: 25px;
-}
+} */
 
 .uzarimg {
   margin-top: -100px;
@@ -24,14 +23,14 @@ body {
   max-width: 450px;
 }
 
-.container{
+.container {
   margin: 40px;
 }
 #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
 }
 
@@ -40,9 +39,19 @@ body {
 }
 
 .header {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .content {
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+
+.menu {
+  font-size: 75px;
+}
+.results-field {
+  height: 350px;
+  width: 400px;
+  overflow: scroll;
+  color: white;
 }

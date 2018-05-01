@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Quattrocento+Sans" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Games Website</title>
+</head>
+<body>
+    <div class="container">
+
+      <!-- Nav Bar -->
+        <div class="ui menu">
+            <a class="item home header" href="/">Home</a>
+            <a class="item signup header" href="#" id="modal1">Log In</a>
+            <a class="item profile header" href="/profile">Profile</a>
+        </div>
+        </br>
+        <!-- search bar -->
+        <div class="ui centered grid">
+            <!-- <div class="five wide column"></div> -->
+            <!-- <div class="six wide column"> -->
+            <div class="ui action input">
+                <input type="text" placeholder="Search..." id="gameSearch">
+                <button class="ui icon button content" id="search">
+                    <i class="search icon"></i>
+                </button>
+            </div>
+            <!-- </div> -->
+            <!-- <div class="five wide column"></div> -->
+        </div>
+
+        </br>
+        </br>
+{{!-- Sign In modal / Note:confirmation sing up  --}}
+        <div class="ui modal modal1">
+            <!-- e-mail
+        password
+        name -->
+            <i class="close icon"></i>
+            <div class="header">
+                Log In
+            </div>
+            <div class="image content">
+                <div class="ui medium image">
+                    <!-- <img src="/images/avatar/large/chris.jpg"> -->
+                </div>
+                <div class="ui input">
+                    <input type="text" placeholder="Name...">
+                </div>
+                <div class="ui input">
+                    <input type="text" placeholder="Email...">
+                </div>
+                <div class="ui input">
+                    <input type="text" placeholder="Password...">
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Cancel
+                </div>
+                <div class="ui positive right labeled icon button">
+                    Login
+                    <i class="user icon"></i>
+                </div>
+            </div>
+        </div>
+
+        
+{{{body}}}
+
+</div>
+
+<script src="assets/js/profile.js"></script>
+<script src="assets/js/index.js"></script>
+
+</body>
+</html>
