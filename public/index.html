@@ -9,9 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Quattrocento+Sans" rel="stylesheet">
     <!--  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Games Website</title>
 </head>
 
@@ -20,10 +21,10 @@
 
         <!-- Nav Bar -->
         <div class="ui menu">
-            <a class="item home" href="/">Home</a>
-            <a class="item signup" href="#" id="modal1">Log In</a>
-            <a class="item profile" href="/profile">Profile</a>
-            <div class="ui action input">
+            <a class="item home header" href="/">Home</a>
+            <a class="item signup header" href="#" id="modal1">Log In</a>
+            <a class="item profile header" href="/profile">Profile</a>
+            <div class="ui action input header">
                 </button>
             </div>
         </div>
@@ -34,7 +35,7 @@
             <!-- <div class="six wide column"> -->
             <div class="ui action input">
                 <input type="text" placeholder="Search..." id="gameSearch">
-                <button class="ui icon button" id="search">
+                <button class="ui icon button content" id="search">
                     <i class="search icon"></i>
                 </button>
             </div>
@@ -51,7 +52,7 @@
         name -->
             <i class="close icon"></i>
             <div class="header">
-                Profile Picture
+                Log In
             </div>
             <div class="image content">
                 <div class="ui medium image">
@@ -73,7 +74,7 @@
                 </div>
                 <div class="ui positive right labeled icon button">
                     Login
-                    <i class="checkmark icon"></i>
+                    <i class="user icon"></i>
                 </div>
             </div>
         </div>
@@ -81,15 +82,15 @@
 
         <div class="ui link cards centered grid">
             <div class="card">
-                <div class="image">
-                    <img src="https://static.gamespot.com/uploads/scale_super/1552/15524586/3350291-d980a0d8a0609cedf692d619f3695576.jpg">
+                <div class="image ui fluid">
+                    <img class="gameImage" src="https://static.gamespot.com/uploads/scale_super/1552/15524586/3350291-d980a0d8a0609cedf692d619f3695576.jpg">
                 </div>
                 <div class="content">
                     <div class="header">Game 1</div>
                     <div class="meta">
                         <a>sub header?</a>
                     </div>
-                    <div class="description">
+                    <div class="description content">
                         Super fun game!
                     </div>
                     <!-- button for adding game to profile -->
@@ -106,8 +107,8 @@
                 </div>
             </div>
             <div class="card">
-                <div class="image">
-                    <img src="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633">
+                <div class="image ui fluid">
+                    <img class="gameImage" src="./assets/images/grl.jpg">
                 </div>
                 <div class="content">
                     <div class="header">Game 2</div>
@@ -130,8 +131,8 @@
                 </div>
             </div>
             <div class="card">
-                <div class="image">
-                    <img src="https://cdn.images.dailystar.co.uk/dynamic/184/photos/334000/620x/Super-Mario-Level-Up-Boardgame-605999.jpg">
+                <div class="image ui fluid">
+                    <img class="gameImage" src="https://cdn.images.dailystar.co.uk/dynamic/184/photos/334000/620x/Super-Mario-Level-Up-Boardgame-605999.jpg">
                 </div>
                 <div class="content">
                     <div class="header">Game 3</div>
@@ -158,8 +159,7 @@
     </div>
 
     <script src="assets/js/index.js"></script>
-    <script type="text/javascript">
-    </script>
+    <script type="text/javascript"></script>
 
 </body>
 
