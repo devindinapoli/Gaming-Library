@@ -105,12 +105,19 @@
 </div>
 <!-- User card -->
 
+
+{{!-- JS init. --}}
 <script>
     $(document).ready(function () {
+        $('.ui.rating')
+            .rating({
+                initialRating: 3,
+                maxRating: 5
+            })
+            ;
         $.get("/user", function (data) {
             console.log(data);
             $(".header").html("<h3>" + data.name + "</h3>");
         });
     });
-
 </script>
