@@ -11,14 +11,50 @@ module.exports = function(app, passport, igdb, client) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/signIn", function(req, res) {
+  app.get("/profile", isLoggedIn, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  });
+  
+  app.get("/currentuser", function(req, res) {
+      res.json(req.user);
+  });
+
+  //--------------Log in/out Routes----------------------------------//
+  app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
-  app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  app.post( "/login",
+    passport.authenticate("local-login", {
+      successRedirect: "/profile", 
+      failureRedirect: "/login",
+      failureflash: true
+    })
+  );
+
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
+  app.post( "/signup",
+  passport.authenticate("local-signup", {
+    successRedirect: "/profile", 
+    failureRedirect: "/login",
+    failureflash: true
+  })
+);
+
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+  });
+
+
+  app.get("/profile", isLoggedIn, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"), {user: req.user});
+  });
+
+// User update routes-----------------------------------------------------//
   app.post("/submit", function(req, res) {
     db.User.create(req.body)
       .then(function(dbUser) {
@@ -43,7 +79,7 @@ module.exports = function(app, passport, igdb, client) {
       })
       .catch(function(err) {
         res.json(err);
-      });
+      })
   });
 
   app.get("/user", function(req, res) {
@@ -74,3 +110,13 @@ module.exports = function(app, passport, igdb, client) {
       });
   });
 };
+
+
+// route middleware to make sure
+function isLoggedIn(req, res, next) {
+  // if user is authenticated in the session, carry on
+  if (req.isAuthenticated()) return next();
+
+  // if they aren't redirect them to the home page
+  res.redirect("/");
+}
