@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $('.ui.rating').rating({
+    initialRating: 3,
+    maxRating: 5
+  });
   $("#modal1").click(function() {
     $(".modal1").modal("show");
   });
