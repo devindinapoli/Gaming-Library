@@ -3,16 +3,16 @@
 }
 body {
   height: 100%;
-  font-family: "Cabin Sketch", cursive;
+  font-family: 'Cabin Sketch', cursive;
   font-size: 25px;
   /* background-color: khaki; */
-  background-image: url("../images/grl.jpg");
+  background-image: url("../images/Astro-Gaming-Background-HD.jpg")
 }
 
 .uzarLgnCntrd {
   height: 100%;
   background: whitesmoke;
-  font-family: "Cabin Sketch", cursive;
+  font-family: 'Cabin Sketch', cursive;
   font-size: 25px;
 }
 
@@ -24,13 +24,29 @@ body {
   max-width: 450px;
 }
 
-.container {
+.container{
   margin: 40px;
 }
 #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%;
+  min-width: 100%; 
   min-height: 100%;
+}
+
+.gameImage {
+  max-height: 150px;
+}
+
+.header {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.content {
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.menu {
+  font-size: 75px;
 }
