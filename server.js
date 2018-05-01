@@ -10,6 +10,7 @@ const db = require("./models");
 const igdb = require("igdb-api-node").default;
 const client = igdb("b7912e5f95234cfe1069d1790bd62eb7");
 var passport = require("passport");
+const exphbs = require("express-handlebars");
 
 require("./config/passport")(passport);
 
@@ -33,6 +34,9 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
+
+app.engine("handlebars", exphbs({defaultLayout:"main"}));
+app.set("view engine", "handlebars");
 
 // Import Routes
 require("./controllers/controller.js")(app, passport, igdb, client);

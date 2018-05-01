@@ -3,18 +3,17 @@
 }
 body {
   height: 100%;
-  font-family: 'Cabin Sketch', cursive;
   font-size: 25px;
   /* background-color: khaki; */
   background-image: url("../images/Astro-Gaming-Background-HD.jpg")
 }
 
-.uzarLgnCntrd {
+/* .uzarLgnCntrd {
   height: 100%;
   background: whitesmoke;
   font-family: 'Cabin Sketch', cursive;
   font-size: 25px;
-}
+} */
 
 .uzarimg {
   margin-top: -100px;
@@ -46,3 +45,4 @@ body {
 .content {
   font-family: 'Quattrocento Sans', sans-serif;
 }
+
