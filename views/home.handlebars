@@ -2,6 +2,29 @@
     <div class="results-field"></div>
 </div>
 
+<div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+      <div class="header">
+        Game
+      </div>
+      <div class="meta">
+        Friends of Veronika
+      </div>
+      <div class="description">
+        Elliot requested permission to view your contact details
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui basic green button">Approve</div>
+        <div class="ui basic red button">Decline</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     function createGameSection(data) {
         for (var i = 0; i < data.length; i++) {
@@ -20,8 +43,11 @@
             initialRating: 3,
             maxRating: 5
         });
-        $("#modal1").click(function () {
-            $(".modal1").modal("show");
+        $("#signinModal").click(function () {
+            $(".signinModal").modal("show");
+        });
+        $("#signupModal").click(function () {
+            $(".signupModal").modal("show");
         });
         $(".modal").modal({
             closable: true
