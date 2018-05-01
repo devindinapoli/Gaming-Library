@@ -3,27 +3,21 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
-  title: {
+  _userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
+  name: {
     type: String,
     required: true,
-    unique: true
+    unique: false
   },
-  console: {
+  summary: {
     type: String,
-    required: true,
+    required: false,
     unique: false
   },
-  releaseYear: {
-    type: Number,
-    required: true,
-    unique: false
-  },
-  rating: {
-    type: Number,
-    required: true,
-    unique: false
-  },
-  Summary: {
+  cover: {
     type: String,
     required: false,
     unique: false
