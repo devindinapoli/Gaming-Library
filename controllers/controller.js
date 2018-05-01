@@ -8,11 +8,11 @@ var router = express.Router();
 // app/routes.js
 module.exports = function(app, passport, igdb, client) {
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render("home");
   });
 
   app.get("/profile", isLoggedIn, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+    res.render("profile", { user: req.user });
   });
   
   app.get("/currentuser", function(req, res) {
@@ -49,10 +49,6 @@ module.exports = function(app, passport, igdb, client) {
     res.redirect("/");
   });
 
-
-  app.get("/profile", isLoggedIn, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"), {user: req.user});
-  });
 
 // User update routes-----------------------------------------------------//
   app.post("/submit", function(req, res) {
