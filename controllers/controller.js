@@ -14,9 +14,9 @@ module.exports = function(app, passport, igdb, client) {
   app.get("/profile", isLoggedIn, function(req, res) {
     res.render("profile", { user: req.user });
   });
-  
+
   app.get("/currentuser", function(req, res) {
-      res.json(req.user);
+    res.json(req.user);
   });
 
   //--------------Log in/out Routes----------------------------------//
@@ -24,9 +24,10 @@ module.exports = function(app, passport, igdb, client) {
     res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
-  app.post( "/login",
+  app.post(
+    "/login",
     passport.authenticate("local-login", {
-      successRedirect: "/profile", 
+      successRedirect: "/profile",
       failureRedirect: "/login",
       failureflash: true
     })
@@ -36,21 +37,21 @@ module.exports = function(app, passport, igdb, client) {
     res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
-  app.post( "/signup",
-  passport.authenticate("local-signup", {
-    successRedirect: "/profile", 
-    failureRedirect: "/login",
-    failureflash: true
-  })
-);
+  app.post(
+    "/signup",
+    passport.authenticate("local-signup", {
+      successRedirect: "/profile",
+      failureRedirect: "/login",
+      failureflash: true
+    })
+  );
 
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
   });
 
-
-// User update routes-----------------------------------------------------//
+  // User update routes-----------------------------------------------------//
   app.post("/submit", function(req, res) {
     db.User.create(req.body)
       .then(function(dbUser) {
@@ -75,7 +76,7 @@ module.exports = function(app, passport, igdb, client) {
       })
       .catch(function(err) {
         res.json(err);
-      })
+      });
   });
 
   app.get("/user", function(req, res) {
@@ -99,14 +100,13 @@ module.exports = function(app, passport, igdb, client) {
           order: "release_dates.date:desc",
           search: req.query.title
         },
-        ["name", "first_release_date", "rating", "summary", "cover"]
+        ["name", "first_release_date", "rating", "summary", "screenshots"]
       )
       .then(function(results) {
         res.json(results.body);
       });
   });
 };
-
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
