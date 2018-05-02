@@ -8,20 +8,6 @@ body {
   background-image: url("../images/Astro-Gaming-Background-HD.jpg");
 }
 
-/* .uzarLgnCntrd {
-  height: 100%;
-  background: whitesmoke;
-  font-family: "Cabin Sketch", cursive;
-  font-size: 25px;
-} */
-
-.uzarimg {
-  margin-top: -100px;
-}
-
-.uzarlogin {
-  max-width: 450px;
-}
 
 .container {
   margin: 40px;
@@ -46,9 +32,6 @@ body {
   font-family: "Quattrocento Sans", sans-serif;
 }
 
-.menu {
-  font-size: 75px;
-}
 .results-field {
   height: 350px;
   width: 400px;

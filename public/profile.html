@@ -8,12 +8,15 @@
     <!--  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Quattrocento+Sans" rel="stylesheet">
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
     <!--  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
     <!--  -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon">
+    <!--  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!--  -->
     <title>Profile</title>
 </head>
@@ -26,38 +29,33 @@
 
     <!-- Nav Bar -->
     <!-- Nav Bar -->
-    <div class="ui menu">
-        <a class="item home header" href="/">Home</a>
-        <a class="item signup header" href="#" id="modal1">Log In</a>
-        <a class="item profile header" href="/profile.html">Profile</a>
-        <div class="ui action input header">
-            </button>
+    <div class=" ui container">
+        <div class="ui menu">
+            <a class="item home header" href="/">Home</a>
+            <a class="item signup header" href="#" id="modal1">Log In</a>
+            <a class="item profile header" href="/profile.html">Profile</a>
         </div>
-    </div>
-    </br>
+        </br>
         <!-- Right Menu -->
-        <div class="right menu">
-            <div class="item">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search...">
-                    <i class="search link icon"></i>
-                </div>
+        <div class=" ui centered grid">
+            <div class="ui action input">
+                <input type="text" placeholder="Search...">
+                <button class="ui icon button content" id="search">
+                    <i class="search icon"></i>
+                </button>
             </div>
-            <a class="ui item">
-                Logout
-            </a>
         </div>
-    </div>
 
-    <!-- UZar container -->
-    <div class="ui container">
+        <!-- UZar container -->
         <div class="ui two column grid">
+
             <!-- UZar Card Info -->
             <div class="ui column">
-                <div class="ui fluid card image">
-                    <a class="center aligned header">
-                        <H1>U-Zar</H1>
-                    </a>
+                <div>
+                    <H5 class="ui inverted center aligned header">U-Zar</H5>
+
+                </div>
+                <div class="ui centered card image">
                     <img class="ui medium rounded image" src="https://media.giphy.com/media/Q2w02BCP1Nvqg/giphy.gif">
                     <div class="content">
                         <div class="meta">
@@ -69,94 +67,75 @@
                         </div>
                         <div class="extra">
                             Rating:
-                            <div class="ui star rating" data-rating="4"></div>
+                            <div class="ui star rating"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Game Collection -->
             <div class="ui column">
-                <a>
-                    <i class="ui orange game icon"></i>Game collection</a>
 
+                <H5 class="ui inverted green center aligned header">
+                    <i class="orange game icon"></i>
+                    Game collection</H5>
                 <!-- Change how many cards to display on each row. -->
-                <div class="ui three doubling cards">
+                <div class="ui two doubling cards">
                     <!-- Game cards -->
                     <a class="red card">
-                        <div class="ui image">
-                            <img src="assets/images/gamelogo.jpg"> Game1
+                        <div class="image">
+                            <img src="assets/images/grl.jpg"> Game1
+                            <div class="extra">
+                                Rating:
+                                <div class="ui heart rating"></div>
+                            </div>
                         </div>
                     </a>
                     <!--  -->
                     <a class="orange card">
                         <div class="image">
                             <img src="assets/images/gamelogo.jpg"> Game2
+                            <div class="extra">
+                                Rating:
+                                <div class="ui heart rating"></div>
+                            </div>
                         </div>
                     </a>
                     <!--  -->
                     <a class="yellow card">
-                        <div class="image">
-                            <img src="assets/images/gamelogo.jpg"> Game
+                        <div class="ui image">
+                            <img src="assets/images/grl.jpg"> Game3
+                            <div class="extra">
+                                Rating:
+                                <div class="ui heart rating"></div>
+                            </div>
                         </div>
                     </a>
                     <!--  -->
                     <a class="olive card">
-                        <div class="ui image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="green card">
-                        <div class="image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="teal card">
-                        <div class="ui image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="blue card">
-                        <div class="image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="violet card">
-                        <div class="ui image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="purple card">
-                        <div class="image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="pink card">
-                        <div class="image">
-                            <img src="assets/images/gamelogo.jpg"> Game
-                        </div>
-                    </a>
-                    <!--  -->
-                    <a class="pink card">
-                        <div class="image">
-                            <img src="assets/images/gamelogo.jpg"> Game
+                        <div class="ui bordered image">
+                            <img src="assets/images/gamelogo.jpg"> Game4
+                            <div class="extra">
+                                Rating:
+                                <div class="ui heart rating"></div>
+                            </div>
                         </div>
                     </a>
                 </div>
-
             </div>
-
         </div>
-
     </div>
     <!-- User card -->
-    <script src="assets/js/profile.js"></script>
-    <script src="assets/js/index.js"></script>
+
+    <!-- JS init. -->
+    <script>
+        $(document).ready(function () {
+            $('.ui.rating')
+                .rating({
+                    initialRating: 1,
+                    maxRating: 5
+                });
+        });
+    </script>
 </body>
 
 </html>
