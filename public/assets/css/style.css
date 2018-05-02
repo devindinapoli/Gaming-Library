@@ -8,6 +8,20 @@ body {
   background-image: url("../images/Astro-Gaming-Background-HD.jpg");
 }
 
+/* .uzarLgnCntrd {
+  height: 100%;
+  background: whitesmoke;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 25px;
+} */
+
+.uzarimg {
+  margin-top: -100px;
+}
+
+.uzarlogin {
+  max-width: 450px;
+}
 
 .container {
   margin: 40px;
@@ -42,6 +56,7 @@ body {
 .game-image {
   float: right;
 }
-content {
-  display: inline;
+
+.card {
+  width: 350px;
 }
