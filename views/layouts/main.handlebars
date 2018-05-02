@@ -21,15 +21,48 @@
 </head>
 <body>
     <div class="container">
-      <!-- Nav Bar -->
-        <div class="ui menu">
+    <video autoplay muted loop id="myVideo">
+        <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+    </video>
+        <!-- Nav Bar Sergio-->
+        <div class="ui inverted  menu">
+           <a class="item home header" href="/">Home</a>
+            <a class="item signup header" href="#" id="signupModal">Sign Up</a>
+            <a class="item signup header" href="#" id="signinModal">Log In</a>
+            <a class="item profile header" href="/profile">Profile</a>
+            <!-- Right menu Log out -->
+            <div class="right menu sticky">
+                <button class="ui animated button" role="button">
+                    <div class="visible content">Log Out</div>
+                    <div class="hidden content">
+                        <i aria-hidden="true" class="right ui inverted green arrow icon"></i>
+                    </div>
+                </button>
+            </div>
+            <!--  -->
+        </div>
+      <!-- Nav Bar Max -->
+        {{!-- <div class="ui menu">
             <a class="item home header" href="/">Home</a>
             <a class="item signup header" href="#" id="signupModal">Sign Up</a>
             <a class="item signup header" href="#" id="signinModal">Log In</a>
             <a class="item profile header" href="/profile">Profile</a>
+        </div> --}}
+        <!-- Search Sergio -->
+        <div class="ui internally celled centered grid ">
+            <div class="ui action input">
+                <input type="text" placeholder="Search...">
+                <button class="ui fade animated button" role="button">
+                    <div class="visible content">
+                        <i class="ui inverted green search icon"></i>
+                    </div>
+                    <div class="hidden content">Search</div>
+                </button>
+            </div>
         </div>
-        <!-- search bar -->
-        <div class="ui internally celled centered grid">
+
+        <!-- search bar Max -->
+        {{!-- <div class="ui internally celled centered grid">
             <div class="ui action input">
                 <input type="text" placeholder="Search..." id="gameSearch">
                 <button class="ui icon button content" id="search">
@@ -39,7 +72,7 @@
         </div>
 
         </br>
-        </br>
+        </br> --}}
 {{!-- Sign In modal / Note:confirmation sing up  --}}
         <div class="ui modal signinModal">
             <!-- e-mail
@@ -110,6 +143,35 @@
         </div>
         
 {{{body}}}
+
+        <div class="footer container">
+                <div class="ui black inverted vertical footer segment">
+                    <div class="ui center aligned container">
+                        <div class="ui stackable inverted  divided grid">
+                            <div class="three wide column">
+                                <h3 class="ui inverted orange header">Team Members</h3>
+                                <div class="ui inverted link list">
+                                    <a href="https://github.com/mecaniser" class="item" target="_blank">
+                                        <i class="green git square icon"></i>
+                                        Sergio Burca</a>
+                                    <a href="" class="item" target="_blank">
+                                        <i class="green git square icon"></i>
+                                        Maxwell Robb</a>
+                                    <a href="" class="item" target="_blank">
+                                        <i class="green git square icon"></i>
+                                        Andrew Knowles</a>
+                                    <a href="https://github.com/devindinapoli" class="item" target="_blank">
+                                        <i class="green git square icon"></i>
+                                        Devin Dinapoli</a>
+                                    <a href="" class="item" target="_blank">
+                                        <i class="green git square icon"></i>
+                                        Jeffrey Easley</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 </div>
 </body>
