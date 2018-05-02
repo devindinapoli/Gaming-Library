@@ -1,15 +1,24 @@
 //Dependencies
 const express = require("express");
+
+// Parsers && other tools
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+
+//  Authentication
 const session = require("express-session");
 const flash = require("connect-flash");
-const logger = require("morgan");
+var passport = require("passport");
+
+// DataBase
 const mongoose = require("mongoose");
 const db = require("./models");
+
+// IGDB API
 const igdb = require("igdb-api-node").default;
 const client = igdb("b7912e5f95234cfe1069d1790bd62eb7");
-var passport = require("passport");
+
 const exphbs = require("express-handlebars");
 
 require("./config/passport")(passport);
@@ -17,7 +26,7 @@ require("./config/passport")(passport);
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-// Required for passport
+// Required for passport (Oauth)
 app.use(
   session({
     secret: "keyboard cat",
@@ -38,8 +47,13 @@ app.use(express.static(__dirname + "/public"));
 app.engine("handlebars", exphbs({defaultLayout:"main"}));
 app.set("view engine", "handlebars");
 
-// Import Routes
-require("./controllers/controller.js")(app, passport, igdb, client);
+
+
+// Import Routes and go ahead and pass them their needed dependencies.
+const authRoutes = require("./controllers/authController")(express, app, passport);
+const apiRoutes = require("./controllers/apiController")(express, app, igdb, client);
+const userRoutes = require("./controllers/userController")(express, app, db);
+
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/VGDB";
 
