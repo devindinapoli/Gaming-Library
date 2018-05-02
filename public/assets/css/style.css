@@ -38,3 +38,10 @@ body {
   overflow: scroll;
   color: white;
 }
+
+.game-image {
+  float: right;
+}
+content {
+  display: inline;
+}
