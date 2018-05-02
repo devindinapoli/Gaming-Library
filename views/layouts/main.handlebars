@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +20,15 @@
     <!--Web Site Title-->
     <title>Games Website</title>
 </head>
+
 <body>
     <div class="container">
-    <video autoplay muted loop id="myVideo">
-        <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-    </video>
+        <video autoplay muted loop id="myVideo">
+            <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+        </video>
         <!-- Nav Bar Sergio-->
         <div class="ui inverted  menu">
-           <a class="item home header" href="/">Home</a>
+            <a class="item home header" href="/">Home</a>
             <a class="item signup header" href="#" id="signupModal">Sign Up</a>
             <a class="item signup header" href="#" id="signinModal">Log In</a>
             <a class="item profile header" href="/profile">Profile</a>
@@ -41,8 +43,9 @@
             </div>
             <!--  -->
         </div>
-      <!-- Nav Bar Max -->
-        {{!-- <div class="ui menu">
+        <!-- Nav Bar Max -->
+        {{!--
+        <div class="ui menu">
             <a class="item home header" href="/">Home</a>
             <a class="item signup header" href="#" id="signupModal">Sign Up</a>
             <a class="item signup header" href="#" id="signinModal">Log In</a>
@@ -62,7 +65,8 @@
         </div>
 
         <!-- search bar Max -->
-        {{!-- <div class="ui internally celled centered grid">
+        {{!--
+        <div class="ui internally celled centered grid">
             <div class="ui action input">
                 <input type="text" placeholder="Search..." id="gameSearch">
                 <button class="ui icon button content" id="search">
@@ -72,8 +76,7 @@
         </div>
 
         </br>
-        </br> --}}
-{{!-- Sign In modal / Note:confirmation sing up  --}}
+        </br> --}} {{!-- Sign In modal / Note:confirmation sing up --}}
         <div class="ui modal signinModal">
             <!-- e-mail
         password
@@ -87,23 +90,24 @@
                     <!-- <img src="/images/avatar/large/chris.jpg"> -->
                 </div>
                 <div class="ui input">
-                    <input type="text" id="email" placeholder="Email...">
+                    <input name="email" type="text" id="email" placeholder="Email...">
                 </div>
                 <div class="ui input">
-                    <input type="text" id="password" placeholder="Password...">
+                    <input name="password" type="password" id="password" placeholder="Password...">
                 </div>
             </div>
             <div class="actions">
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <div class="ui positive right labeled icon button">
+                <div id="loginButton" class="ui positive right labeled icon button">
                     Login
                     <i class="user icon"></i>
                 </div>
             </div>
         </div>
-        <div class="ui modal signupModal">
+
+        <form class="ui modal signupModal">
             <!-- e-mail
         password
         name -->
@@ -116,18 +120,19 @@
                     <!-- <img src="/images/avatar/large/chris.jpg"> -->
                 </div>
                 <div class="ui input">
-                    <input type="text" id="firstName" placeholder="First Name...">
+                    <input name="firstName" type="text" id="firstName" placeholder="First Name...">
                 </div>
                 <div class="ui input">
-                    <input type="text" id="lastName" placeholder="Last Name...">
+                    <input name="lastName" type="text" id="lastName" placeholder="Last Name...">
                 </div>
                 <div class="ui input">
-                    <input type="text" id="email" placeholder="Email...">
+                    <input name="email" type="text" id="signUpEmail" placeholder="Email...">
                 </div>
                 <div class="ui input">
-                    <input type="text" id="password" placeholder="Password...">
+                    <input name="password" type="password" id="signUpPassword" placeholder="Password...">
                 </div>
-                {{!-- <div class="ui input">
+                {{!--
+                <div class="ui input">
                     <input type="text" placeholder="SSN...">
                 </div> --}}
             </div>
@@ -135,44 +140,46 @@
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <div class="ui positive right labeled icon button">
+                <div id="signUp" class="ui positive right labeled icon button">
                     Sign Up
                     <i class="user icon"></i>
                 </div>
             </div>
-        </div>
-        
-{{{body}}}
+        </form>
+
+
+        {{{body}}}
 
         <div class="footer container">
-                <div class="ui black inverted vertical footer segment">
-                    <div class="ui center aligned container">
-                        <div class="ui stackable inverted  divided grid">
-                            <div class="three wide column">
-                                <h3 class="ui inverted orange header">Team Members</h3>
-                                <div class="ui inverted link list">
-                                    <a href="https://github.com/mecaniser" class="item" target="_blank">
-                                        <i class="green git square icon"></i>
-                                        Sergio Burca</a>
-                                    <a href="" class="item" target="_blank">
-                                        <i class="green git square icon"></i>
-                                        Maxwell Robb</a>
-                                    <a href="" class="item" target="_blank">
-                                        <i class="green git square icon"></i>
-                                        Andrew Knowles</a>
-                                    <a href="https://github.com/devindinapoli" class="item" target="_blank">
-                                        <i class="green git square icon"></i>
-                                        Devin Dinapoli</a>
-                                    <a href="" class="item" target="_blank">
-                                        <i class="green git square icon"></i>
-                                        Jeffrey Easley</a>
-                                </div>
+            <div class="ui black inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <div class="ui stackable inverted  divided grid">
+                        <div class="three wide column">
+                            <h3 class="ui inverted orange header">Team Members</h3>
+                            <div class="ui inverted link list">
+                                <a href="https://github.com/mecaniser" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Sergio Burca</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Maxwell Robb</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Andrew Knowles</a>
+                                <a href="https://github.com/devindinapoli" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Devin Dinapoli</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Jeffrey Easley</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-</div>
+    </div>
 </body>
+
 </html>
