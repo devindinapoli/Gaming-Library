@@ -1,5 +1,3 @@
-const path = require("path"); // I don't think we need this anymore.
-
 // Pass our dependcies as arguments
 module.exports = function(express, app, passport) {
   app.get("/", function(req, res) {
@@ -15,6 +13,8 @@ module.exports = function(express, app, passport) {
     res.json(req.user);
   });
 
+
+
   //--------------Log in/out Routes----------------------------------//
 
   app.post(
@@ -26,7 +26,6 @@ module.exports = function(express, app, passport) {
     })
   );
 
-  // This will probably not be needed if we use a modal
 
   app.post(
     "/signup",
