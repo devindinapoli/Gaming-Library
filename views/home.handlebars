@@ -87,19 +87,23 @@
             console.log(data);
             createGameSection(data);
         });
+
+        $("#search").on("click", function (event) {
+            event.preventDefault();
+            $(".results-field").empty();
+            var title = $("#gameSearch")
+                .val()
+                .trim();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
+                console.log(data);
+                createGameSection(data);
+            });
+        });
+
     });
 
-    $("#search").on("click", function (event) {
-        event.preventDefault();
-        $(".results-field").empty();
-        var title = $("#gameSearch")
-            .val()
-            .trim();
-        $.get("/search?title=" + title, function (data) {
-            console.log(title);
-            console.log(data);
-            createGameSection(data);
-        });
-    });
+
+
 
 </script>
