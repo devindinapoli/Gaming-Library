@@ -9,13 +9,6 @@ body {
   text-align: center;
 }
 
-/* .uzarLgnCntrd {
-  height: 100%;
-  background: whitesmoke;
-  font-family: "Cabin Sketch", cursive;
-  font-size: 25px;
-} */
-
 .uzarimg {
   margin-top: -100px;
 }
@@ -67,6 +60,7 @@ body {
 }
 .gameHead {
   font-size: 12px;
+  padding-top: 20px;
 }
 .game {
   margin-bottom: 15px;
