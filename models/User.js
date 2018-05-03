@@ -19,6 +19,11 @@ const UserSchema = new Schema({
     type: String,
     required: false,
     unique: false
+  },
+  game: {
+    type: Number,
+    required: false,
+    unique: false
   }
 });
 

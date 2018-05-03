@@ -28,7 +28,7 @@
                     "<div class='description'>" +
                     data[i].summary +
                     "</div></div>" +
-                    "<div class='ui bottom attached button addGame' id=" + data[i].id + ">" +
+                    "<div class='ui bottom attached large button addGame' id=" + data[i].id + ">" +
                     "<i class='add icon'></i>" +
                     "Add Game" +
                     "</div></div></div>")
@@ -36,6 +36,12 @@
             }
 
         }
+
+        $(document).on("click", ".addGame", function () {
+            var game = $(this).attr("id");
+            console.log(game);
+            $(this).text("Game Added")
+        })
 
 
         $("#signinModal").click(function () {
@@ -48,7 +54,7 @@
             closable: true
         });
 
-        $("#loginButton").on("click", function (event) {
+       /* $("#loginButton").on("click", function (event) {
             event.preventDefault();
             var email = $("#email").val().trim();
             var password = $("#password").val().trim();
@@ -73,7 +79,7 @@
                 console.log(data)
             });
 
-        })
+        }) */
 
 
 
@@ -81,19 +87,30 @@
             console.log(data);
             createGameSection(data);
         });
+
+        $("#search").on("click", function (event) {
+            event.preventDefault();
+            $(".results-field").empty();
+            var title = $("#gameSearch")
+                .val()
+                .trim();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
+                console.log(data);
+                createGameSection(data);
+            });
+        });
+
+        $('#gameSearch').keypress(function(e){
+            if(e.which == 13){//Enter key pressed
+                $('#search').click();//Trigger search button click event
+            }
     });
 
-    $("#search").on("click", function (event) {
-        event.preventDefault();
-        $(".results-field").empty();
-        var title = $("#gameSearch")
-            .val()
-            .trim();
-        $.get("/search?title=" + title, function (data) {
-            console.log(title);
-            console.log(data);
-            createGameSection(data);
-        });
+
     });
+
+
+
 
 </script>

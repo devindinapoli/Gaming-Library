@@ -46,14 +46,20 @@ body {
   height: 400px;
   overflow-x: hidden;
   overflow-y: auto;
+
 }
 .description {
   font-size: 12px;
 }
 .gameHead {
   font-size: 12px;
-  padding-top: 20px;
+  padding-top: 15px;
+
 }
 .game {
   margin-bottom: 15px;
+}
+
+.card.content.button {
+  padding-bottom: 1000px;
 }
