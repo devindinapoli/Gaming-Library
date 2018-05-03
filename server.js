@@ -21,6 +21,8 @@ const client = igdb("b7912e5f95234cfe1069d1790bd62eb7");
 
 const exphbs = require("express-handlebars");
 
+const fileUpload = require("express-fileupload");
+
 require("./config/passport")(passport);
 
 const PORT = process.env.PORT || 3000;
@@ -38,6 +40,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+app.use(fileUpload());
+
 app.use(logger("dev"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,7 +57,7 @@ app.set("view engine", "handlebars");
 const authRoutes = require("./controllers/authController")(express, app, passport);
 const apiRoutes = require("./controllers/apiController")(express, app, igdb, client);
 const userRoutes = require("./controllers/userController")(express, app, db);
-
+const uploadRoutes = require("./controllers/uploadController")(express, app, fileUpload);
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/VGDB";
 

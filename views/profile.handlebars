@@ -1,4 +1,4 @@
-<!-- UZar container -->
+<!--THIS IS PROFILE PAGE-->
 
 <div class="ui main container">
     <!-- UZar container -->
@@ -130,4 +130,9 @@
                 initialRating: 1,
                 maxRating: 5
             })
+            ;
+        $.get("/currentuser", function (req, res) {
+            console.log(req)
+        });
+    });
 </script>
