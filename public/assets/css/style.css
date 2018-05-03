@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   height: 100%;
   font-size: 25px;
@@ -11,12 +12,19 @@ body {
 .container {
   margin: 40px;
 }
+
 #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.9;
 }
 
 .gameImage {
@@ -48,18 +56,25 @@ body {
   overflow-y: auto;
 
 }
+
 .description {
   font-size: 12px;
 }
+
 .gameHead {
   font-size: 12px;
   padding-top: 15px;
 
 }
+
 .game {
   margin-bottom: 15px;
+<<<<<<< HEAD
+}
+=======
 }
 
 .card.content.button {
   padding-bottom: 1000px;
 }
+>>>>>>> b100bded5e759a92c6a34a097e1e6ce11e4cf531
