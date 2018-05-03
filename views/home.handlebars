@@ -20,17 +20,20 @@
                     "<div class='ui cards'>" +
                     "<div class='card'>" +
                     "<div class='content'>" +
-                    "<img class='ui image fluid gameImage' src=" +
+                    "<img class='ui image fluid rounded gameImage' src=" +
                     data[i].screenshots[0].url + ">" +
                     "<div class='header gameHead'>" +
-                    data[i].name +
-                    "</div>" +
+                    "<div class='ui animated fade button addGame' tabindex='0'id=" + data[i].id +">" +
+                    "<div class='visible content'>"+ data[i].name + "</div>"+
+                        "<div class='hidden content'>"+
+                        "<i class='add icon'></i>" +
+                        "Add Game" +
+                       "</div>"+
+                   "</div>"+
                     "<div class='description'>" +
                     data[i].summary +
                     "</div></div>" +
-                    "<div class='ui bottom attached button addGame' id=" + data[i].id + ">" +
-                    "<i class='add icon'></i>" +
-                    "Add Game" +
+                    
                     "</div></div></div>")
                 $(".results-field").append(gameCard);
             }
