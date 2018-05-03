@@ -50,6 +50,7 @@ module.exports = function(passport) {
         User.findOne({"local.email": email }, function(err, user) {
             if(err) { return done(err); }
             if(!user) {
+                console.log("inccorect email")
                 return done(null, false, req.flash("loginMessage", "No user found"));
             }
 
