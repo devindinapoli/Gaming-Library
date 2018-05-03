@@ -37,6 +37,12 @@
 
         }
 
+        $(document).on("click", ".addGame", function () {
+            var game = $(this).attr("id");
+            console.log(game);
+            $(this).text("Game Added")
+        })
+
 
         $("#signinModal").click(function () {
             $(".signinModal").modal("show");
