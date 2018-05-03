@@ -4,17 +4,8 @@
 body {
   height: 100%;
   font-size: 25px;
-  /* background-color: khaki; */
   background-image: url("../images/Astro-Gaming-Background-HD.jpg");
   text-align: center;
-}
-
-.uzarimg {
-  margin-top: -100px;
-}
-
-.uzarlogin {
-  max-width: 450px;
 }
 
 .container {
@@ -41,7 +32,7 @@ body {
 }
 
 .results-field {
-  height: 600px;
+  height: 800px;
   width: 100%;
   overflow: scroll;
   color: black;
@@ -53,7 +44,8 @@ body {
 
 .card {
   height: 400px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .description {
   font-size: 12px;
