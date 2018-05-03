@@ -4,24 +4,8 @@
 body {
   height: 100%;
   font-size: 25px;
-  /* background-color: khaki; */
   background-image: url("../images/Astro-Gaming-Background-HD.jpg");
   text-align: center;
-}
-
-/* .uzarLgnCntrd {
-  height: 100%;
-  background: whitesmoke;
-  font-family: "Cabin Sketch", cursive;
-  font-size: 25px;
-} */
-
-.uzarimg {
-  margin-top: -100px;
-}
-
-.uzarlogin {
-  max-width: 450px;
 }
 
 .container {
@@ -61,7 +45,8 @@ body {
 .card {
   height: 400px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+
 }
 .description {
   font-size: 12px;
@@ -69,6 +54,7 @@ body {
 .gameHead {
   font-size: 12px;
   padding-top: 15px;
+
 }
 .game {
   margin-bottom: 15px;

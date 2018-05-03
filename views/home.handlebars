@@ -20,7 +20,7 @@
                     "<div class='ui cards'>" +
                     "<div class='card'>" +
                     "<div class='content'>" +
-                    "<img class='ui image small gameImage' src=" +
+                    "<img class='ui image fluid gameImage' src=" +
                     data[i].screenshots[0].url + ">" +
                     "<div class='header gameHead'>" +
                     data[i].name +
@@ -36,6 +36,12 @@
             }
 
         }
+
+        $(document).on("click", ".addGame", function () {
+            var game = $(this).attr("id");
+            console.log(game);
+            $(this).text("Game Added")
+        })
 
 
         $("#signinModal").click(function () {
@@ -81,19 +87,30 @@
             console.log(data);
             createGameSection(data);
         });
+
+        $("#search").on("click", function (event) {
+            event.preventDefault();
+            $(".results-field").empty();
+            var title = $("#gameSearch")
+                .val()
+                .trim();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
+                console.log(data);
+                createGameSection(data);
+            });
+        });
+
+        $('#gameSearch').keypress(function(e){
+            if(e.which == 13){//Enter key pressed
+                $('#search').click();//Trigger search button click event
+            }
     });
 
-    $("#search").on("click", function (event) {
-        event.preventDefault();
-        $(".results-field").empty();
-        var title = $("#gameSearch")
-            .val()
-            .trim();
-        $.get("/search?title=" + title, function (data) {
-            console.log(title);
-            console.log(data);
-            createGameSection(data);
-        });
+
     });
+
+
+
 
 </script>
