@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,20 +20,21 @@
     <!--Web Site Title-->
     <title>Games Website</title>
 </head>
+
 <body>
     <div class="container">
-    <video autoplay muted loop id="myVideo">
-        <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-    </video>
-        <!-- Nav Bar Sergio-->
+        <!--<video autoplay muted loop id="myVideo">
+            <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+        </video>
+        <! Nav Bar Sergio-->
         <div class="ui inverted  menu">
-           <a class="item home header" href="/">Home</a>
+            <a class="item home header" href="/">Home</a>
             <a class="item signup header" href="#" id="signupModal">Sign Up</a>
             <a class="item signup header" href="#" id="signinModal">Log In</a>
             <a class="item profile header" href="/profile">Profile</a>
             <!-- Right menu Log out -->
             <div class="right menu sticky">
-                <button class="ui animated button" role="button">
+                <button id="logOut" class="ui animated button" role="button">
                     <div class="visible content">Log Out</div>
                     <div class="hidden content">
                         <i aria-hidden="true" class="right ui inverted green arrow icon"></i>
@@ -41,8 +43,9 @@
             </div>
             <!--  -->
         </div>
-      <!-- Nav Bar Max -->
-        {{!-- <div class="ui menu">
+        <!-- Nav Bar Max -->
+        {{!--
+        <div class="ui menu">
             <a class="item home header" href="/">Home</a>
             <a class="item signup header" href="#" id="signupModal">Sign Up</a>
             <a class="item signup header" href="#" id="signinModal">Log In</a>
@@ -51,8 +54,8 @@
         <!-- Search Sergio -->
         <div class="ui internally celled centered grid ">
             <div class="ui action input">
-                <input type="text" placeholder="Search...">
-                <button class="ui fade animated button" role="button">
+                <input id="gameSearch" type="text" placeholder="Search...">
+                <button id="search" class="ui fade animated button" role="button">
                     <div class="visible content">
                         <i class="ui inverted green search icon"></i>
                     </div>
@@ -62,7 +65,8 @@
         </div>
 
         <!-- search bar Max -->
-        {{!-- <div class="ui internally celled centered grid">
+        {{!--
+        <div class="ui internally celled centered grid">
             <div class="ui action input">
                 <input type="text" placeholder="Search..." id="gameSearch">
                 <button class="ui icon button content" id="search">
@@ -72,79 +76,78 @@
         </div>
 
         </br>
-        </br> --}}
-{{!-- Sign In modal / Note:confirmation sing up  --}}
-        <div class="ui modal signinModal">
-            <!-- e-mail
-        password
-        name -->
+
+        </br> --}} {{!-- Sign In modal / Note:confirmation sing up --}} {{!-- Sign In modal / Note:confirmation sing up --}}
+        <div class="ui modal form signinModal">
             <i class="close icon"></i>
             <div class="header">
                 Login
             </div>
-            <div class="image content">
-                <div class="ui medium image">
-                    <!-- <img src="/images/avatar/large/chris.jpg"> -->
-                </div>
-                <div class="ui input">
-                    <input type="text" id="email" placeholder="Email...">
-                </div>
-                <div class="ui input">
-                    <input type="text" id="password" placeholder="Password...">
+            <div class="content">
+                <div class="two fields">
+                    <div class="field">
+                        <input name="email" type="text" id="email" placeholder="Email...">
+                    </div>
+                    <div class="field">
+                        <input name="password" type="password" id="password" placeholder="Password...">
+                    </div>
                 </div>
             </div>
             <div class="actions">
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <div class="ui positive right labeled icon button">
+                <div id="loginButton" class="ui positive right labeled icon button">
                     Login
                     <i class="user icon"></i>
                 </div>
             </div>
         </div>
-        <div class="ui modal signupModal">
-            <!-- e-mail
-        password
-        name -->
+
+        {{!-- Sign Up Modal --}}
+        <div class="ui modal form signupModal">
             <i class="close icon"></i>
             <div class="header">
                 Sign Up
             </div>
-            <div class="image content">
-                <div class="ui medium image">
-                    <!-- <img src="/images/avatar/large/chris.jpg"> -->
+            <div class="content">
+                <label>Name</label>
+                <div class="two fields">
+                    <div class="field">
+                        <input name="firstName" type="text" id="firstName" placeholder="First Name...">
+                    </div>
+                    <div class="field">
+                        <input name="lastName" type="text" id="lastName" placeholder="Last Name...">
+                    </div>
                 </div>
-                <div class="ui input">
-                    <input type="text" id="firstName" placeholder="First Name...">
+                <div class="two fields">
+                    <div class="field">
+                        <label>Email</label>
+                        <input name="email" type="text" id="signUpEmail" placeholder="Email...">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <div class="ui left icon input">
+                            <input name="password" type="password" id="signUpPassword">
+                            <i class="lock icon"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="ui input">
-                    <input type="text" id="lastName" placeholder="Last Name...">
-                </div>
-                <div class="ui input">
-                    <input type="text" id="email" placeholder="Email...">
-                </div>
-                <div class="ui input">
-                    <input type="text" id="password" placeholder="Password...">
-                </div>
-                {{!-- <div class="ui input">
-                    <input type="text" placeholder="SSN...">
-                </div> --}}
             </div>
             <div class="actions">
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <div class="ui positive right labeled icon button">
+                <div id="signUp" class="ui positive right labeled icon button">
                     Sign Up
                     <i class="user icon"></i>
                 </div>
             </div>
         </div>
-        
-{{{body}}}
 
-    <div class="footer container">
+        {{{body}}}
+
+        <div class="footer container">
             <div class="ui black inverted vertical footer segment">
                 <div class="ui center aligned container">
                     <div class="ui stackable inverted  divided grid">
@@ -173,6 +176,15 @@
             </div>
         </div>
 
-</div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#logOut").on("click", function (event) {
+                event.preventDefault();
+                $.get("/logout");
+            })
+        })
+    </script>
 </body>
+
 </html>
