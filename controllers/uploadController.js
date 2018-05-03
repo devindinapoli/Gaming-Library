@@ -10,9 +10,10 @@ module.exports = function(express, app, fileUpload) {
 
         let sampleFile = req.files.pic;
         console.log(sampleFile.name);
-        sendFile.mv("somewhere/on/the/server/filename.jpg",function(err) {
+
+        sampleFile.mv("./public/uploads/images/profile",function(err) {
             if(err) { return res.status(500).send(err); }
             res.send("File has been uploaded!");
-        });
+       });
     });
 };
