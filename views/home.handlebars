@@ -16,6 +16,7 @@
         function createGameSection(data) {
             for (var i = 0; i < data.length; i++) {
                 var gameCard = $(
+                    "<div class='game' id='game-well-'" + data[i].id + ">" +
                     "<div class='ui cards'>" +
                     "<div class='card'>" +
                     "<div class='content'>" +
@@ -27,28 +28,26 @@
                     "<div class='description'>" +
                     data[i].summary +
                     "</div></div>" +
-                    "<div class='ui bottom attached button' id=" + data[i].id + ">" +
+                    "<div class='ui bottom attached button addGame' id=" + data[i].id + ">" +
                     "<i class='add icon'></i>" +
                     "Add Game" +
-                    "</div></div>")
-                var gameSection = $("<div>");
-                gameSection.addClass("game");
-                gameSection.attr("id", "game-well-" + data[i].id);
-                $(".results-field").append(gameSection);
-                $(gameSection).append(gameCard);
-
+                    "</div></div></div>")
+                $(".results-field").append(gameCard);
             }
+
         }
 
 
-
-        $('.ui.rating').rating({
-            initialRating: 1,
-            maxRating: 5
-        });
         $("#signinModal").click(function () {
             $(".signinModal").modal("show");
         });
+        $("#signupModal").click(function () {
+            $(".signupModal").modal("show");
+        });
+        $(".modal").modal({
+            closable: true
+        });
+
         $("#loginButton").on("click", function (event) {
             event.preventDefault();
             var email = $("#email").val().trim();
@@ -58,9 +57,6 @@
 
         })
 
-        $("#signupModal").click(function () {
-            $(".signupModal").modal("show");
-        });
 
         $("#signUp").on("click", function (event) {
             event.preventDefault();
@@ -79,9 +75,7 @@
 
         })
 
-        $(".modal").modal({
-            closable: true
-        });
+
 
         $.get("/search?title=starfox", function (data) {
             console.log(data);
@@ -101,4 +95,5 @@
             createGameSection(data);
         });
     });
+
 </script>

@@ -48,7 +48,7 @@ body {
 }
 
 .results-field {
-  height: 350px;
+  height: 600px;
   width: 100%;
   overflow: scroll;
   color: black;
@@ -59,14 +59,15 @@ body {
 }
 
 .card {
-  width: 450px;
-  height: 250px;
+  height: 400px;
   overflow: scroll;
-  margin-bottom: 25px;
 }
 .description {
   font-size: 12px;
 }
 .gameHead {
   font-size: 12px;
+}
+.game {
+  margin-bottom: 15px;
 }
