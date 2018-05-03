@@ -101,6 +101,13 @@
             });
         });
 
+        $('#gameSearch').keypress(function(e){
+            if(e.which == 13){//Enter key pressed
+                $('#search').click();//Trigger search button click event
+            }
+    });
+
+
     });
 
 
