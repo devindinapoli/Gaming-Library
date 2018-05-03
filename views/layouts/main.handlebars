@@ -23,10 +23,13 @@
 
 <body>
     <div class="container">
+
         <!--<video autoplay muted loop id="myVideo">
             <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-        </video>
-        <! Nav Bar Sergio-->
+        </video> -->
+
+       <!--<! Nav Bar Sergio-->
+
         <div class="ui inverted  menu">
             <a class="item home header" href="/">Home</a>
             <a class="item signup header" href="#" id="signupModal">Sign Up</a>
@@ -44,6 +47,7 @@
             <!--  -->
         </div>
 
+
         <!-- Search -->
         <div class="ui internally celled centered grid ">
             <div class="ui action input">
@@ -56,9 +60,10 @@
                 </button>
             </div>
         </div>
+        
+        {{!-- Sign In modal / Note:confirmation sing up --}}
+        <form action="/login" method="POST" class="ui modal form signinModal">
 
-        </br> --}} {{!-- Sign In modal / Note:confirmation sing up --}} {{!-- Sign In modal / Note:confirmation sing up --}}
-        <div class="ui modal form signinModal">
             <i class="close icon"></i>
             <div class="header">
                 Login
@@ -69,7 +74,11 @@
                         <input name="email" type="text" id="email" placeholder="Email...">
                     </div>
                     <div class="field">
-                        <input name="password" type="password" id="password" placeholder="Password...">
+                        <div class="ui left icon input">
+                            <input type="password" name="password" id="password">
+                            <i class="lock icon"></i>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -77,15 +86,15 @@
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <div id="loginButton" class="ui positive right labeled icon button">
+                <div id="loginButton" type="submit" class="ui positive right labeled icon button">
                     Login
                     <i class="user icon"></i>
                 </div>
             </div>
-        </div>
+        </form>
 
         {{!-- Sign Up Modal --}}
-        <div class="ui modal form signupModal">
+        <form action="/signup" method="POST" class="ui modal form signupModal">
             <i class="close icon"></i>
             <div class="header">
                 Sign Up
@@ -118,12 +127,12 @@
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <div id="signUp" class="ui positive right labeled icon button">
+                <div id="signUp" type="submit" class="ui positive right labeled icon button">
                     Sign Up
                     <i class="user icon"></i>
                 </div>
             </div>
-        </div>
+        </form>
 
         {{{body}}}
 
