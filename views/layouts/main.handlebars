@@ -34,7 +34,7 @@
             <a class="item profile header" href="/profile">Profile</a>
             <!-- Right menu Log out -->
             <div class="right menu sticky">
-                <button class="ui animated button" role="button">
+                <button id="logOut" class="ui animated button" role="button">
                     <div class="visible content">Log Out</div>
                     <div class="hidden content">
                         <i aria-hidden="true" class="right ui inverted green arrow icon"></i>
@@ -89,7 +89,7 @@
                         <input name="email" type="text" id="email" placeholder="Email...">
                     </div>
                     <div class="field">
-                        <input name="password" type="text" id="password" placeholder="Password...">
+                        <input name="password" type="password" id="password" placeholder="Password...">
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                     <div class="field">
                         <label>Password</label>
                         <div class="ui left icon input">
-                            <input name="passwords" type="password" id="signUpPassword">
+                            <input name="password" type="password" id="signUpPassword">
                             <i class="lock icon"></i>
                         </div>
                     </div>
@@ -177,6 +177,14 @@
         </div>
 
     </div>
+    <script>
+        $(document).ready(function () {
+            $("#logOut").on("click", function (event) {
+                event.preventDefault();
+                $.get("/logout");
+            })
+        })
+    </script>
 </body>
 
 </html>
