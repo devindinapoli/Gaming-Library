@@ -24,6 +24,7 @@ module.exports = function(passport) {
       function(req, email, password, done) {
         process.nextTick(function() {
           var name = req.body.name;
+          var game;
           // this func wont fire unless data is sent back.
           User.findOne({ "local.email": email }, function(err, user) {
             if (err) {
@@ -38,7 +39,8 @@ module.exports = function(passport) {
             } else {
               var newUser = new User();
               newUser.local.email = email;
-              newUser.local.name = name;
+              newUser.name = name;
+              newUser.game = game;
               newUser.local.password = newUser
                 .generateHash(password)
                 .toString();
@@ -65,7 +67,6 @@ module.exports = function(passport) {
         passReqToCallback: true
       },
       function(req, email, password, done) {
-        var name = req.body.name;
         User.findOne({ "local.email": email }, function(err, user) {
           if (err) {
             return done(err);

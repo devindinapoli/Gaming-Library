@@ -7,15 +7,21 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   local: {
     email: String,
-    password: String,
-    name: String,
-    games: Number
+    password: String
   },
   google: {
     id: String,
     token: String,
     email: String,
     name: String
+  },
+  name: {
+    type: String,
+    required: true,
+    unique: false
+  },
+  game: {
+    gameId: Number
   }
 });
 

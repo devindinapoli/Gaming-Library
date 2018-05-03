@@ -54,32 +54,32 @@
             closable: true
         });
 
-        /* $("#loginButton").on("click", function (event) {
-             event.preventDefault();
-             var email = $("#email").val().trim();
-             var password = $("#password").val().trim();
- 
-             $.post("/login", { email: email, password: password })
- 
-         })
- 
- 
-         $("#signUp").on("click", function (event) {
-             event.preventDefault();
-             var name = $("#firstName").val().trim() + " " + $("#lastName").val().trim();
-             var email = $("#signUpEmail").val().trim();
-             var password = $("#signUpPassword").val().trim();
- 
-             console.log(name);
-             console.log(email);
-             console.log(password);
- 
-             $.post("/signup", { name: name, email: email, password: password }, function (data) {
- 
-                 console.log(data)
-             });
- 
-         }) */
+        $("#loginButton").on("click", function (event) {
+            event.preventDefault();
+            var email = $("#email").val().trim();
+            var password = $("#password").val().trim();
+
+            $.post("/login", { email: email, password: password })
+
+        })
+
+
+        $("#signUp").on("click", function (event) {
+            event.preventDefault();
+            var name = $("#firstName").val().trim() + " " + $("#lastName").val().trim();
+            var email = $("#signUpEmail").val().trim();
+            var password = $("#signUpPassword").val().trim();
+
+            console.log(name);
+            console.log(email);
+            console.log(password);
+
+            $.post("/signup", { name: name, email: email, password: password }, function (data) {
+
+                console.log(data)
+            });
+
+        })
 
 
 
