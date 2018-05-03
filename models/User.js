@@ -17,13 +17,11 @@ const UserSchema = new Schema({
   },
   name: {
     type: String,
-    required: false,
+    required: true,
     unique: false
   },
   game: {
-    type: Number,
-    required: false,
-    unique: false
+    gameId: Number
   }
 });
 
