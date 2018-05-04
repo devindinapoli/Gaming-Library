@@ -48,16 +48,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
-app.engine("handlebars", exphbs({defaultLayout:"main"}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
-
 // Import Routes and go ahead and pass them their needed dependencies.
-const authRoutes = require("./controllers/authController")(express, app, passport);
-const apiRoutes = require("./controllers/apiController")(express, app, igdb, client);
-const userRoutes = require("./controllers/userController")(express, app, db);
-const uploadRoutes = require("./controllers/uploadController")(express, app, fileUpload);
+const authRoutes = require("./controllers/authController")(
+  express,
+  app,
+  passport
+);
+const apiRoutes = require("./controllers/apiController")(
+  express,
+  app,
+  igdb,
+  client
+);
+const userRoutes = require("./controllers/userController")(
+  express,
+  app,
+  db,
+  passport
+);
+const uploadRoutes = require("./controllers/uploadController")(
+  express,
+  app,
+  fileUpload
+);
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/VGDB";
 
