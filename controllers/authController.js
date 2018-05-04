@@ -38,7 +38,6 @@ module.exports = function(express, app, passport) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
   });
 };
 
