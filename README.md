@@ -17,7 +17,7 @@ _Overview_
 > **`Stretch Goals`**
 _Use steamworks api to automatically add to users collection_
 
-[![API](public/assets/images/ReadMe/api.png)](https://www.igdb.com/api)[![Steam](public/assets/images/ReadMe/stm.png)](https://store.steampowered.com/)  [![](public/assets/images/ReadMe/semantic.png)]()
+[![API](public/assets/images/ReadMe/api.png)](https://www.igdb.com/api)[![Steam](public/assets/images/ReadMe/stm.png)](https://store.steampowered.com/)  [![](public/assets/images/ReadMe/pssprtSmall.png)]()
 * `(note: not every user might use steam)` 
 
 
