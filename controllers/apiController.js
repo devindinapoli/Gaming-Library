@@ -16,4 +16,4 @@ module.exports = function(express, app, igdb, client) {
             res.json(results.body);
         });
     });
-}; 
+};   

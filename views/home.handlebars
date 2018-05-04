@@ -17,13 +17,14 @@
         function createGameSection(data) {
         
             for (var i = 0; i < data.length; i++) {
-                    let screenshot;
-                if(data[i].screenshots[0].url !== null || undefined) {
-                    screenshot = data[i].screenshots[0].url + ">";
+                
+                // Create an if conditional for screenshots since they aren't required.
+                if(data[i].screenshots) {
+                    let screenshot = data[i].screenshots[0].url;
                 } else {
-                    screenshot ="http://via.placeholder.com/2000x150" + ">";
+                    let screenshot ="http://via.placeholder.com/200x150";
                 }
-    console.log(image);
+
                 var gameCard = $(
                     "<div class='game' id='game-well-'" + data[i].id + ">" +
                     "<div class='ui cards'>" +
@@ -46,7 +47,7 @@
                     "<i class='add icon'></i>" +
                     "Add Game" +
                     "</div></div></div>")
-                $(".results-field").append(gameCard);
+                $(".results-field").append(gameCard); 
             }
 
         }
