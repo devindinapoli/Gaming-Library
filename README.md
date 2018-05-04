@@ -2,7 +2,7 @@
 
 ![](public/assets/images/ReadMe/Steam-Library.png)
 
-# **Project 3**
+# **Project-3**
 
 > *Game Collector Goals*
 * `Create a mySql or MongoDB data structure that stores user’s collection stats.`
