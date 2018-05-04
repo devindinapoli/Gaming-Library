@@ -36,7 +36,7 @@
             </div>
 
             <!-- Change how many cards to display on each row. -->
-            <div class="ui two stackable cards">
+            <div class="ui two stackable cards userGameSection">
                 <!-- Game cards -->
                 <a class="red card">
                     <H3 class="ui center aligned header">Game 1</H3>
@@ -115,10 +115,42 @@
         </div>
     </div>
 </div>
+<div class="random"></div>
 <!-- User card -->
 
 {{!-- JS init. --}}
 <script>
+    function createCard(data) {
+        let screenshot;
+        if (data[0].screenshots) {
+            screenshot = data[0].screenshots[0].url;
+        } else {
+            screenshot = "http://via.placeholder.com/200x150";
+        }
+
+        var gameCard = $(
+            "<div class='game' id='game-well-'" + data[0].id + ">" +
+            "<div class='ui cards'>" +
+            "<div class='card'>" +
+            "<div class='content'>" +
+            "<img class='ui image fluid rounded gameImage' src=" +
+            screenshot + ">" +
+            "<div class='header gameHead'>" +
+            "<div class='ui animated fade button addGame' tabindex='0'id=" + data[0].id + ">" +
+            "<div class='visible content'>" + data[0].name + "</div>" +
+            "<div class='hidden content'>" +
+            "<i class='add icon'></i>" +
+            "Add Game" +
+            "</div>" +
+            "</div>" +
+            "<div class='description'>" +
+            data[0].summary +
+            "</div></div>" +
+            "</div></div></div>")
+        $(".random").append(gameCard)
+    }
+
+
     $(document).ready(function () {
         $('.ui.sticky')
             .sticky({
@@ -131,8 +163,13 @@
                 maxRating: 5
             })
             ;
-        $.get("/currentuser", function (req, res) {
-            console.log(req)
+        $.get("/currentuser", function (data) {
+            console.log(data.game);
+            for (let i = 0; i < data.game.length; i++) {
+                $.get("/gameId?id=" + data.game[i], function (game) {
+                    createCard(game);
+                })
+            }
         });
-    });
+    })
 </script>
