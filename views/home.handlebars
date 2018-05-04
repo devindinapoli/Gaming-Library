@@ -15,15 +15,15 @@
 
 
         function createGameSection(data) {
-        
+
             for (var i = 0; i < data.length; i++) {
-                
+
                 // Create an if conditional for screenshots since they aren't required.
                 let screenshot;
-                if(data[i].screenshots) {
+                if (data[i].screenshots) {
                     screenshot = data[i].screenshots[0].url;
                 } else {
-                    screenshot ="http://via.placeholder.com/200x150";
+                    screenshot = "http://via.placeholder.com/200x150";
                 }
 
                 var gameCard = $(
@@ -32,20 +32,20 @@
                     "<div class='card'>" +
                     "<div class='content'>" +
                     "<img class='ui image fluid rounded gameImage' src=" +
-                                        screenshot + ">"+
+                    screenshot + ">" +
                     "<div class='header gameHead'>" +
-                    "<div class='ui animated fade button fluid addGame' tabindex='0'id=" + data[i].id +">" +
-                    "<div class='visible content'>"+ data[i].name + "</div>"+
-                        "<div class='hidden content'>"+
-                        "<i class='add icon'></i>" +
-                        "Add Game" +
-                       "</div>"+
-                   "</div>"+
+                    "<div class='ui animated fade button addGame' tabindex='0'id=" + data[i].id + ">" +
+                    "<div class='visible content'>" + data[i].name + "</div>" +
+                    "<div class='hidden content'>" +
+                    "<i class='add icon'></i>" +
+                    "Add Game" +
+                    "</div>" +
+                    "</div>" +
                     "<div class='description'>" +
                     data[i].summary +
                     "</div></div>" +
                     "</div></div></div>")
-                $(".results-field").append(gameCard); 
+                $(".results-field").append(gameCard);
             }
 
         }
@@ -53,8 +53,10 @@
         $(document).on("click", ".addGame", function () {
             var game = $(this).attr("id");
             console.log(game);
-            $(this).text("Game Added")
+            $(this).text("Game Added");
+            $.post("/currentuser", { gameId: game })
         })
+
 
 
         $("#signinModal").click(function () {
@@ -66,7 +68,7 @@
         $(".modal").modal({
             closable: true
         });
-        
+
         // this is currently the default search on page load.
         $.get("/search?title=starfox", function (data) {
             console.log(data);
