@@ -185,6 +185,7 @@
             $("#logOut").on("click", function (event) {
                 event.preventDefault();
                 $.get("/logout");
+                location.href = "/";
             })
         })
     </script>
