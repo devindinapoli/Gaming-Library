@@ -5,6 +5,7 @@ module.exports = function(express, app, db) {
     db.User.create(req.body)
       .then(function(dbUser) {
         res.json(dbUser);
+        console.log(dbUser);
       })
       .catch(function(err) {
         res.json(err);
