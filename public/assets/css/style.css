@@ -5,7 +5,7 @@
 body {
   height: 100%;
   font-size: 25px;
-  background-image: url("../images/Astro-Gaming-Background-HD.jpg");
+  /* background-image: url("../images/Astro-Gaming-Background-HD.jpg"); */
   text-align: center;
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .content {
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .results-field {
@@ -55,10 +55,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 
-}
-
-.description {
-  font-size: 12px;
 }
 
 .gameHead {
