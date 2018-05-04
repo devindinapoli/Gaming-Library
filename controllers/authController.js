@@ -21,7 +21,7 @@ module.exports = function(express, app, passport) {
     "/login",
     passport.authenticate("local-login", {
       successRedirect: "/profile",
-      failureRedirect: "/profile",
+      failureRedirect: "/",
       failureflash: true
     })
   );
