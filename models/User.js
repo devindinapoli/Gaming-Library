@@ -21,9 +21,7 @@ const UserSchema = new Schema({
     unique: false
   },
   game: {
-    type: Number,
-    required: false,
-    unique: false
+    gameId: Number
   }
 });
 
