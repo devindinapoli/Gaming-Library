@@ -8,7 +8,6 @@ module.exports = function(express, app, igdb, client) {
             {
             limit: 12, // limit results for testing.
             offset: 0,
-            order: "release_dates.date:desc",
             search: req.query.title
             },
             ["name", "first_release_date", "rating", "summary", "screenshots"]
@@ -17,4 +16,4 @@ module.exports = function(express, app, igdb, client) {
             res.json(results.body);
         });
     });
-};
+}; 

@@ -13,15 +13,24 @@
 
     $(document).ready(function () {
 
+
         function createGameSection(data) {
+        
             for (var i = 0; i < data.length; i++) {
+                    let screenshot;
+                if(data[i].screenshots[0].url !== null || undefined) {
+                    screenshot = data[i].screenshots[0].url + ">";
+                } else {
+                    screenshot ="http://via.placeholder.com/2000x150" + ">";
+                }
+    console.log(image);
                 var gameCard = $(
                     "<div class='game' id='game-well-'" + data[i].id + ">" +
                     "<div class='ui cards'>" +
                     "<div class='card'>" +
                     "<div class='content'>" +
                     "<img class='ui image fluid rounded gameImage' src=" +
-                    data[i].screenshots[0].url + ">" +
+                                        screenshot + ">"+
                     "<div class='header gameHead'>" +
                     "<div class='ui animated fade button addGame' tabindex='0'id=" + data[i].id +">" +
                     "<div class='visible content'>"+ data[i].name + "</div>"+
