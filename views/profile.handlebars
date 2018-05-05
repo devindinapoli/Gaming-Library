@@ -10,7 +10,13 @@
             </div>
 
             <div class="ui sticky centered large card image">
-                <img class="ui rounded fluid image" src="https://media.giphy.com/media/Q2w02BCP1Nvqg/giphy.gif">
+                <div>
+                    <img class="ui rounded fluid edit image" src="https://media.giphy.com/media/Q2w02BCP1Nvqg/giphy.gif">
+                    <button class="ui circular edit icon editBtn button" id="userEdit">
+                        <i class="edit icon"></i>
+                    </button>
+                </div>
+                {{!-- About uZar --}}
                 <div class="content">
                     <div class="meta">
                         <span class="date">Joined in 2013</span>
@@ -24,6 +30,35 @@
                         <div class="ui star rating"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+        {{!-- User Edit modal --}}
+        <div action="" method="POST" class="ui modal form userEdit">
+            <i class="close icon"></i>
+            <div class="header">
+                Edit Profile
+            </div>
+            <div class="content">
+                <label>Name</label>
+                <div class="two fields">
+                    <div class="field">
+                        <input name="name" type="text" id="firstName" placeholder="First Name...">
+                    </div>
+                    <div class="field">
+                        <label>Year Joined ( 4 digit )</label>
+                        <input type="text" maxlength="4" placeholder="Year">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input name="email" type="text" id="signUpEmail" placeholder="Email...">
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Cancel
+                </div>
+                <input id="signUp" type="submit" name="Sign up" class="ui positive button">
             </div>
         </div>
 
@@ -40,7 +75,7 @@
                 <!-- Game cards -->
                 <a class="red card">
                     <H3 class="ui center aligned header">Game 1</H3>
-                    <button class="positive ui button" href="#" >View more...</button>
+                    <button class="positive ui button" href="#">View more...</button>
                     <div class=" ui bordered image">
                         <img src="assets/images/grl.jpg">
                         <div class="extra">
@@ -49,7 +84,7 @@
                         </div>
                     </div>
                     <div class="ui divider"></div>
-                     <div>
+                    <div>
                         <button class="ui negative circular icon button">
                             <i class="trash icon"></i>
                         </button>
@@ -127,6 +162,12 @@
 {{!-- JS init. --}}
 <script>
     $(document).ready(function () {
+        $("#userEdit").click(function () {
+            $(".userEdit").modal("show");
+        });
+        $(".modal").modal({
+            closable: true
+        });
         $('.ui.sticky')
             .sticky({
                 offset: 50,
