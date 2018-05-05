@@ -51,7 +51,7 @@
                         <label>Year Joined (YYYY)</label>
                         <input type="text" maxlength="4" placeholder="ex. 2017">
                     </div>
-                  
+
                     <div class="four wide field">
                         <label>Country</label>
                         <div class="ui fluid search selection dropdown">
@@ -594,123 +594,49 @@
             <!-- Change how many cards to display on each row. -->
             <div class="ui two stackable cards userGameSection">
                 <!-- Game cards -->
-                <a class="red card">
-                    <H3 class="ui center aligned header">Game 1</H3>
-                    <button class="positive ui button" href="#" id="gameModal">View more...</button>
-                    <div class=" ui bordered image">
-                        <img src="assets/images/grl.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                    <div class="ui divider"></div>
-                    <div>
-                        <button class="ui negative circular icon button">
-                            <i class="trash icon"></i>
-                        </button>
-                    </div>
-                </a>
-                <!--  -->
-                <a class="orange card">
-                    <H3 class="ui  center aligned header">Game 2</H3>
-                    <div class="ui bordered image">
-                        <img src="assets/images/gamelogo.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                </a>
-                <!--  -->
-                <a class="yellow card">
-                    <H3 class="ui  center aligned header">Game 3</H3>
-                    <div class="ui bordered image">
-                        <img src="assets/images/grl.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                </a>
-                <!--  -->
-                <a class="olive card">
-                    <H3 class="ui  center aligned header">Game 4</H3>
-                    <div class="ui bordered image">
-                        <img src="assets/images/gamelogo.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                </a>
-                <a class="olive card">
-                    <H3 class="ui  center aligned header">Game 5</H3>
-                    <div class="ui bordered image">
-                        <img src="assets/images/gamelogo.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                </a>
-                <a class="olive card">
-                    <H3 class="ui  center aligned header">Game 6</H3>
-                    <div class="ui bordered image">
-                        <img src="assets/images/gamelogo.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                </a>
-                <a class="olive card">
-                    <H3 class="ui  center aligned header">Game 7</H3>
-                    <div class="ui bordered image">
-                        <img src="assets/images/gamelogo.jpg">
-                        <div class="extra">
-                            Rating:
-                            <div class="ui heart rating"></div>
-                        </div>
-                    </div>
-                </a>
+
+
             </div>
         </div>
     </div>
 </div>
-<div class="random"></div>
+
+
+
 <!-- User card -->
 
 {{!-- JS init. --}}
 <script>
     function createCard(data) {
-        let screenshot;
-        if (data[0].screenshots) {
-            screenshot = data[0].screenshots[0].url;
-        } else {
-            screenshot = "http://via.placeholder.com/200x150";
-        }
 
-        var gameCard = $(
-            "<div class='game' id='game-well-'" + data[0].id + ">" +
-            "<div class='ui cards'>" +
-            "<div class='card'>" +
-            "<div class='content'>" +
-            "<img class='ui image fluid rounded gameImage' src=" +
-            screenshot + ">" +
-            "<div class='header gameHead'>" +
-            "<div class='ui animated fade button addGame' tabindex='0'id=" + data[0].id + ">" +
-            "<div class='visible content'>" + data[0].name + "</div>" +
-            "<div class='hidden content'>" +
-            "<i class='add icon'></i>" +
-            "Add Game" +
-            "</div>" +
-            "</div>" +
-            "<div class='description'>" +
-            data[0].summary +
-            "</div></div>" +
-            "</div></div></div>")
-        $(".random").append(gameCard)
+        for (var i = 0; i < data.length; i++) {
+
+            let src;
+            // Create an if conditional for screenshots since they aren't required.
+            if (!data[i].cover.url) {
+                src = "http://via.placeholder.com/200x150";
+            } else {
+                // Replace the img src to a higher res one.
+                src = data[i].cover.url.replace("t_thumb", "t_cover_big");
+            }
+
+            var gameCard = $(
+                "<div class='ui card' id='gameId-" + data[0].id + "'>" +
+                "<div class='image'>" +
+                "<img class='gameImage' src='" + src + "'></div>" +
+                "<div class='content'>" +
+                "<p>" + data[0].name + "</p></div>" +
+                "<div class='extra content'>" +
+                "<button class='positive ui button' href='#' id='gameModal'>View More...</button>" +
+                "<div class='ui divider'></div>" +
+                "<div>" + "<button class='ui negative circular icon button delete' id='" + data[0].id + "'>" +
+                "<i class='trash icon'></i></button></div></div></div>"
+
+            )
+
+
+            $(".userGameSection").append(gameCard)
+        }
     }
 
 
@@ -744,11 +670,21 @@
                 })
             }
         });
-        $("#gameModal").click(function () {
+
+        $(document).on("click", "#gameModal", function () {
             $(".gameModal").modal("show");
         });
         $(".modal").modal({
             closable: true
         });
+
+        $(document).on("click", ".delete", function () {
+            var game = $(this).attr("id");
+            console.log(game);
+            $("#gameId-" + game).remove();
+        })
+
+
+
     });
 </script>
