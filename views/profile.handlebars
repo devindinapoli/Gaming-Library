@@ -553,7 +553,7 @@
                     <textarea type="text" rows="2" placeholder="What's your story?"></textarea>
                 </div>
             </div>
-            <div class="ui inverted grey actions segment">
+            <div class="ui inverted grey actions orange segment">
                 <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" />
                 <label for="embedpollfileinput" class="ui red left floated button">
                     <i class="ui upload icon"></i>
@@ -567,6 +567,8 @@
         </div>
 
         <!-- modals -->
+
+
         <div class="ui modal gameModal">
             <i class="close icon"></i>
             <div class="header gameHeader">
@@ -574,16 +576,18 @@
             </div>
             <div class="image content">
                 <div class="ui medium image gameImage">
-                    <img src="/images/avatar/large/chris.jpg">
+                    <img src="/assets/images/Astro-Gaming-Background-HD.jpg">
                 </div>
                 <div class="description">
                     <div class="ui gameDescription">We've auto-chosen a profile image for you.</div>
                     <p>We've grabbed the following image from the image associated with your registered e-mail address.</p>
                 </div>
             </div>
-            <div class="actions">
-                <div class="ui black deny button">
-                    Back
+            <div class="ui red segment right aligned">
+                <div class="actions">
+                    <div class="ui black deny button">
+                        Back
+                    </div>
                 </div>
             </div>
         </div>
@@ -722,6 +726,11 @@
 
 
     $(document).ready(function () {
+        $('.positive.button')
+            .transition({
+                animation: 'scale in',
+                duration: '4s'
+            });
         $('.negative.button')
             .transition('jiggle');
 
