@@ -51,7 +51,7 @@
                         <label>Year Joined (YYYY)</label>
                         <input type="text" maxlength="4" placeholder="ex. 2017">
                     </div>
-                  
+
                     <div class="four wide field">
                         <label>Country</label>
                         <div class="ui fluid search selection dropdown">
@@ -606,9 +606,11 @@
                     </div>
                     <div class="ui divider"></div>
                     <div>
-                        <button class="ui negative circular icon button">
-                            <i class="trash icon"></i>
-                        </button>
+                        <div>
+                            <button class="ui negative circular icon button">
+                                <i class="erase icon"></i>
+                            </button>
+                        </div>
                     </div>
                 </a>
                 <!--  -->
@@ -715,6 +717,8 @@
 
 
     $(document).ready(function () {
+        $('.negative.button')
+            .transition('jiggle');
 
         $('.ui.dropdown')
             .dropdown()
