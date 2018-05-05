@@ -38,7 +38,7 @@
         {{!-- User Edit modal --}}
         <div action="" method="POST" class="ui modal form userEdit">
             <i class="close icon"></i>
-            <div class="header">
+            <div class="header ui inverted grey segment">
                 Edit Profile
             </div>
             <div class=" content">
@@ -51,7 +51,7 @@
                         <label>Year Joined (YYYY)</label>
                         <input type="text" maxlength="4" placeholder="ex. 2017">
                     </div>
-                  
+
                     <div class="four wide field">
                         <label>Country</label>
                         <div class="ui fluid search selection dropdown">
@@ -553,7 +553,12 @@
                     <textarea type="text" rows="2" placeholder="What's your story?"></textarea>
                 </div>
             </div>
-            <div class="actions">
+            <div class="ui inverted grey actions segment">
+                <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" />
+                <label for="embedpollfileinput" class="ui red left floated button">
+                    <i class="ui upload icon"></i>
+                    Upload image
+                </label>
                 <div class="ui black deny button">
                     Cancel
                 </div>
@@ -606,9 +611,11 @@
                     </div>
                     <div class="ui divider"></div>
                     <div>
-                        <button class="ui negative circular icon button">
-                            <i class="trash icon"></i>
-                        </button>
+                        <div>
+                            <button class="ui negative circular icon button">
+                                <i class="erase icon"></i>
+                            </button>
+                        </div>
                     </div>
                 </a>
                 <!--  -->
@@ -715,6 +722,8 @@
 
 
     $(document).ready(function () {
+        $('.negative.button')
+            .transition('jiggle');
 
         $('.ui.dropdown')
             .dropdown()
