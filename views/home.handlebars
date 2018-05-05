@@ -17,13 +17,13 @@
         function createGameSection(data) {
 
             for (var i = 0; i < data.length; i++) {
-
+                let src;
                 // Create an if conditional for screenshots since they aren't required.
-                let screenshot;
-                if (data[i].screenshots) {
-                    screenshot = data[i].screenshots[0].url;
+                if (!data[i].cover.url) {
+                    src = "http://via.placeholder.com/200x150";
                 } else {
-                    screenshot = "http://via.placeholder.com/200x150";
+                    // Replace the img src to a higher res one.
+                    src = data[i].cover.url.replace("t_thumb", "t_cover_big");
                 }
 
                 var gameCard = $(
@@ -32,7 +32,7 @@
                     "<div class='card'>" +
                     "<div class='content'>" +
                     "<img class='ui image fluid rounded gameImage' src=" +
-                    screenshot + ">" +
+                    src + ">" +
                     "<div class='header gameHead'>" +
                     "<div class='ui animated fade button addGame' tabindex='0'id=" + data[i].id + ">" +
                     "<div class='visible content'>" + data[i].name + "</div>" +
