@@ -554,6 +554,11 @@
                 </div>
             </div>
             <div class="ui inverted grey actions segment">
+                <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" />
+                <label for="embedpollfileinput" class="ui red left floated button">
+                    <i class="ui upload icon"></i>
+                    Upload image
+                </label>
                 <div class="ui black deny button">
                     Cancel
                 </div>
