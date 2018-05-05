@@ -37,7 +37,7 @@ module.exports = function(express, app, passport) {
   );
 
   app.get("/logout", function(req, res) {
-    req.logout();
+    req.session.destroy();        // stack overflow https://bit.ly/2HRDDvA
   });
 };
 
