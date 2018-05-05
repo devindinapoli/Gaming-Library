@@ -10,7 +10,7 @@ module.exports = function(express, app, igdb, client) {
           offset: 0,
           search: req.query.title
         },
-        ["name", "first_release_date", "rating", "summary", "screenshots"]
+        ["name", "first_release_date", "rating", "summary", "screenshots", "cover"]
       )
       .then(function(results) {
         res.json(results.body);
