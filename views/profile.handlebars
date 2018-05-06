@@ -6,7 +6,7 @@
         <!-- UZar Card Info -->
         <div class="ui column">
             <div class="ui">
-                <H5 id="userName" class="ui inverted center aligned header">{{user.name}}</H5>
+                <H5 id="userName" class="ui inverted center aligned header">{{user.nickname}}</H5>
             </div>
 
             <div class="ui sticky centered large card image">
@@ -19,14 +19,17 @@
                 {{!-- About uZar --}}
                 <div class="content">
                     <div class="meta">
-                        <span class="date">Joined in 2013</span>
+                        <span id="name" class="date">{{user.name}}</span>
                     </div>
                     <div class="meta">
-                        <span class="date">Country</span>
+                        <span class="date">{{user.joined}}</span>
+                    </div>
+                    <div class="meta">
+                        <span class="date">{{user.country}}</span>
                     </div>
                     <div class="description">
                         <h4>About:</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis a minima esse...</p>
+                        <p>{{user.bio}}</p>
                     </div>
                     <div class="extra">
                         Rating:
@@ -45,19 +48,19 @@
                 <div class="equal width fields">
                     <div class="four wide field">
                         <label>NickName</label>
-                        <input name="name" type="text" id="firstName" placeholder="nickname...">
+                        <textarea name="name" id="nickname" type="text" rows="1">{{user.nickname}}</textarea>
                     </div>
                     <div class="two wide field">
                         <label>Year Joined (YYYY)</label>
-                        <input type="text" maxlength="4" placeholder="ex. 2017">
+                        <input id="joined" type="text" maxlength="4" placeholder="ex. 2017">
                     </div>
 
                     <div class="four wide field">
                         <label>Country</label>
                         <div class="ui fluid search selection dropdown">
-                            <input type="hidden" name="country">
+                            <input id="country" type="text" name="country">
                             <i class="dropdown icon"></i>
-                            <div class="default text">Wakanda</div>
+                            <div class="default text">{{user.country}}</div>
                             {{!-- Country List --}}
                             <div class="menu">
                                 <div class="item" data-value="af">
@@ -550,7 +553,7 @@
                 </div>
                 <div class="field">
                     <label>About you:</label>
-                    <textarea type="text" rows="2" placeholder="What's your story?"></textarea>
+                    <textarea id="bio" type="text" rows="2" placeholder="What's your story?">{{user.bio}}</textarea>
                 </div>
             </div>
             <div class="ui inverted grey actions orange segment">
@@ -562,7 +565,7 @@
                 <div class="ui black deny button">
                     Cancel
                 </div>
-                <input id="signUp" type="submit" name="Sign up" class="ui positive button">
+                <input id="editInfo" type="submit" name="Sign up" class="ui positive button">
             </div>
         </div>
 
@@ -702,7 +705,15 @@
             $("#gameId-" + game).remove();
         })
 
-
+        $("#editInfo").on("click", function (event) {
+            event.preventDefault();
+            var picture = $(".inputfile").val().trim();
+            var bio = $("#bio").val().trim();
+            var joined = $("#joined").val().trim();
+            var country = $("#country").val().trim().toUpperCase();
+            var nickname = $("#nickname").val().trim();
+            $.post("/updateInfo", { picture: picture, bio: bio, joined: joined, country: country, nickname: nickname })
+        })
 
     });
 </script>

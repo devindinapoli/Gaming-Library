@@ -27,7 +27,7 @@ module.exports = function(express, app, db, passport) {
 
   app.post("/delete", function(req, res) {
     db.User.findOneAndUpdate(
-      {_id: req.user.id },
+      { _id: req.user.id },
       { $pull: { game: req.body.gameId } }
     )
       .then(function(dbUser) {
@@ -36,6 +36,26 @@ module.exports = function(express, app, db, passport) {
       .catch(function(err) {
         res.json(err);
       });
-  })
+  });
 
+  app.post("/updateInfo", function(req, res) {
+    db.User.findOneAndUpdate(
+      { _id: req.user.id },
+      {
+        $set: {
+          nickname: req.body.nickname,
+          picture: req.body.picture,
+          bio: req.body.bio,
+          country: req.body.country,
+          joined: req.body.joined
+        }
+      }
+    )
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
 };
