@@ -54,13 +54,11 @@ body {
   height: 400px;
   overflow-x: hidden;
   overflow-y: auto;
-
 }
 
 .gameHead {
   font-size: 12px;
   padding-top: 15px;
-
 }
 
 .game {
@@ -85,3 +83,7 @@ position: relative;
   top: 10px;
   right: 10px;
 } */
+
+.gameImage {
+  height: 161px;
+}
