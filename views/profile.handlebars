@@ -713,6 +713,7 @@
             var country = $("#country").val().trim().toUpperCase();
             var nickname = $("#nickname").val().trim();
             $.post("/updateInfo", { picture: picture, bio: bio, joined: joined, country: country, nickname: nickname })
+            location.reload();
         })
 
     });
