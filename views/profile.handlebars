@@ -698,6 +698,7 @@
         $(document).on("click", ".delete", function () {
             var game = $(this).attr("id");
             console.log(game);
+            $.post("/delete", { gameId: game });
             $("#gameId-" + game).remove();
         })
 

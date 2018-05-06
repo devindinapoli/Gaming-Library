@@ -24,4 +24,18 @@ module.exports = function(express, app, db, passport) {
         res.json(err);
       });
   });
+
+  app.post("/delete", function(req, res) {
+    db.User.findOneAndUpdate(
+      {_id: req.user.id },
+      { $pull: { game: req.body.gameId } }
+    )
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  })
+
 };
