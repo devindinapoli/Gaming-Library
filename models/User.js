@@ -20,9 +20,10 @@ const UserSchema = new Schema({
     required: false,
     unique: false
   },
-  game: {
-    gameId: Number
-  }
+  game: [{
+    type: Schema.Types.ObjectId,
+    ref: "Game"
+  }]
 });
 
 // Methods

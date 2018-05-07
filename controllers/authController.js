@@ -1,5 +1,5 @@
 // Pass our dependcies as arguments
-module.exports = function(express, app, passport) {
+module.exports = function(express, app, passport, db) {
   app.get("/", function(req, res) {
     res.render("home");
   });
@@ -10,7 +10,11 @@ module.exports = function(express, app, passport) {
   });
 
   app.get("/currentuser", function(req, res) {
-    res.json(req.user);
+    db.User.findOne({_id: req.user._id})
+      .populate("game")
+      .then(function(user) {
+        res.json(user );
+      })
   });
 
 

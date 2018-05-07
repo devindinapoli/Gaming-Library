@@ -10,20 +10,12 @@ module.exports = function(express, app, igdb, client) {
           offset: 0,
           search: req.query.title
         },
-        [
-          "name",
-          "first_release_date",
-          "rating",
-          "summary",
-          "screenshots",
-          "cover",
-          "genres",
-          "platforms",
-          "publishers"
-        ]
+        ["name", "first_release_date", "rating", "summary", "screenshots", "cover"]
       )
       .then(function(results) {
         res.json(results.body);
+
+        
       });
   });
 
@@ -33,17 +25,7 @@ module.exports = function(express, app, igdb, client) {
         {
           ids: [req.query.id]
         },
-        [
-          "name",
-          "first_release_date",
-          "rating",
-          "summary",
-          "screenshots",
-          "cover",
-          "genres",
-          "platforms",
-          "publishers"
-        ]
+        ["name", "first_release_date", "screenshots", "rating", "summary", "cover"]
       )
       .then(function(results) {
         res.json(results.body);

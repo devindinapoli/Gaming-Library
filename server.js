@@ -17,7 +17,7 @@ const db = require("./models");
 
 // IGDB API
 const igdb = require("igdb-api-node").default;
-const client = igdb("b7912e5f95234cfe1069d1790bd62eb7");
+const client = igdb("35b484e14469492df86c34fb84dd00d5");
 
 const exphbs = require("express-handlebars");
 
@@ -55,7 +55,8 @@ app.set("view engine", "handlebars");
 const authRoutes = require("./controllers/authController")(
   express,
   app,
-  passport
+  passport,
+  db
 );
 const apiRoutes = require("./controllers/apiController")(
   express,

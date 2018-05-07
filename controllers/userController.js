@@ -12,30 +12,36 @@ module.exports = function(express, app, db, passport) {
       });
   });
 
-  app.post("/currentuser", function(req, res) {
-    db.User.findOneAndUpdate(
-      { _id: req.user.id },
-      { $push: { game: req.body.gameId } }
-    )
-      .then(function(dbUser) {
-        res.json(dbUser);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
-
   app.post("/delete", function(req, res) {
-    db.User.findOneAndUpdate(
-      {_id: req.user.id },
-      { $pull: { game: req.body.gameId } }
-    )
-      .then(function(dbUser) {
-        res.json(dbUser);
+
+    db.Game.findOne( {gameId: req.body.gameId} )
+      .then(function(gameObj) {
+        db.User.findOneAndUpdate(
+          { _id: req.user._id },
+          { $pull: { game: gameObj._id } }
+        )
+        .then( db.Game.remove({ _id: gameObj._id }));
+      })
+      res.end()
+      
+  
+  })
+
+  app.post("/currentuser", function(req, res) {
+    db.Game.create(req.body)
+      .then(function(game) { 
+        return db.User.findOneAndUpdate(
+          { _id: req.user._id },
+          { $push: { game:  game._id } },
+          { new: true }
+        );
+    })
+      .then(function(user) {
+        res.json(user);
       })
       .catch(function(err) {
         res.json(err);
-      });
+      })
   })
 
 };
