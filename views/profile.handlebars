@@ -567,8 +567,6 @@
         </div>
 
         <!-- modals -->
-
-
         <div class="ui modal gameModal">
             <i class="close icon"></i>
             <div class="header gameHeader">
@@ -600,9 +598,7 @@
 
             <!-- Change how many cards to display on each row. -->
             <div class="ui two stackable cards userGameSection">
-                <!-- Game cards -->
-
-
+                <!-- Game cards will be added here -->
             </div>
         </div>
     </div>
@@ -617,7 +613,6 @@
     function createCard(data) {
 
         for (var i = 0; i < data.length; i++) {
-
 
             let src;
             // Create an if conditional for screenshots since they aren't required.
@@ -639,15 +634,13 @@
                 "<div class='ui divider'></div>" +
                 "<div>" + "<button class='ui negative circular icon button delete' id='" + data[0].id + "'>" +
                 "<i class='trash icon'></i></button></div></div></div>"
-
             )
-
 
             $(".userGameSection").append(gameCard);
         }
     }
 
-
+   
     $(document).ready(function () {
         $('.positive.button')
             .transition({
@@ -701,8 +694,5 @@
             $.post("/delete", { gameId: game });
             $("#gameId-" + game).remove();
         })
-
-
-
     });
 </script>
