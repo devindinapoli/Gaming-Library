@@ -23,7 +23,32 @@ const UserSchema = new Schema({
   game: [{
     type: Schema.Types.ObjectId,
     ref: "Game"
-  }]
+  }],
+  nickname: {
+    type: String,
+    required: false,
+    unique: true
+  },
+  picture: {
+    type: String,
+    required: false,
+    unique: false
+  },
+  bio: {
+    type: String,
+    required: false,
+    unique: false
+  },
+  country: {
+    type: String,
+    required: false,
+    unique: false
+  },
+  joined: {
+    type: Number,
+    required: false,
+    unique: false
+  }
 });
 
 // Methods

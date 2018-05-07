@@ -44,4 +44,24 @@ module.exports = function(express, app, db, passport) {
       })
   })
 
+  app.post("/updateInfo", function(req, res) {
+    db.User.findOneAndUpdate(
+      { _id: req.user.id },
+      {
+        $set: {
+          nickname: req.body.nickname,
+          picture: req.body.picture,
+          bio: req.body.bio,
+          country: req.body.country,
+          joined: req.body.joined
+        }
+      }
+    )
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
 };

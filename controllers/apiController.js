@@ -14,8 +14,9 @@ module.exports = function(express, app, igdb, client) {
       )
       .then(function(results) {
         res.json(results.body);
-
-        
+      })
+      .catch(function(err) {
+        res.json(err);
       });
   });
 
@@ -29,6 +30,9 @@ module.exports = function(express, app, igdb, client) {
       )
       .then(function(results) {
         res.json(results.body);
+      })
+      .catch(function(err) {
+        res.json(err);
       });
   });
 };

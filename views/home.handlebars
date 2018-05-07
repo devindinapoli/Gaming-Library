@@ -70,6 +70,7 @@
         });
 
         // this is currently the default search on page load.
+
         $.get("/search?title=starfox", function (data) {
             console.log(data);
             createGameSection(data);
@@ -88,9 +89,10 @@
             });
         });
 
-        $('#gameSearch').keypress(function (e) {
-            if (e.which == 13) {//Enter key pressed
-                $('#search').click();//Trigger search button click event
+        $("#gameSearch").keypress(function (e) {
+            if (e.which == 13) {
+                //Enter key pressed
+                $("#search").click(); //Trigger search button click event
             }
         });
 
