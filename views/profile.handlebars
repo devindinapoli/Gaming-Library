@@ -576,7 +576,7 @@
             </div>
         </div>
 
-        <!-- modals -->
+        <!-- modals game info-->
         <div class="ui modal gameModal">
             <i class="close icon"></i>
             <div class="header gameHeader">
@@ -598,6 +598,7 @@
             </div>
         </div>
     </div>
+
     <!-- Game Collection -->
     <div class="ui container">
         <div class="ui raised segment">
@@ -612,7 +613,7 @@
         <div class="ui segment">
             <div class="ui labeled  button" tabindex="0">
                 <div class="ui red circular button">
-                    <i class="orange game icon"></i> Game Collection
+                    <i class=" game icon"></i> Game Collection
                 </div>
                 <a class="ui basic red left pointing label">
                     23
@@ -643,7 +644,8 @@
             }
 
             var gameCard = $(
-                "<div class='ui card' id='gameId-" + data[0].id + "'>" +
+                "<div class='ui raised link card' id='gameId-" + data[0].id + "'>" +
+                "<div class='ui heart rating' data-rating='1' data-max-rating='3'>" + "Rating:" + "</div>" +
                 "<div class='image'>" +
                 "<img class='gameImage' src='" + src + "'></div>" +
                 "<div class='content'>" +
