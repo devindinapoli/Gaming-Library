@@ -31,14 +31,7 @@
                         <h4>About:</h4>
                         <p>{{user.bio}}</p>
                     </div>
-                    <div class="extra">
-                        Rating:
-                        <div class="ui star rating"></div>
-                    </div>
-                    <div class="description">
-                        <h4>Game reviews</h4>
-                        <p>{{user.review}}</p>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -50,7 +43,7 @@
         </div>
 
         {{!-- User Edit modal --}}
-        <div action="" method="POST" class="ui modal form userEdit">
+        <div class="ui modal form userEdit">
             <i class="close icon"></i>
             <div class="header ui inverted grey segment">
                 Edit Profile
@@ -69,9 +62,9 @@
                     <div class="four wide field">
                         <label>Country</label>
                         <div class="ui fluid search selection dropdown">
-                            <input id="country" type="text" name="country">
+                            <input id="country" type="hidden" name="country">
                             <i class="dropdown icon"></i>
-                            <div class="default text">{{user.country}}</div>
+                            <div class="default text">United States</div>
                             {{!-- Country List --}}
                             <div class="menu">
                                 <div class="item" data-value="af">
@@ -682,7 +675,6 @@
 
             var gameCard = $(
                 "<div class='ui raised link card' id='gameId-" + data[0].id + "'>" +
-                "<div class='ui heart rating' data-rating='1' data-max-rating='3'>" + "Rating:" + "</div>" +
                 "<div class='ui rounded image'>" +
                 "<img class=' gameImage' src='" + src + "'></div>" +
                 "<div class='content'>" +
@@ -695,19 +687,16 @@
             )
 
             $(".userGameSection").append(gameCard);
+             $('.positive.button')
+            .transition({
+                animation: 'scale in',
+                duration: '1s'
+            });
         }
     }
 
 
     $(document).ready(function () {
-        $('.positive.button')
-            .transition({
-                animation: 'scale in',
-                duration: '4s'
-            });
-        $('.negative.button')
-            .transition('jiggle');
-
         $('.ui.dropdown')
             .dropdown()
             ;
@@ -720,17 +709,7 @@
         $(".modal").modal({
             closable: true
         });
-        $('.ui.sticky')
-            .sticky({
-                offset: 50,
-                context: '#uzarSticky',
-            });
-        $('.ui.rating')
-            .rating({
-                initialRating: 1,
-                maxRating: 5
-            })
-            ;
+        
         $.get("/currentuser", function (data) {
             console.log(data);
             console.log(data.game);
@@ -764,10 +743,10 @@
             var picture = $(".inputfile").val().trim();
             var bio = $("#bio").val().trim();
             var joined = $("#joined").val().trim();
-            var country = $("#country").val().trim().toUpperCase();
+            var country = $("#country").().trim().toUpperCase();
             var nickname = $("#nickname").val().trim();
             $.post("/updateInfo", { picture: picture, bio: bio, joined: joined, country: country, nickname: nickname })
-            location.reload();
+            console.log(country)
         })
 
     });
