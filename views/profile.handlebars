@@ -31,10 +31,6 @@
                         <h4>About:</h4>
                         <p>{{user.bio}}</p>
                     </div>
-                    <div class="extra">
-                        Rating:
-                        <div class="ui star rating"></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -645,7 +641,6 @@
 
             var gameCard = $(
                 "<div class='ui raised link card' id='gameId-" + data[0].id + "'>" +
-                "<div class='ui heart rating' data-rating='1' data-max-rating='3'>" + "Rating:" + "</div>" +
                 "<div class='ui rounded image'>" +
                 "<img class=' gameImage' src='" + src + "'></div>" +
                 "<div class='content'>" +
@@ -658,19 +653,16 @@
             )
 
             $(".userGameSection").append(gameCard);
+             $('.positive.button')
+            .transition({
+                animation: 'scale in',
+                duration: '1s'
+            });
         }
     }
 
 
     $(document).ready(function () {
-        $('.positive.button')
-            .transition({
-                animation: 'scale in',
-                duration: '4s'
-            });
-        $('.negative.button')
-            .transition('jiggle');
-
         $('.ui.dropdown')
             .dropdown()
             ;
@@ -680,17 +672,7 @@
         $(".modal").modal({
             closable: true
         });
-        $('.ui.sticky')
-            .sticky({
-                offset: 50,
-                context: '#uzarSticky',
-            });
-        $('.ui.rating')
-            .rating({
-                initialRating: 1,
-                maxRating: 5
-            })
-            ;
+        
         $.get("/currentuser", function (data) {
             console.log(data);
             console.log(data.game);
