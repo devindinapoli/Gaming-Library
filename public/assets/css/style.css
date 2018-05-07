@@ -94,3 +94,6 @@ position: relative;
 #name {
   font-size: 24px;
 }
+.stats.column{
+  background-color: grey;
+}
