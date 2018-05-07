@@ -630,7 +630,7 @@
                 <div class="ui red circular button">
                     <i class=" game icon"></i> Game Collection
                 </div>
-                <a class="ui basic red left pointing label">
+                <a id="collection" class="ui basic red left pointing label">
                     23
                 </a>
             </div>
@@ -713,6 +713,8 @@
                 $.get("/gameId?id=" + data.game[i].gameId, function (game) {
                     createCard(game);
                 })
+                $("#collection").text(data.game.length)
+
             }
         });
 
