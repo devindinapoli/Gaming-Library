@@ -47,13 +47,9 @@
         <!-- Search -->
         <div class="ui internally celled centered grid ">
             <div class="ui action input">
-                <input id="gameSearch" type="text" placeholder="Search...">
-                <button id="search" class="ui fade animated button" role="button">
-                    <div class="visible content">
-                        <i class="ui inverted green search icon"></i>
-                    </div>
-                    <div class="hidden content">Search</div>
-                </button>
+                                  <input id="gameSearch" type="text" placeholder="Search...">
+                    <div id="root"></div>
+                    
             </div>
         </div>
 
@@ -192,6 +188,26 @@
             })
         })
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <script type="text/babel">
+    class Searchgames extends React.Component {
+        render() {
+            return (<p>
+                    <button id="search" class="ui fade animated button" role="button">
+                        <div class="hidden content">React bitches</div>
+                    </button>
+            </p>);
+        }
+    }
+    ReactDOM.render(
+        <Searchgames />,
+        document.getElementById('root')
+    );
+    </script>
+
 </body>
 
 </html>
