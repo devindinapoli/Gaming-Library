@@ -55,10 +55,7 @@
         <!-- UZar container -->
         <div class="ui equal width grid">
             <!-- UZar Card Info -->
-            <div class="ui equal width grid">
-                <!-- <div> -->
-                <!-- </div> -->
-
+            <div class="ui four wide column">
                 <div class="ui medium card image">
                     <H5 class="ui center aligned header">U-Zar</H5>
                     <img class="ui medium rounded image" src="https://media.giphy.com/media/Q2w02BCP1Nvqg/giphy.gif">
@@ -77,8 +74,16 @@
                     </div>
                 </div>
             </div>
+            <!-- Stats block -->
+            <div class="ui stats twelve wide column">
+                <div class="ui segment">
+                    PLACE YOUR STATS HERE
+                </div>
+            </div>
+        </div>
 
-            <!-- Fav Collection -->
+        <!-- Fav Collection -->
+        <div class="ui container">
             <div class="ui column ">
                 <div class="ui centered grid ">
                     <H5 class="ui inverted green center aligned header centered grid">
@@ -129,126 +134,60 @@
                 <button type="submit" class="ui blue button">My Game collection</button>
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui segment">
-            <div class="ui comments">
-                <h3 class="ui dividing header">Reviews</h3>
-                <div class="comment">
-                    <a class="avatar">
-                        <img src="./assets/images/grl.jpg">
-                    </a>
-                    <div class="content">
-                        <a class="author">Elliot Fu</a>
-                        <div class="metadata">
-                            <span class="date">Yesterday at 12:30AM</span>
-                        </div>
-                        <div class="text">
-                            <p>This has been very useful for my research. Thanks as well!</p>
-                        </div>
-                        <div class="actions">
-                            <a class="reply">Reply</a>
+
+        <!-- Footer -->
+        <div class="footer container">
+            <div class="ui black inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <div class="ui stackable inverted  divided grid">
+                        <div class="three wide column">
+                            <h3 class="ui inverted orange header">Team Members</h3>
+                            <div class="ui inverted link list">
+                                <a href="https://github.com/mecaniser" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Sergio Burca</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Maxwell Robb</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Andrew Knowles</a>
+                                <a href="https://github.com/devindinapoli" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Devin Dinapoli</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Jeffrey Easley</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="ui segment">
-                <div class="ui comments">
-                    <h3 class="ui dividing header">Reviews</h3>
-                    <div class="comment">
-                        <a class="avatar">
-                            <img src="./assets/images/grl.jpg">
-                        </a>
-                        <div class="content">
-                            <a class="author">Elliot Fu</a>
-                            <div class="metadata">
-                                <span class="date">Yesterday at 12:30AM</span>
-                            </div>
-                            <div class="text">
-                                <p>This has been very useful for my research. Thanks as well!</p>
-                            </div>
-                            <div class="actions">
-                                <a class="reply">Reply</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- JS init. -->
+        <script>
+            $(document).ready(function () {
+                $('.ui.dropdown')
+                    .dropdown({
+                        allowCategorySelection: true
+                    });
+                $("#openmodal").click(function () {
+                    $('.ui.modal').modal('show');
+                });
 
-            <div class="ui segment">
-                    <div class="ui comments">
-                        <h3 class="ui dividing header">Reviews</h3>
-                        <div class="comment">
-                            <a class="avatar">
-                                <img src="./assets/images/grl.jpg">
-                            </a>
-                            <div class="content">
-                                <a class="author">Elliot Fu</a>
-                                <div class="metadata">
-                                    <span class="date">Yesterday at 12:30AM</span>
-                                </div>
-                                <div class="text">
-                                    <p>This has been very useful for my research. Thanks as well!</p>
-                                </div>
-                                <div class="actions">
-                                    <a class="reply">Reply</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer container">
-        <div class="ui black inverted vertical footer segment">
-            <div class="ui center aligned container">
-                <div class="ui stackable inverted  divided grid">
-                    <div class="three wide column">
-                        <h3 class="ui inverted orange header">Team Members</h3>
-                        <div class="ui inverted link list">
-                            <a href="https://github.com/mecaniser" class="item" target="_blank">
-                                <i class="green git square icon"></i>
-                                Sergio Burca</a>
-                            <a href="" class="item" target="_blank">
-                                <i class="green git square icon"></i>
-                                Maxwell Robb</a>
-                            <a href="" class="item" target="_blank">
-                                <i class="green git square icon"></i>
-                                Andrew Knowles</a>
-                            <a href="https://github.com/devindinapoli" class="item" target="_blank">
-                                <i class="green git square icon"></i>
-                                Devin Dinapoli</a>
-                            <a href="" class="item" target="_blank">
-                                <i class="green git square icon"></i>
-                                Jeffrey Easley</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- JS init. -->
-    <script>
-        $(document).ready(function () {
-            $("#openmodal").click(function () {
-                $('.ui.modal').modal('show');
+                $('.ui.sticky')
+                    .sticky({
+                        offset: 50,
+                        context: '#uzarSticky',
+                    });
+                $('.ui.rating')
+                    .rating({
+                        initialRating: 1,
+                        maxRating: 5
+                    });
             });
-
-            $('.ui.sticky')
-                .sticky({
-                    offset: 50,
-                    context: '#uzarSticky',
-                });
-            $('.ui.rating')
-                .rating({
-                    initialRating: 1,
-                    maxRating: 5
-                });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
