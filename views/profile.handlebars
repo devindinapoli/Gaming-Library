@@ -2,14 +2,14 @@
 
 <div class="ui main container">
     <!-- UZar container -->
-    <div class="ui two column grid" id="uzarSticky">
+    <div class="ui grid" id="uzarSticky">
         <!-- UZar Card Info -->
-        <div class="ui column">
+        <div class="ui four wide column">
             <div class="ui">
                 <H5 id="userName" class="ui inverted center aligned header">{{user.nickname}}</H5>
             </div>
 
-            <div class="ui sticky centered large card image">
+            <div class="ui centered medium card image">
                 <div>
                     <img class="ui  rounded fluid edit image" src="https://media.giphy.com/media/Q2w02BCP1Nvqg/giphy.gif">
                     <button class="ui circular edit icon editBtn button" id="userEdit">
@@ -38,6 +38,13 @@
                 </div>
             </div>
         </div>
+        {{!-- Stast --}}
+        <div class="ui stats twelve wide column">
+            <div class="ui segment">
+                PLACE YOUR STATS HERE
+            </div>
+        </div>
+
         {{!-- User Edit modal --}}
         <div action="" method="POST" class="ui modal form userEdit">
             <i class="close icon"></i>
@@ -569,9 +576,7 @@
             </div>
         </div>
 
-        <!-- modals -->
-
-
+        <!-- modals game info-->
         <div class="ui modal gameModal">
             <i class="close icon"></i>
             <div class="header gameHeader">
@@ -592,22 +597,30 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Game Collection -->
-        <div class="ui column ">
-            <div class="ui centered grid ">
-                <H5 class="ui inverted green center aligned header centered grid">
-                    <i class="orange game icon"></i>
-                    Game collection</H5>
-            </div>
-
-            <!-- Change how many cards to display on each row. -->
-            <div class="ui two stackable cards userGameSection">
-                <!-- Game cards -->
-
-
+    <!-- Game Collection -->
+    <div class="ui container">
+        <div class="ui raised segment">
+            <H5 class="ui inverted green center aligned header centered grid">
+                <i class="heart icon"></i>
+                Fav Games</H5>
+        </div>
+        <!-- Change how many cards to display on each row. -->
+        <div class="ui four stackable cards userGameSection">
+            <!-- Game cards will be dynamically added here -->
+        </div>
+        <div class="ui segment">
+            <div class="ui labeled  button" tabindex="0">
+                <div class="ui red circular button">
+                    <i class=" game icon"></i> Game Collection
+                </div>
+                <a class="ui basic red left pointing label">
+                    23
+                </a>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -621,7 +634,6 @@
 
         for (var i = 0; i < data.length; i++) {
 
-
             let src;
             // Create an if conditional for screenshots since they aren't required.
             if (!data[i].cover.url) {
@@ -632,9 +644,10 @@
             }
 
             var gameCard = $(
-                "<div class='ui card' id='gameId-" + data[0].id + "'>" +
-                "<div class='image'>" +
-                "<img class='gameImage' src='" + src + "'></div>" +
+                "<div class='ui raised link card' id='gameId-" + data[0].id + "'>" +
+                "<div class='ui heart rating' data-rating='1' data-max-rating='3'>" + "Rating:" + "</div>" +
+                "<div class='ui rounded image'>" +
+                "<img class=' gameImage' src='" + src + "'></div>" +
                 "<div class='content'>" +
                 "<p>" + data[0].name + "</p></div>" +
                 "<div class='extra content'>" +
@@ -642,9 +655,7 @@
                 "<div class='ui divider'></div>" +
                 "<div>" + "<button class='ui negative circular icon button delete' id='" + data[0].id + "'>" +
                 "<i class='trash icon'></i></button></div></div></div>"
-
             )
-
 
             $(".userGameSection").append(gameCard);
         }
