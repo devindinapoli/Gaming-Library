@@ -37,5 +37,4 @@ module.exports = function(express, app, db, passport) {
         res.json(err);
       });
   })
-
 };
