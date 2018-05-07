@@ -681,9 +681,10 @@
             })
             ;
         $.get("/currentuser", function (data) {
+            console.log(data);
             console.log(data.game);
             for (let i = 0; i < data.game.length; i++) {
-                $.get("/gameId?id=" + data.game[i], function (game) {
+                $.get("/gameId?id=" + data.game[i].gameId, function (game) {
                     createCard(game);
                 })
             }

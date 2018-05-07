@@ -55,7 +55,8 @@ app.set("view engine", "handlebars");
 const authRoutes = require("./controllers/authController")(
   express,
   app,
-  passport
+  passport,
+  db
 );
 const apiRoutes = require("./controllers/apiController")(
   express,

@@ -20,6 +20,10 @@ const UserSchema = new Schema({
     required: false,
     unique: false
   },
+  game: [{
+    type: Schema.Types.ObjectId,
+    ref: "Game"
+  }],
   nickname: {
     type: String,
     required: false,
@@ -44,9 +48,6 @@ const UserSchema = new Schema({
     type: Number,
     required: false,
     unique: false
-  },
-  game: {
-    gameId: Number
   }
 });
 
