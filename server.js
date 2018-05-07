@@ -64,6 +64,11 @@ const apiRoutes = require("./controllers/apiController")(
   igdb,
   client
 );
+const reviewRoutes = require("./controllers/reviewController")(
+  express,
+  app,
+  db
+);
 const userRoutes = require("./controllers/userController")(
   express,
   app,

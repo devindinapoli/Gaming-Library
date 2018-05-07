@@ -48,7 +48,11 @@ const UserSchema = new Schema({
     type: Number,
     required: false,
     unique: false
-  }
+  },
+  review: [{
+    type: Schema.Types.ObjectId,
+    ref: "Review"
+  }]
 });
 
 // Methods
