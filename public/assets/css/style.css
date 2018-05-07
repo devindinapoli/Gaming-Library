@@ -65,15 +65,15 @@ body {
   margin-bottom: 15px;
 }
 /* .grid.container { */
-  /* margin-top: 5em; */
+/* margin-top: 5em; */
 /* } */
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 /* .edit{
 position: relative;
@@ -86,4 +86,11 @@ position: relative;
 
 .gameImage {
   height: 161px;
+}
+
+#userName {
+  font-size: 24px;
+}
+#name {
+  font-size: 24px;
 }

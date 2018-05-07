@@ -20,6 +20,31 @@ const UserSchema = new Schema({
     required: false,
     unique: false
   },
+  nickname: {
+    type: String,
+    required: false,
+    unique: true
+  },
+  picture: {
+    type: String,
+    required: false,
+    unique: false
+  },
+  bio: {
+    type: String,
+    required: false,
+    unique: false
+  },
+  country: {
+    type: String,
+    required: false,
+    unique: false
+  },
+  joined: {
+    type: Number,
+    required: false,
+    unique: false
+  },
   game: {
     gameId: Number
   }
