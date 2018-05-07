@@ -11,7 +11,7 @@ module.exports = function(express, app, passport, db) {
 
   app.get("/currentuser", function(req, res) {
     db.User.findOne({_id: req.user._id})
-      .populate("game")
+      .populate("game review")
       .then(function(user) {
         res.json(user );
       })
