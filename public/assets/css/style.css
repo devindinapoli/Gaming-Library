@@ -85,7 +85,6 @@ position: relative;
   top: 10px;
   right: 10px;
 }
-
 .gameImage {
   height: 161px;
 }
@@ -95,4 +94,8 @@ position: relative;
 }
 #name {
   font-size: 24px;
+}
+.ui.card,
+.ui.cards>.card {
+  background-color: gainsboro;
 }
