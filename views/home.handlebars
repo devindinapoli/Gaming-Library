@@ -14,13 +14,10 @@
             <div class="item">Have fun!</div>
         </div>
         <div class="ui horizontal divider">
-            <div class="ui positive button" id="signupModal">Join</div>
+            <div class="ui positive button" id="signupModal2">Join</div>
         </div>
     </div>
-    <!-- sign up button goes here -->
 </div>
-</div>
-
 
 <div class="ui link cards centered grid results-field">
 
@@ -122,6 +119,10 @@
         });
 
         $("#signupModal").click(function () {
+            $(".signupModal").modal("show");
+        });
+
+        $("#signupModal2").click(function () {
             $(".signupModal").modal("show");
         });
 
