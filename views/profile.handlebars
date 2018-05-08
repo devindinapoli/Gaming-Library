@@ -687,11 +687,11 @@
             )
 
             $(".userGameSection").append(gameCard);
-             $('.positive.button')
-            .transition({
-                animation: 'scale in',
-                duration: '1s'
-            });
+            $('.positive.button')
+                .transition({
+                    animation: 'scale in',
+                    duration: '1s'
+                });
         }
     }
 
@@ -709,7 +709,7 @@
         $(".modal").modal({
             closable: true
         });
-        
+
         $.get("/currentuser", function (data) {
             console.log(data);
             console.log(data.game);
@@ -743,7 +743,7 @@
             var picture = $(".inputfile").val().trim();
             var bio = $("#bio").val().trim();
             var joined = $("#joined").val().trim();
-            var country = $("#country").().trim().toUpperCase();
+            var country = $("#country").trim().toUpperCase();
             var nickname = $("#nickname").val().trim();
             $.post("/updateInfo", { picture: picture, bio: bio, joined: joined, country: country, nickname: nickname })
             console.log(country)
