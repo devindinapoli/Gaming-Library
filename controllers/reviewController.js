@@ -10,7 +10,7 @@ module.exports = function(express, app, db) {
         });
     });
   
-    app.get("/user", function(res, res) {
+    app.get("/user", function(req, res) {
       db.User.find({})
         .then(function(dbUser) {
           res.json(dbUser);
