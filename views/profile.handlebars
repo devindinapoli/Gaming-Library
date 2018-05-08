@@ -2,7 +2,7 @@
 
 <div class="ui main container">
     <!-- UZar container -->
-    <div class="ui grid" id="uzarSticky">
+    <div class="ui stackable two column divided grid container" id="uzarSticky">
         <!-- UZar Card Info -->
         <div class="ui four wide column">
             <div class="ui">
@@ -36,7 +36,7 @@
             </div>
         </div>
         {{!-- Stast --}}
-        <div class="ui stats twelve wide column">
+        <div class="ui stats twelve wide column stackable">
             <div class="ui segment">
                 PLACE YOUR STATS HERE
             </div>
@@ -596,17 +596,19 @@
             </div>
         </div>
     </div>
-
+    <div class="ui divider"></div>
     <!-- Game Collection -->
     <div class="ui container">
-        <div class="ui raised segment">
-            <H5 class="ui inverted green center aligned header centered grid">
+        <div class="ui segment">
+            <H5 class="ui inverted green center aligned header">
                 <i class="heart icon"></i>
                 Fav Games</H5>
         </div>
+        <div class="ui divider"></div>
+
         <!-- Change how many cards to display on each row. -->
-        <div class="ui four stackable cards userGameSection">
-            <!-- Game cards will be dynamically added here -->
+        <div class="ui four column row four stackable cards userGameSection">
+            <!-- Game cards will be dynamically created here -->
         </div>
         <div class="ui segment">
             <div class="ui labeled  button" tabindex="0">
@@ -617,12 +619,9 @@
                 </a>
             </div>
         </div>
-
     </div>
+
 </div>
-
-
-
 <!-- User card -->
 
 {{!-- JS init. --}}
