@@ -1,241 +1,248 @@
 <!--THIS IS HOMEPAGE-->
-<div class="container">
-    <div id="welcome" class="ui fluid card">
-        <div class="content">
-            <h1 class="content">Welcome to Gamers Meet!</h1>
-            <p>Sign up to fully enjoy</p>
-            <div class="ui horizontal divider">
-                Benefits
-            </div>
-            <div class="ui list font">
-                <div class="item">Keep track of your game collection</div>
-                <div class="item">Rate and review your collection</div>
-                <div class="item">Find people with overlapping (or entirely different) libraries</div>
-                <div class="item">Have fun!</div>
-            </div>
-            <div class="ui horizontal divider">
-                <div class="ui positive button" id="signupModal2">Join</div>
+<div class="ui centered grid">
+    <div class="two wide column"></div>
+    <div class="twelve wide column">
+        <div class="ui fluid card basicinfo">
+            <div class="content">
+                <h1 class="content centerize">Welcome to Gamers Meet!</h1>
+                <p>Sign up to fully enjoy</p>
+                <div class="ui horizontal divider">
+                    Benefits
+                </div>
+                <div class="ui list font">
+                    <div class="item">Keep track of your game collection</div>
+                    <div class="item">Rate and review your collection</div>
+                    <div class="item">Find people with overlapping (or entirely different) libraries</div>
+                    <div class="item">Have fun!</div>
+                </div>
+                <div class="ui horizontal divider">
+                    <div class="ui positive button" id="signupModal2">Join</div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="ui link cards centered grid results-field">
-
+    <div class="two wide column"></div>
+    <div class="ui horizontal divider white">
     </div>
+</div>
 
-    <form class="ui modal form gameinfoModal">
-        <i class="close icon"></i>
-        <div class="header">Basic Game Information</div>
-        <div class="content">
-            <div class="fields">
-                <div class="three wide field">
-                    <select id="platform" class="ui dropdown">
-                        <option value="">Game Platform</option>
-                        <option value="PC">PC</option>
-                        <option value="Mac">Mac</option>
-                        <option value="Xbox 1">Xbox 1</option>
-                        <option value="Xbox 360">Xbox 360</option>
-                        <option value="Xbox">Xbox</option>
-                        <option value="PlayStation 4">PlayStation 4</option>
-                        <option value="PlayStation 3">Playstation 3</option>
-                        <option value="Playstation 2">Playstation 2</option>
-                        <option value="Playstation">Playstation</option>
-                        <option value="Nintendo Switch">Nintendo Switch</option>
-                        <option value="Nintendo">NES</option>
-                        <option value="Super Nintendo">Super Nintendo</option>
-                        <option value="Wii U">Wii U</option>
-                        <option value="Wii">Wii</option>
-                        <option value="GameCube">GameCube</option>
-                        <option value="Nintendo 64">Nintendo 64</option>
-                        <option value="Nintendo DS">Nintendo DS</option>
-                        <option value="Nintendo 3DS">Nintendo 3DS</option>
-                        <option value="Gameboy Advance">Gameboy Advance</option>
-                        <option value="Gameboy Color">Gameboy Color</option>
-                        <option value="Sega Dreamcast">Sega Dreamcast</option>
-                        <option value="Sega Saturn">Sega Saturn</option>
-                        <option value="Neo Geo">Neo Geo</option>
-                        <option value="Sega Genesis">Sega Genesis</option>
-                        <option value="PSP">PSP</option>
-                        <option value="PS Vita">PS Vita</option>
-                        <option value="Virtual Boy">Virtual Boy</option>
-                    </select>
-                </div>
-                <div class=" three wide field">
-                    <select id="condition" class="ui dropdown">
-                        <option value="">Condition</option>
-                        <option value="New">New (in box)</option>
-                        <option value="Lightly Used">Lightly Used</option>
-                        <option value="Well Used">Well used</option>
-                        <option value="Broken">Broken</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <input id="copies" type="text" name="copies" maxlength="3" placeholder="Number of Copies">
-                </div>
+<div class="ui link cards centered grid results-field">
+
+</div>
+
+<form class="ui modal form gameinfoModal">
+    <i class="close icon"></i>
+    <div class="header">Basic Game Information</div>
+    <div class="content">
+        <div class="fields">
+            <div class="three wide field">
+                <select id="platform" class="ui dropdown">
+                    <option value="">Game Platform</option>
+                    <option value="PC">PC</option>
+                    <option value="Mac">Mac</option>
+                    <option value="Xbox 1">Xbox 1</option>
+                    <option value="Xbox 360">Xbox 360</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="PlayStation 4">PlayStation 4</option>
+                    <option value="PlayStation 3">Playstation 3</option>
+                    <option value="Playstation 2">Playstation 2</option>
+                    <option value="Playstation">Playstation</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="Nintendo">NES</option>
+                    <option value="Super Nintendo">Super Nintendo</option>
+                    <option value="Wii U">Wii U</option>
+                    <option value="Wii">Wii</option>
+                    <option value="GameCube">GameCube</option>
+                    <option value="Nintendo 64">Nintendo 64</option>
+                    <option value="Nintendo DS">Nintendo DS</option>
+                    <option value="Nintendo 3DS">Nintendo 3DS</option>
+                    <option value="Gameboy Advance">Gameboy Advance</option>
+                    <option value="Gameboy Color">Gameboy Color</option>
+                    <option value="Sega Dreamcast">Sega Dreamcast</option>
+                    <option value="Sega Saturn">Sega Saturn</option>
+                    <option value="Neo Geo">Neo Geo</option>
+                    <option value="Sega Genesis">Sega Genesis</option>
+                    <option value="PSP">PSP</option>
+                    <option value="PS Vita">PS Vita</option>
+                    <option value="Virtual Boy">Virtual Boy</option>
+                </select>
+            </div>
+            <div class=" three wide field">
+                <select id="condition" class="ui dropdown">
+                    <option value="">Condition</option>
+                    <option value="New">New (in box)</option>
+                    <option value="Lightly Used">Lightly Used</option>
+                    <option value="Well Used">Well used</option>
+                    <option value="Broken">Broken</option>
+                </select>
+            </div>
+            <div class="field">
+                <input id="copies" type="text" name="copies" maxlength="3" placeholder="Number of Copies">
             </div>
         </div>
-        <div class="actions">
-            <div class="ui black deny button">
-                Cancel
-            </div>
-            <button id="gameInfoButton" type="submit" class="ui positive button">Add</button>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Cancel
         </div>
-    </form>
+        <button id="gameInfoButton" type="submit" class="ui positive button">Add</button>
+    </div>
+</form>
 
 
-    <script>
+<script>
 
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            function createGameSection(data) {
+        function createGameSection(data) {
 
-                for (var i = 0; i < data.length; i++) {
-                    let src;
-                    // Create an 'if(){}' conditional for screenshots since they aren't required.
-                    if (!data[i].cover.url) {
-                        src = "http://via.placeholder.com/200x150";
-                    } else {
-                        // Replace the img src to a higher res one.
-                        src = data[i].cover.url.replace("t_thumb", "t_cover_big");
-                    }
-
-                    var gameCard = $(
-                        "<div class='game' id='game-well-'" + data[i].id + ">" +
-                        "<div class='ui cards'>" +
-                        "<div class='card'>" +
-                        "<div class='content'>" +
-                        "<img class='ui image fluid rounded gameImage' src=" +
-                        src + ">" +
-                        "<div class='header gameHead'>" +
-                        "<div class='ui animated fade button fluid addGame' data-id='" + data[i].id + "' tabindex='0' id='gameinfoModal'>" +
-                        "<div class='visible content'>" + data[i].name + "</div>" +
-                        "<div class='hidden content'>" +
-                        "<i class='add icon'></i>" +
-                        "Add Game" +
-                        "</div>" +
-                        "</div>" +
-                        "<div class='description'>" +
-                        data[i].summary +
-                        "</div></div>" +
-                        "</div></div></div>")
-                    $(".results-field").append(gameCard);
+            for (var i = 0; i < data.length; i++) {
+                let src;
+                // Create an 'if(){}' conditional for screenshots since they aren't required.
+                if (!data[i].cover.url) {
+                    src = "http://via.placeholder.com/200x150";
+                } else {
+                    // Replace the img src to a higher res one.
+                    src = data[i].cover.url.replace("t_thumb", "t_cover_big");
                 }
 
+                var gameCard = $(
+                    "<div class='game' id='game-well-'" + data[i].id + ">" +
+                    "<div class='ui cards'>" +
+                    "<div class='card'>" +
+                    "<div class='content'>" +
+                    "<img class='ui image fluid rounded gameImage' src=" +
+                    src + ">" +
+                    "<div class='header gameHead'>" +
+                    "<div class='ui animated fade button fluid addGame' data-id='" + data[i].id + "' tabindex='0' id='gameinfoModal'>" +
+                    "<div class='visible content'>" + data[i].name + "</div>" +
+                    "<div class='hidden content'>" +
+                    "<i class='add icon'></i>" +
+                    "Add Game" +
+                    "</div>" +
+                    "</div>" +
+                    "<div class='description'>" +
+                    data[i].summary +
+                    "</div></div>" +
+                    "</div></div></div>")
+                $(".results-field").append(gameCard);
             }
 
-            $(document).on("click", ".addGame", function () {
-                var game = $(this).attr("data-id");
-                console.log(game);
-                $(this).html("<i class='check icon'></i>");
-                $(document).on("click", "#gameInfoButton", function (event) {
-                    event.preventDefault();
-                    var platform = $("#platform").val().trim();
-                    var condition = $("#condition").val().trim();
-                    $.post("/currentuser", { gameId: game, platform: platform, condition: condition })
-                })
+        }
+
+        $(document).on("click", ".addGame", function () {
+            var game = $(this).attr("data-id");
+            console.log(game);
+            $(this).html("<i class='check icon'></i>");
+            $(document).on("click", "#gameInfoButton", function (event) {
+                event.preventDefault();
+                var platform = $("#platform").val().trim();
+                var condition = $("#condition").val().trim();
+                $.post("/currentuser", { gameId: game, platform: platform, condition: condition })
             })
+        })
 
 
 
-            $("#signinModal").click(function () {
-                $(".signinModal").modal("show");
+        $("#signinModal").click(function () {
+            $(".signinModal").modal("show");
+        });
+
+        $("#signupModal").click(function () {
+            $(".signupModal").modal("show");
+        });
+
+        $("#signupModal2").click(function () {
+            $(".signupModal").modal("show");
+        });
+
+        $(document).on("click", "#gameinfoModal", function () {
+            $(".gameinfoModal").modal("show");
+        });
+
+        $(".modal").modal({
+            closable: true
+        });
+
+        // this is currently the default search on page load.
+
+        $.get("/search?title=starfox", function (data) {
+            console.log(data);
+            createGameSection(data);
+        });
+
+
+        $('.ui.search')
+            .search({
+                type: 'category',
+                minCharacters: 3,
+                apiSettings: {
+                    onResponse: function (data) {
+                        var
+                            response = {
+                                results: {}
+                            }
+                            ;
+                        $.each(data, function (i, item) {
+                            if (i >= 5) {
+                                return false;
+                            }
+                            if (response.results[i] === undefined) {
+                                response.results[i] = {
+                                    results: []
+                                };
+                            }
+                            response.results[i].results.push({
+                                title: item.name,
+                                url: 'searchUrl(\'' + item.name + '\')'
+                            });
+                            console.log(item.name);
+
+                        });
+                        // initSearchHandler();
+                        return response;
+                    },
+                    url: '/search?title={query}'
+                }
+            })
+            ;
+
+        function initSearchHandler() {
+            console.log("init call");
+            $('a.result').off('click').on('click', function () {
+                console.log("fooo");
             });
+        };
 
-            $("#signupModal").click(function () {
-                $(".signupModal").modal("show");
-            });
 
-            $("#signupModal2").click(function () {
-                $(".signupModal").modal("show");
-            });
-
-            $(document).on("click", "#gameinfoModal", function () {
-                $(".gameinfoModal").modal("show");
-            });
-
-            $(".modal").modal({
-                closable: true
-            });
-
-            // this is currently the default search on page load.
-
-            $.get("/search?title=starfox", function (data) {
+        function searchUrl(title) {
+            $(".results-field").empty();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
                 console.log(data);
                 createGameSection(data);
             });
+        }
 
-
-            $('.ui.search')
-                .search({
-                    type: 'category',
-                    minCharacters: 3,
-                    apiSettings: {
-                        onResponse: function (data) {
-                            var
-                                response = {
-                                    results: {}
-                                }
-                                ;
-                            $.each(data, function (i, item) {
-                                if (i >= 5) {
-                                    return false;
-                                }
-                                if (response.results[i] === undefined) {
-                                    response.results[i] = {
-                                        results: []
-                                    };
-                                }
-                                response.results[i].results.push({
-                                    title: item.name,
-                                    url: 'searchUrl(\'' + item.name + '\')'
-                                });
-                                console.log(item.name);
-
-                            });
-                            // initSearchHandler();
-                            return response;
-                        },
-                        url: '/search?title={query}'
-                    }
-                })
-                ;
-
-            function initSearchHandler() {
-                console.log("init call");
-                $('a.result').off('click').on('click', function () {
-                    console.log("fooo");
-                });
-            };
-
-
-            function searchUrl(title) {
-                $(".results-field").empty();
-                $.get("/search?title=" + title, function (data) {
-                    console.log(title);
-                    console.log(data);
-                    createGameSection(data);
-                });
-            }
-
-            $("#search").on("click", function (event) {
-                event.preventDefault();
-                $(".results-field").empty();
-                var title = $("#gameSearch")
-                    .val()
-                    .trim();
-                $.get("/search?title=" + title, function (data) {
-                    console.log(title);
-                    console.log(data);
-                    createGameSection(data);
-                });
-            });
-
-            $("#gameSearch").keypress(function (e) {
-                if (e.which == 13) {
-                    //Enter key pressed
-                    $("#search").click(); //Trigger search button click event
-                }
+        $("#search").on("click", function (event) {
+            event.preventDefault();
+            $(".results-field").empty();
+            var title = $("#gameSearch")
+                .val()
+                .trim();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
+                console.log(data);
+                createGameSection(data);
             });
         });
 
-    </script>
+        $("#gameSearch").keypress(function (e) {
+            if (e.which == 13) {
+                //Enter key pressed
+                $("#search").click(); //Trigger search button click event
+            }
+        });
+    });
+
+</script>
