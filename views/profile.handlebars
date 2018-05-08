@@ -36,7 +36,8 @@
             </div>
         </div>
         {{!-- Stats --}}
-        <div class="ui stats twelve wide column stackable">
+        <div class="ui stats twelve wide column">
+
             <div class="ui segment">
                 PLACE YOUR STATS HERE
             </div>
@@ -559,6 +560,16 @@
                     <label>About you:</label>
                     <textarea id="bio" type="text" rows="2" placeholder="What's your story?">{{user.bio}}</textarea>
                 </div>
+                {{!-- <div class="field">
+                    <form action="/newReview" method="post">
+                        <h1>Review a game</h1>
+                        <h2>Impart your knowledge</h2>
+                        <input type="text" name="title" placeholder="Title">
+                        <input type="text" name="platform" placeholder="Platform">
+                        <textarea type="text" name="review">{{user.review}}</textarea>
+                        <input type="submit" value="review">
+                    </form>
+                </div> --}}
 
             </div>
             <div class="ui inverted grey actions orange segment">
@@ -694,7 +705,7 @@
         });
         $("#gamereviewModal").click(function () {
             $(".gamereviewModal").modal("show");
-        });        
+        });
         $(".modal").modal({
             closable: true
         });

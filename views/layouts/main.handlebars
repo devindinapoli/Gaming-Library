@@ -30,43 +30,23 @@
 
         <!--<! Nav Bar Sergio-->
 
-        <div class="ui inverted stackable menu two column grid">
-            <div class="column">
-                <div class="ui stackable doubling two column grid">
-                    <div class="column">
-                        <a class="item home header column center align" href="/">Home
-                            <img class="ui avatar image floated right" src="./assets/images/gamelogo.jpg" alt="logo">
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a class="item profile header column" href="/profile">Profile </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="ui stackable doubling two column grid">
-                    <div class="column">
-                        <div class="ui right floated column " id="root"></div>
-                    </div>
-                    <div class="column">
-                        <!-- Right menu Search -->
-                        <div class="ui small action icon input">
-                            <input id="gameSearch" type="text" placeholder="Search...">
-                            <button id="search" class="ui fade animated button" role="button">
-                                <div class="visible content">
-                                    <i class="ui inverted green search icon"></i>
-                                </div>
-                                <div class="hidden content">Search</div>
-                            </button>
+        <div class="ui inverted  menu">
+            <a class="item home header" href="/">Home</a>
+            <a class="item profile header" href="/profile">Profile</a>
+            <!-- Right menu Search -->
+            <div id="root"></div>
+            <div class="ui right menu">
+                <div class="ui small action icon input">
+                    <input id="gameSearch" type="text" placeholder="Search...">
+                    <button id="search" class="ui fade animated button" role="button">
+                        <div class="visible content">
+                            <i class="ui inverted green search icon"></i>
                         </div>
-                    </div>
-
+                        <div class="hidden content">Search</div>
+                    </button>
                 </div>
             </div>
-
         </div>
-
         <div class="ui section divider"></div>
         {{!-- Sign In modal / Note:confirmation sing up --}}
         <form action="/login" method="POST" class="ui modal form signinModal">
@@ -134,16 +114,11 @@
         </form>
 
         {{{body}}}
-
         <div class="ui section divider"></div>
-
         <div class="footer container">
-            {{!-- --}}
             <div class="ui black inverted vertical footer segment">
                 <div class="ui center aligned container">
-                    {{!-- --}}
-                    <div class="ui stackable inverted divided equal height stackable grid">
-                        {{!-- --}}
+                    <div class="ui stackable inverted  divided grid">
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">Team Members</h3>
                             <div class="ui inverted link list">
@@ -164,13 +139,11 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
-                        {{!-- --}}
                         <div class="ten wide column">
                             <h4 class="ui inverted header">Game collector</h4>
                             <p>The only and ultimate app that will make you happy and it will be fun to collect your games.</br>Yes!
                                 It is free!</p>
                         </div>
-                        {{!-- --}}
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">LinkedIn</h3>
                             <div class="ui inverted link list">
@@ -191,16 +164,12 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
-                        {{!-- --}}
                     </div>
-                    {{!-- --}}
                     <div class="footer copyright">
                         <p class="copyright">2018 Copyright and all legal stuff...</p>
                     </div>
-                    {{!-- --}}
                 </div>
             </div>
-            {{!-- --}}
         </div>
 
     </div>
@@ -212,6 +181,8 @@
                 location.href = "/";
             })
         })
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
@@ -222,7 +193,7 @@
         class LogOut extends React.Component {
             render() {
                 return (
-                    <div >
+                    <div className="right menu sticky">
                         <button id="logOut" className="ui animated button" role="button">
                             <div className="visible content">Log Out</div>
                             <div className="hidden content">
@@ -238,7 +209,7 @@
         class SignInOrUp extends React.Component {
             render() {
                 return(
-                    <div>
+                    <div className="right menu sticky">
                         <button id="signinModal" className="ui animated button" role="button">
                             <div className="visible content">Log in</div>
                             <div className="hidden content">
@@ -256,6 +227,7 @@
                     <LogOut />,
                     document.getElementById('root')
                 );
+                $("#welcome").remove();
             } else {
                 ReactDOM.render(
                     <SignInOrUp />,
