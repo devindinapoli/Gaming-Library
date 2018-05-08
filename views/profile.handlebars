@@ -2,7 +2,7 @@
 
 <div class="ui main container">
     <!-- UZar container -->
-    <div class="ui grid" id="uzarSticky">
+    <div class="ui stackable two column divided grid container" id="uzarSticky">
         <!-- UZar Card Info -->
         <div class="ui four wide column">
             <div class="ui">
@@ -31,18 +31,19 @@
                         <h4>About:</h4>
                         <p>{{user.bio}}</p>
                     </div>
+
                 </div>
             </div>
         </div>
         {{!-- Stast --}}
-        <div class="ui stats twelve wide column">
+        <div class="ui stats twelve wide column stackable">
             <div class="ui segment">
                 PLACE YOUR STATS HERE
             </div>
         </div>
 
         {{!-- User Edit modal --}}
-        <div action="" method="POST" class="ui modal form userEdit">
+        <div class="ui modal form userEdit">
             <i class="close icon"></i>
             <div class="header ui inverted grey segment">
                 Edit Profile
@@ -61,9 +62,9 @@
                     <div class="four wide field">
                         <label>Country</label>
                         <div class="ui fluid search selection dropdown">
-                            <input id="country" type="text" name="country">
+                            <input id="country" type="hidden" name="country">
                             <i class="dropdown icon"></i>
-                            <div class="default text">{{user.country}}</div>
+                            <div class="default text">United States</div>
                             {{!-- Country List --}}
                             <div class="menu">
                                 <div class="item" data-value="af">
@@ -558,6 +559,7 @@
                     <label>About you:</label>
                     <textarea id="bio" type="text" rows="2" placeholder="What's your story?">{{user.bio}}</textarea>
                 </div>
+
             </div>
             <div class="ui inverted grey actions orange segment">
                 <input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" />
@@ -594,17 +596,19 @@
             </div>
         </div>
     </div>
-
+    <div class="ui divider"></div>
     <!-- Game Collection -->
     <div class="ui container">
-        <div class="ui raised segment">
-            <H5 class="ui inverted green center aligned header centered grid">
+        <div class="ui segment">
+            <H5 class="ui inverted green center aligned header">
                 <i class="heart icon"></i>
                 Fav Games</H5>
         </div>
+        <div class="ui divider"></div>
+
         <!-- Change how many cards to display on each row. -->
-        <div class="ui four stackable cards userGameSection">
-            <!-- Game cards will be dynamically added here -->
+        <div class="ui four column row four stackable cards userGameSection">
+            <!-- Game cards will be dynamically created here -->
         </div>
         <div class="ui segment">
             <div class="ui labeled  button" tabindex="0">
@@ -612,16 +616,12 @@
                     <i class=" game icon"></i> Game Collection
                 </div>
                 <a id="collection" class="ui basic red left pointing label">
-                    23
                 </a>
             </div>
         </div>
-
     </div>
+
 </div>
-
-
-
 <!-- User card -->
 
 {{!-- JS init. --}}
@@ -653,11 +653,11 @@
             )
 
             $(".userGameSection").append(gameCard);
-             $('.positive.button')
-            .transition({
-                animation: 'scale in',
-                duration: '1s'
-            });
+            $('.positive.button')
+                .transition({
+                    animation: 'scale in',
+                    duration: '1s'
+                });
         }
     }
 
@@ -672,7 +672,7 @@
         $(".modal").modal({
             closable: true
         });
-        
+
         $.get("/currentuser", function (data) {
             console.log(data);
             console.log(data.game);
@@ -706,10 +706,10 @@
             var picture = $(".inputfile").val().trim();
             var bio = $("#bio").val().trim();
             var joined = $("#joined").val().trim();
-            var country = $("#country").val().trim().toUpperCase();
+            var country = $("#country").trim().toUpperCase();
             var nickname = $("#nickname").val().trim();
             $.post("/updateInfo", { picture: picture, bio: bio, joined: joined, country: country, nickname: nickname })
-            location.reload();
+            console.log(country)
         })
 
     });

@@ -5,21 +5,17 @@
 body {
   height: 100%;
   font-size: 23px;
-  /* background-image: url("../images/Astro-Gaming-Background-HD.jpg"); */
+  background-image: url("../images/Astro-Gaming-Background-HD.jpg");
   text-align: center;
   font-family: "Orbitron", sans-serif;
 }
-
-.container {
-  margin: 40px;
-}
-#myVideo {
+/* #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-}
+} */
 
 .description {
   font-size: 12px;
@@ -41,7 +37,7 @@ body {
 
 .results-field {
   height: 800px;
-  width: 100%;
+  /* width: 100%; */
   overflow: scroll;
   color: black;
 }
@@ -81,7 +77,6 @@ position: relative;
   top: 10px;
   right: 10px;
 }
-
 .gameImage {
   height: 161px;
 }
@@ -91,4 +86,8 @@ position: relative;
 }
 #name {
   font-size: 24px;
+}
+.ui.card,
+.ui.cards>.card {
+  background-color: gainsboro;
 }

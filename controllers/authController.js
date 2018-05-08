@@ -11,13 +11,20 @@ module.exports = function(express, app, passport, db) {
 
   app.get("/currentuser", function(req, res) {
     db.User.findOne({_id: req.user._id})
-      .populate("game")
+      .populate("game review")
       .then(function(user) {
         res.json(user );
       })
   });
 
-
+  app.get("/isMember", function(req, res) {
+    if(req.user) {
+      res.json(req.user);
+    }
+    if(!req.user){
+      res.json(null);
+    }
+  });
 
   //--------------Log in/out Routes----------------------------------//
 

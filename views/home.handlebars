@@ -14,25 +14,25 @@
     <div class="content">
         <div class="fields">
             <div class="three wide field">
-                <select class="ui dropdown">
+                <select id="platform" class="ui dropdown">
                     <option value="">Game Platform</option>
-                    <option value="0">PC</option>
-                    <option value="1">Xbox 1</option>
-                    <option value="2">PlayStation 4</option>
-                    <option value="3">Nintendo Switch</option>
+                    <option value="PC">PC</option>
+                    <option value="Xbox-1">Xbox 1</option>
+                    <option value="PlayStation-4">PlayStation 4</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
                 </select>
             </div>
             <div class=" three wide field">
-                <select class="ui dropdown">
+                <select id="condition" class="ui dropdown">
                     <option value="">Condition</option>
-                    <option value="0">New (in box)</option>
-                    <option value="1">Lightly Used</option>
-                    <option value="2">Well used</option>
-                    <option value="3">Broken</option>
+                    <option value="New">New (in box)</option>
+                    <option value="Lightly Used">Lightly Used</option>
+                    <option value="Well Used">Well used</option>
+                    <option value="Broken">Broken</option>
                 </select>
             </div>
             <div class="field">
-                <input type="text" name="copies" maxlength="3" placeholder="Number of Copies">
+                <input id="copies" type="text" name="copies" maxlength="3" placeholder="Number of Copies">
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="ui black deny button">
             Cancel
         </div>
-        <input id="gameinfoButton" name="Submit" type="submit" class="ui positive button">
+        <button id="gameInfoButton" type="submit" class="ui positive button">Add</button>
     </div>
 </form>
 
@@ -89,8 +89,14 @@
             var game = $(this).attr("data-id");
             console.log(game);
             $(this).html("<i class='check icon'></i>");
-            $.post("/currentuser", { gameId: game })
+            $(document).on("click", "#gameInfoButton", function (event) {
+                event.preventDefault();
+                var platform = $("#platform").val().trim();
+                var condition = $("#condition").val().trim();
+                $.post("/currentuser", { gameId: game, platform: platform, condition: condition })
+            })
         })
+
 
 
         $("#signinModal").click(function () {
