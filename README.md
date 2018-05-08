@@ -32,14 +32,14 @@ _Use steamworks api to automatically add to users collection_
  ## Team Members:
  ---
  *Design and layout*
- > Sergio Burca aka Serg.io
- 
-  > Maxwell Robb
+ > Sergio Burca
+
+ > Maxwell Robb
  ---
  *Client side logic*
- > Jeffrey Easley aka Easy E 
+ > Jeffrey Easley
  ---
  *BackEnd*
- > Andrew Knowles aka Andy Boi
+ > Andrew Knowles 
  
- > Devin Dinapoli aka Dr. DEV-in
+ > Devin Dinapoli 
