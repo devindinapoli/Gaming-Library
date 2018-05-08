@@ -30,6 +30,7 @@
 
         <!--<! Nav Bar Sergio-->
 
+ max-front-end
         <div class="ui inverted  menu">
             <a class="item home header" href="/">Home</a>
             <a class="item profile header" href="/profile">Profile</a>
@@ -42,13 +43,16 @@
                     <button id="search" class="ui fade animated button" role="button">
                         <div class="visible content">
                             <i class="ui inverted green search icon"></i>
+
                         </div>
-                        <div class="hidden content">Search</div>
-                    </button>
+                    </div>
+
                 </div>
                 <div class="results"></div>
             </div>
+
         </div>
+
         <div class="ui section divider"></div>
 
     {{!-- <div class="ui search">
@@ -124,11 +128,16 @@
         </form>
 
         {{{body}}}
+
         <div class="ui section divider"></div>
+
         <div class="footer container">
+            {{!-- --}}
             <div class="ui black inverted vertical footer segment">
                 <div class="ui center aligned container">
-                    <div class="ui stackable inverted  divided grid">
+                    {{!-- --}}
+                    <div class="ui stackable inverted divided equal height stackable grid">
+                        {{!-- --}}
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">Team Members</h3>
                             <div class="ui inverted link list">
@@ -149,11 +158,13 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
+                        {{!-- --}}
                         <div class="ten wide column">
                             <h4 class="ui inverted header">Game collector</h4>
                             <p>The only and ultimate app that will make you happy and it will be fun to collect your games.</br>Yes!
                                 It is free!</p>
                         </div>
+                        {{!-- --}}
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">LinkedIn</h3>
                             <div class="ui inverted link list">
@@ -174,12 +185,16 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
+                        {{!-- --}}
                     </div>
+                    {{!-- --}}
                     <div class="footer copyright">
                         <p class="copyright">2018 Copyright and all legal stuff...</p>
                     </div>
+                    {{!-- --}}
                 </div>
             </div>
+            {{!-- --}}
         </div>
 
     </div>
@@ -191,6 +206,8 @@
                 location.href = "/";
             })
         })
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
@@ -201,7 +218,7 @@
         class LogOut extends React.Component {
             render() {
                 return (
-                    <div className="right menu sticky">
+                    <div >
                         <button id="logOut" className="ui animated button" role="button">
                             <div className="visible content">Log Out</div>
                             <div className="hidden content">
@@ -217,7 +234,7 @@
         class SignInOrUp extends React.Component {
             render() {
                 return(
-                    <div className="right menu sticky">
+                    <div>
                         <button id="signinModal" className="ui animated button" role="button">
                             <div className="visible content">Log in</div>
                             <div className="hidden content">
