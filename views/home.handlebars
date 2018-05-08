@@ -1,8 +1,23 @@
 <!--THIS IS HOMEPAGE-->
 
-
-
-
+<div class="ui fluid card">
+    <div class="content">
+        <h1 class="content">Welcome to Gamers Meet!</h1>
+        <p>Sign up to fully enjoy</p>
+        <div class="ui horizontal divider">
+            Benefits
+        </div>
+        <div class="ui list font">
+            <div class="item">Keep track of your game collection</div>
+            <div class="item">Rate and review your collection</div>
+            <div class="item">Find people with overlapping (or entirely different) libraries</div>
+            <div class="item">Have fun!</div>
+        </div>
+        <div class="ui horizontal divider">
+            <div class="ui positive button" id="signupModal2">Join</div>
+        </div>
+    </div>
+</div>
 
 <div class="ui link cards centered grid results-field">
 
@@ -130,6 +145,10 @@
             $(".signupModal").modal("show");
         });
 
+        $("#signupModal2").click(function () {
+            $(".signupModal").modal("show");
+        });
+
         $(document).on("click", "#gameinfoModal", function () {
             $(".gameinfoModal").modal("show");
         });
@@ -144,6 +163,59 @@
             console.log(data);
             createGameSection(data);
         });
+
+
+$('.ui.search')
+  .search({
+    type          : 'category',
+    minCharacters : 3,
+    apiSettings   : {
+      onResponse: function(data) {
+        var
+          response = {
+            results : {}
+          }
+        ;
+        $.each(data, function(i, item) {
+            if(i >= 5) {
+                return false;
+            }
+            if(response.results[i] === undefined) {
+                response.results[i] = {
+                  results : []
+                };
+            }
+            response.results[i].results.push({
+                title : item.name,
+                url :  'searchUrl(\'' + item.name + '\')'
+            }); 
+            console.log(item.name);
+            
+        });
+        // initSearchHandler();
+        return response;
+      },
+      url: '/search?title={query}'
+    }
+  })
+;
+
+    function initSearchHandler() {
+        console.log("init call");
+        $('a.result').off('click').on('click', function() {
+            console.log("fooo");
+        });
+    };
+    
+
+    function searchUrl(title) {
+        $(".results-field").empty();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
+                console.log(data);
+                createGameSection(data);
+        });
+}
 
         $("#search").on("click", function (event) {
             event.preventDefault();

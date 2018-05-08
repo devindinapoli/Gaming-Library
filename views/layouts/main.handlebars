@@ -30,44 +30,38 @@
 
         <!--<! Nav Bar Sergio-->
 
-        <div class="ui inverted stackable menu two column grid">
-            <div class="column">
-                <div class="ui stackable doubling two column grid">
-                    <div class="column">
-                        <a class="item home header column center align" href="/">Home
-                            <img class="ui avatar image floated right" src="./assets/images/gamelogo.jpg" alt="logo">
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a class="item profile header column" href="/profile">Profile </a>
+ max-front-end
+        <div class="ui inverted  menu">
+            <a class="item home header" href="/">Home</a>
+            <a class="item profile header" href="/profile">Profile</a>
 
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="ui stackable doubling two column grid">
-                    <div class="column">
-                        <div class="ui right floated column " id="root"></div>
-                    </div>
-                    <div class="column">
-                        <!-- Right menu Search -->
-                        <div class="ui small action icon input">
-                            <input id="gameSearch" type="text" placeholder="Search...">
-                            <button id="search" class="ui fade animated button" role="button">
-                                <div class="visible content">
-                                    <i class="ui inverted green search icon"></i>
-                                </div>
-                                <div class="hidden content">Search</div>
-                            </button>
+            <!-- Right menu Search -->
+            <div id="root"></div>
+            <div class="ui search right menu">
+                <div class="ui small action icon input" id="searchDiv">
+                    <input class="prompt" id="gameSearch" type="text" placeholder="Search...">
+                    <button id="search" class="ui fade animated button" role="button">
+                        <div class="visible content">
+                            <i class="ui inverted green search icon"></i>
+
                         </div>
                     </div>
 
                 </div>
+                <div class="results"></div>
             </div>
 
         </div>
 
         <div class="ui section divider"></div>
+
+    {{!-- <div class="ui search">
+        <div class="ui left icon input">
+            <input class="prompt" type="text" placeholder="Search GitHub" autocomplete="off">
+            <i class="github icon"></i>
+        </div>
+    <div class="results"></div></div> --}}
+
         {{!-- Sign In modal / Note:confirmation sing up --}}
         <form action="/login" method="POST" class="ui modal form signinModal">
 
