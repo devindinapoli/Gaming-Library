@@ -17,7 +17,14 @@ module.exports = function(express, app, passport, db) {
       })
   });
 
-
+  app.get("/isMember", function(req, res) {
+    if(req.user) {
+      res.json(req.user);
+    }
+    if(!req.user){
+      res.json(null);
+    }
+  });
 
   //--------------Log in/out Routes----------------------------------//
 
