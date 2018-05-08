@@ -1,0 +1,103 @@
+<!--THIS IS game collection-->
+<h1>Game Collection</h1>
+<div class="ui link cards centered grid results-field">
+
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        function createCard(data) {
+
+            for (var i = 0; i < data.length; i++) {
+
+                let src;
+                // Create an if conditional for screenshots since they aren't required.
+                if (!data[i].cover.url) {
+                    src = "http://via.placeholder.com/200x150";
+                } else {
+                    // Replace the img src to a higher res one.
+                    src = data[i].cover.url.replace("t_thumb", "t_cover_big");
+                }
+
+                var gameCard = $(
+                    "<div class='ui raised link card' id='gameId-" + data[0].id + "'>" +
+                    "<div class='ui rounded image'>" +
+                    "<img class=' gameImage' src='" + src + "'></div>" +
+                    "<div class='content'>" +
+                    "<p>" + data[0].name + "</p></div>" +
+                    "<div class='extra content'>" +
+                    "<button class='positive ui button' data-sum-id='" + data[0].summary + "' href='#' id='gameModal'>View Info</button>" +
+                    "<div class='ui divider'></div>" +
+                    "<div>" + "<button class='ui negative circular icon button delete' id='" + data[0].id + "'>" +
+                    "<i class='trash icon'></i></button></div></div></div>"
+                )
+
+                $(".userGameSection").append(gameCard);
+                $('.positive.button')
+                    .transition({
+                        animation: 'scale in',
+                        duration: '1s'
+                    });
+            }
+        }
+
+        $(document).on("click", ".addGame", function () {
+            var game = $(this).attr("data-id");
+            console.log(game);
+            $(this).html("<i class='check icon'></i>");
+            $(document).on("click", "#gameInfoButton", function (event) {
+                event.preventDefault();
+                var platform = $("#platform").val().trim();
+                var condition = $("#condition").val().trim();
+                $.post("/currentuser", { gameId: game, platform: platform, condition: condition })
+            })
+        })
+
+
+
+        $("#signinModal").click(function () {
+            $(".signinModal").modal("show");
+        });
+
+        $("#signupModal").click(function () {
+            $(".signupModal").modal("show");
+        });
+
+        $(document).on("click", "#gameinfoModal", function () {
+            $(".gameinfoModal").modal("show");
+        });
+
+        $(".modal").modal({
+            closable: true
+        });
+
+        // this is currently the default search on page load.
+
+        $.get("/search?title=starfox", function (data) {
+            console.log(data);
+            createGameSection(data);
+        });
+
+        $("#search").on("click", function (event) {
+            event.preventDefault();
+            $(".results-field").empty();
+            var title = $("#gameSearch")
+                .val()
+                .trim();
+            $.get("/search?title=" + title, function (data) {
+                console.log(title);
+                console.log(data);
+                createGameSection(data);
+            });
+        });
+
+        $("#gameSearch").keypress(function (e) {
+            if (e.which == 13) {
+                //Enter key pressed
+                $("#search").click(); //Trigger search button click event
+            }
+        });
+    });
+
+</script>
