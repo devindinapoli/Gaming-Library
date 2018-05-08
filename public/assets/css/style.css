@@ -92,3 +92,7 @@ position: relative;
 #name {
   font-size: 24px;
 }
+.ui.card,
+.ui.cards>.card {
+  background-color: gainsboro;
+}
