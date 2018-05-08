@@ -33,11 +33,12 @@
         <div class="ui inverted  menu">
             <a class="item home header" href="/">Home</a>
             <a class="item profile header" href="/profile">Profile</a>
+
             <!-- Right menu Search -->
             <div id="root"></div>
-            <div class="ui right menu">
-                <div class="ui small action icon input">
-                    <input id="gameSearch" type="text" placeholder="Search...">
+            <div class="ui search right menu">
+                <div class="ui small action icon input" id="searchDiv">
+                    <input class="prompt" id="gameSearch" type="text" placeholder="Search...">
                     <button id="search" class="ui fade animated button" role="button">
                         <div class="visible content">
                             <i class="ui inverted green search icon"></i>
@@ -45,9 +46,18 @@
                         <div class="hidden content">Search</div>
                     </button>
                 </div>
+                <div class="results"></div>
             </div>
         </div>
         <div class="ui section divider"></div>
+
+    {{!-- <div class="ui search">
+        <div class="ui left icon input">
+            <input class="prompt" type="text" placeholder="Search GitHub" autocomplete="off">
+            <i class="github icon"></i>
+        </div>
+    <div class="results"></div></div> --}}
+
         {{!-- Sign In modal / Note:confirmation sing up --}}
         <form action="/login" method="POST" class="ui modal form signinModal">
 
