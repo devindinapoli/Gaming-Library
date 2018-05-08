@@ -130,6 +130,7 @@
 
         }
 
+
         $(document).on("click", ".addGame", function () {
             var game = $(this).attr("data-id");
             console.log(game);
@@ -138,10 +139,20 @@
                 event.preventDefault();
                 var platform = $("#platform").val().trim();
                 var condition = $("#condition").val().trim();
-                $.post("/currentuser", { gameId: game, platform: platform, condition: condition })
-            })
-        })
+                $.get("/currentuser", function(data) {
+                    const user = data._id;
+                    $.post("/currentuser", { 
+                        gameId: game,
+                        platform: platform,
+                        condition: condition,
+                        user: user
+                    })
+                }) 
 
+            })
+
+
+    
 
 
         $("#signinModal").click(function () {
