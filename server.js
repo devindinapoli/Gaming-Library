@@ -17,7 +17,9 @@ const db = require("./models");
 
 // IGDB API
 const igdb = require("igdb-api-node").default;
-const client = igdb("96f42db86f96478f49c36662bfdd2167");
+
+const client = igdb("5b610550e45c7061921ab712c0ed6ec9");
+
 
 const exphbs = require("express-handlebars");
 
