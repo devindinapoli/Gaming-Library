@@ -25,10 +25,17 @@
     <div class="ui horizontal divider white">
     </div>
 </div>
+{{!-- <div class="ui container"> --}}
+    <div class="ui relaxed divided items">
+        <div class="ui inverted  center aligned header">
+            <i class="ui inverted orange gamepad large icon"></i> Game Search Results</div>
+        <div class="ui divider"></div>
+        <div class="ui link cards centered grid results-field">
+            {{!-- Home Page cards go here --}}
+        </div>
+    </div>
+{{!-- </div> --}}
 
-<div class="ui link cards centered grid results-field">
-
-</div>
 
 <form class="ui modal form gameinfoModal">
     <i class="close icon"></i>
@@ -137,6 +144,11 @@
                     "</div>")
 
                 $(".results-field").append(gameCard);
+                $('.positive.button')
+                    .transition({
+                        animation: 'scale in',
+                        duration: '1s'
+                    });
             }
 
         }
