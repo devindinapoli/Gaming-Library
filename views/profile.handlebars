@@ -714,7 +714,7 @@
         $.get("/currentuser", function (data) {
             console.log(data);
             console.log(data.game);
-            for (let i = 0; i < data.game.length; i++) {
+            for (let i = 0; i < 4; i++) {
                 $.get("/gameId?id=" + data.game[i].gameId, function (game) {
                     createCard(game);
                 })
