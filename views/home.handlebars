@@ -25,7 +25,8 @@
     <div class="ui horizontal divider white">
     </div>
 </div>
-{{!-- <div class="ui container"> --}}
+{{!--
+<div class="ui container"> --}}
     <div class="ui relaxed divided items">
         <div class="ui inverted  center aligned header">
             <i class="ui inverted orange gamepad large icon"></i> Game Search Results</div>
@@ -34,7 +35,7 @@
             {{!-- Home Page cards go here --}}
         </div>
     </div>
-{{!-- </div> --}}
+    {{!-- </div> --}}
 
 
 <form class="ui modal form gameinfoModal">
@@ -188,7 +189,7 @@
         });
 
 
-        $("#signinModal").click(function () {
+        $(document).on("click", "#signinModal", function () {
             $(".signinModal").modal("show");
         });
 
