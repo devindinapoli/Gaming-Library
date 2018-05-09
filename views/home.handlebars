@@ -109,10 +109,11 @@
                 var gameCard = $(
                     "<div class='game' id='game-well-'" + data[i].id + ">" +
                     "<div class='ui cards'>" +
-                    "<div class='card'>" +
-                    "<div class='content'>" +
-                    "<img class='ui image fluid rounded gameImage' src=" +
+                    "<div class='ui card'>" +
+                    "<img class='ui rounded image gameImage' src=" +
                     src + ">" +
+                    "<div class='content'>" +
+
                     "<div class='header gameHead'>" +
                     "<div class='ui animated fade button fluid addGame' data-id='" + data[i].id + "' tabindex='0' id='gameinfoModal'>" +
                     "<div class='visible content'>" + data[i].name + "</div>" +
@@ -124,7 +125,8 @@
                     "<div class='description'>" +
                     data[i].summary +
                     "</div></div>" +
-                    "</div></div></div>")
+                    "</div></div></div></div>")
+
                 $(".results-field").append(gameCard);
             }
 

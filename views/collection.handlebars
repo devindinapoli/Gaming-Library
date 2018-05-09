@@ -1,0 +1,55 @@
+<!--THIS IS game collection-->
+<div class="ui link cards centered grid results-field">
+    
+<h1>Game Collection</h1>
+
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        function createCard(data) {
+
+            for (var i = 0; i < data.length; i++) {
+
+                let src;
+                // Create an if conditional for screenshots since they aren't required.
+                if (!data[i].cover.url) {
+                    src = "http://via.placeholder.com/200x150";
+                } else {
+                    // Replace the img src to a higher res one.
+                    src = data[i].cover.url.replace("t_thumb", "t_cover_big");
+                }
+
+                var gameCard = $(
+                    "<div class='ui raised link card' id='gameId-" + data[0].id + "'>" +
+                    "<div class='ui rounded image'>" +
+                    "<img class=' gameImage' src='" + src + "'></div>" +
+                    "<div class='content'>" +
+                    "<p>" + data[0].name + "</p></div>" +
+                    "<div class='extra content'>" +
+                    "<button class='positive ui button' data-sum-id='" + data[0].summary + "' href='#' id='gameModal'>View Info</button>" +
+                    "<div class='ui divider'></div>" +
+                    "<div>" + "<button class='ui negative circular icon button delete' id='" + data[0].id + "'>" +
+                    "<i class='trash icon'></i></button></div></div></div>"
+                )
+
+                $(".userGameSection").append(gameCard);
+                $('.positive.button')
+                    .transition({
+                        animation: 'scale in',
+                        duration: '1s'
+                    });
+            }
+        }
+
+        $(document).on("click", "#gameinfoModal", function () {
+            $(".gameinfoModal").modal("show");
+        });
+
+        $(".modal").modal({
+            closable: true
+        });
+    });
+
+</script>
