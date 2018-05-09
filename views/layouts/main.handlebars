@@ -196,7 +196,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $("#logOut").on("click", function (event) {
+            $(document).on("click", "#logOut", function (event) {
                 event.preventDefault();
                 $.get("/logout");
                 location.href = "/";
