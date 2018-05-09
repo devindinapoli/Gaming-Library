@@ -23,43 +23,51 @@
 
 <body>
     <div class="container">
+        {{!--
         <video autoplay muted loop id="myVideo">
             <source src="./assets/images/Video/Warhammer-Vermintide-2-Live-Wallpaper-1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-        </video> 
+        </video> --}}
 
-       <!--<! Nav Bar Sergio-->
+        <!--<! Nav Bar Sergio-->
 
-        <div class="ui inverted  menu">
-            <a class="item home header" href="/">Home</a>
-            <a class="item signup header" href="#" id="signupModal">Sign Up</a>
-            <a class="item signup header" href="#" id="signinModal">Log In</a>
-            <a class="item profile header" href="/profile">Profile</a>
-            <!-- Right menu Log out -->
-            <div class="right menu sticky">
-                <button id="logOut" class="ui animated button" role="button">
-                    <div class="visible content">Log Out</div>
-                    <div class="hidden content">
-                        <i aria-hidden="true" class="right ui inverted green arrow icon"></i>
+        <div class="ui inverted stackable menu two column grid">
+            <div class="column">
+                <div class="ui stackable doubling two column grid">
+                    <div class="column">
+                        <a class="item home header column center align" href="/">Home
+                            <img class="ui avatar image floated right" src="./assets/images/gamelogo.jpg" alt="logo">
+                        </a>
                     </div>
-                </button>
+                    <div class="column">
+                        <a class="item profile header column" href="/profile">Profile </a>
+
+                    </div>
+                </div>
             </div>
-            <!--  -->
+            <div class="column">
+                <div class="ui stackable doubling two column grid">
+                    <div class="column">
+                        <div class="ui right floated column " id="root"></div>
+                    </div>
+                    <div class="column">
+                        <!-- Right menu Search -->
+                        <div class="ui small action icon input">
+                            <input id="gameSearch" type="text" placeholder="Search...">
+                            <button id="search" class="ui fade animated button" role="button">
+                                <div class="visible content">
+                                    <i class="ui inverted green search icon"></i>
+                                </div>
+                                <div class="hidden content">Search</div>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
-
-        <!-- Search -->
-        <div class="ui internally celled centered grid ">
-            <div class="ui action input">
-                <input id="gameSearch" type="text" placeholder="Search...">
-                <button id="search" class="ui fade animated button" role="button">
-                    <div class="visible content">
-                        <i class="ui inverted green search icon"></i>
-                    </div>
-                    <div class="hidden content">Search</div>
-                </button>
-            </div>
-        </div>
-        
+        <div class="ui section divider"></div>
         {{!-- Sign In modal / Note:confirmation sing up --}}
         <form action="/login" method="POST" class="ui modal form signinModal">
 
@@ -77,12 +85,14 @@
 
                     </div>
                 </div>
+                <h3>or</h3>
+                <div class="ui positive button" id="signupModal">Create Account</div>
             </div>
             <div class="actions">
                 <div class="ui black deny button">
                     Cancel
                 </div>
-           
+
                 <input id="loginButton" name="Login" type="submit" class="ui positive button">
             </div>
         </form>
@@ -125,10 +135,15 @@
 
         {{{body}}}
 
+        <div class="ui section divider"></div>
+
         <div class="footer container">
+            {{!-- --}}
             <div class="ui black inverted vertical footer segment">
                 <div class="ui center aligned container">
-                    <div class="ui stackable inverted  divided grid">
+                    {{!-- --}}
+                    <div class="ui stackable inverted divided equal height stackable grid">
+                        {{!-- --}}
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">Team Members</h3>
                             <div class="ui inverted link list">
@@ -149,11 +164,14 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
+                        {{!-- --}}
                         <div class="ten wide column">
                             <h4 class="ui inverted header">Game collector</h4>
-                                <p>The only and ultimate app that will make you happy and it will be fun to collect your games.</br>Yes! It is free!</p>
+                            <p>The only and ultimate app that will make you happy and it will be fun to collect your games.</br>Yes!
+                                It is free!</p>
                         </div>
-                         <div class="three wide column">
+                        {{!-- --}}
+                        <div class="three wide column">
                             <h3 class="ui inverted orange header">LinkedIn</h3>
                             <div class="ui inverted link list">
                                 <a href="https://www.linkedin.com/in/srgiobrca/" class="item" target="_blank">
@@ -173,10 +191,16 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
+                        {{!-- --}}
                     </div>
+                    {{!-- --}}
+                    <div class="footer copyright">
+                        <p class="copyright">2018 Copyright and all legal stuff...</p>
+                    </div>
+                    {{!-- --}}
                 </div>
-                <div class="footer copyright"> <p class="copyright">2018 Copyright and all legal stuff...</p></div>
             </div>
+            {{!-- --}}
         </div>
         
 
@@ -186,8 +210,62 @@
             $("#logOut").on("click", function (event) {
                 event.preventDefault();
                 $.get("/logout");
+                location.href = "/";
             })
         })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class LogOut extends React.Component {
+            render() {
+                return (
+                    <div >
+                        <button id="logOut" className="ui animated button" role="button">
+                            <div className="visible content">Log Out</div>
+                            <div className="hidden content">
+                                <i aria-hidden="true" className="right ui inverted green arrow icon"></i>
+                            </div>
+                        </button>
+                    </div> 
+                );
+            }
+
+        }
+
+        class SignInOrUp extends React.Component {
+            render() {
+                return(
+                    <div>
+                        <button id="signinModal" className="ui animated button" role="button">
+                            <div className="visible content">Log in</div>
+                            <div className="hidden content">
+                                <i aria-hidden="true" className="right ui inverted green arrow icon"></i>
+                            </div>
+                        </button>
+                    </div> 
+                )
+            }
+        } 
+
+        $.get("/isMember", function(user) {
+            if(user !== null) {
+                ReactDOM.render(
+                    <LogOut />,
+                    document.getElementById('root')
+                );
+            } else {
+                ReactDOM.render(
+                    <SignInOrUp />,
+                    document.getElementById('root')
+                );
+            }
+        });
+
+
     </script>
 </body>
 

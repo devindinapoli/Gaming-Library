@@ -1,5 +1,5 @@
 // Pass our dependcies as arguments
-module.exports = function(express, app, passport) {
+module.exports = function(express, app, passport, db) {
   app.get("/", function(req, res) {
     res.render("home");
   });
@@ -10,10 +10,21 @@ module.exports = function(express, app, passport) {
   });
 
   app.get("/currentuser", function(req, res) {
-    res.json(req.user);
+    db.User.findOne({_id: req.user._id})
+      .populate("game review")
+      .then(function(user) {
+        res.json(user );
+      })
   });
 
-
+  app.get("/isMember", function(req, res) {
+    if(req.user) {
+      res.json(req.user);
+    }
+    if(!req.user){
+      res.json(null);
+    }
+  });
 
   //--------------Log in/out Routes----------------------------------//
 
@@ -37,8 +48,7 @@ module.exports = function(express, app, passport) {
   );
 
   app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
+    req.session.destroy();        // stack overflow https://bit.ly/2HRDDvA
   });
 };
 
