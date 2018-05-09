@@ -8,6 +8,9 @@ module.exports = function(express, app, passport, db) {
   app.get("/profile", isLoggedIn, function(req, res) {
     res.render("profile", { user: req.user });
   });
+  app.get("/collection", isLoggedIn, function(req, res) {
+    res.render("collection", { user: req.user });
+  });
 
   app.get("/currentuser", function(req, res) {
     db.User.findOne({_id: req.user._id})
