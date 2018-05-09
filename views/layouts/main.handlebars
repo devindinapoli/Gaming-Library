@@ -191,7 +191,7 @@
                 </div>
             </div>
         </div>
-        
+
 
     </div>
     <script>
@@ -209,57 +209,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
 
-    <script type="text/babel">
+    <script>
 
-        class LogOut extends React.Component {
-            render() {
-                return (
-                    <div>
-                        <button id="logOut" className="ui animated button" role="button">
-                            <div className="visible content">Log Out</div>
-                            <div className="hidden content">
-                                <i aria-hidden="true" className="right ui inverted green arrow icon"></i>
-                            </div>
-                        </button>
-                    </div> 
-                );
-            }
 
-        }
 
-        class SignInOrUp extends React.Component {
-            render() {
-                return(
-                    <div>
-                        <button id="signinModal" class="ui animated button" role="button">
-                            <div className="visible content">Log in</div>
-                            <div className="hidden content">
-                                <i aria-hidden="true" className="right ui inverted green arrow icon"></i>
-                            </div>
-                        </button>
-                    </div> 
+        $.get("/isMember", function (user) {
+            if (user !== null) {
+                $(".authBtn").empty().html("<button id='logOut' class='ui animated button' role='buttton'>" +
+                    "<div class='visible content'>log Out</div>" +
+                    "<div class='hidden content'>" +
+                    "<i aria-hidden='true' class='right ui inverted green arrow icon'></i>" +
+                    "</div>" +
+                    "</div>"
                 )
-            }
-        } 
-
-        $.get("/isMember", function(user) {
-            if(user !== null) {
-                $(".authBtn").empty().html("<button id='logOut' class='ui animated button' role='buttton'>"+
-                                            "<div class='visible content'>log Out</div>"+
-                                                "<div class='hidden content'>"+
-                                                "<i aria-hidden='true' class='right ui inverted green arrow icon'></i>"+
-                                                "</div>"+
-                                            "</div>"
-                                            )   
                 $("#welcome").remove();
             } else {
-                $(".authBtn").empty().html("<button id='signinModal' class='ui animated button' role='buttton'>"+
-                                            "<div class='visible content'>log In</div>"+
-                                                "<div class='hidden content'>"+
-                                                "<i aria-hidden='true' class='right ui inverted green arrow icon'></i>"+
-                                                "</div>"+
-                                            "</div>"
-                                            )   
+                $(".authBtn").empty().html("<button id='signinModal' class='ui animated button' role='buttton'>" +
+                    "<div class='visible content'>log In</div>" +
+                    "<div class='hidden content'>" +
+                    "<i aria-hidden='true' class='right ui inverted green arrow icon'></i>" +
+                    "</div>" +
+                    "</div>"
+                )
             }
         });
     </script>
