@@ -6,7 +6,11 @@ const GameSchema = new Schema({
     gameId: Number,
     platform: String,
     condition: String,
-    Genre:  String
+    Genre:  String,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
 });
 
 

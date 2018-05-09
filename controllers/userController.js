@@ -47,7 +47,7 @@ module.exports = function(express, app, db, passport) {
           nickname: req.body.nickname,
           picture: req.body.picture,
           bio: req.body.bio,
-          country: req.body.country,
+          country: req.body.country, 
           joined: req.body.joined
         }
       }

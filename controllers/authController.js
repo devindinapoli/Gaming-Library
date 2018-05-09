@@ -20,6 +20,13 @@ module.exports = function(express, app, passport, db) {
       })
   });
 
+  app.get("/games", function(req, res) {
+    db.Game.find({})
+    .then(function(games) {
+      res.json(games);
+    })
+  })
+
   app.get("/isMember", function(req, res) {
     if(req.user) {
       res.json(req.user);

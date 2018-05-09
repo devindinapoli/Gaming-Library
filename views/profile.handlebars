@@ -560,7 +560,8 @@
                     <label>About you:</label>
                     <textarea id="bio" type="text" rows="2" placeholder="What's your story?">{{user.bio}}</textarea>
                 </div>
-                {{!-- <div class="field">
+                {{!--
+                <div class="field">
                     <form action="/newReview" method="post">
                         <h1>Review a game</h1>
                         <h2>Impart your knowledge</h2>
@@ -622,7 +623,8 @@
                 <form action="/newReview" method="post">
                     <h1>Review a game</h1>
                     <h2>Impart your knowledge</h2>
-                    {{!-- <input type="text" name="title" placeholder="Title">
+                    {{!--
+                    <input type="text" name="title" placeholder="Title">
                     <input type="text" name="platform" placeholder="Platform"> --}}
                     <textarea type="text" name="review">{{user.review}}</textarea>
                     <input class="ui green button" type="submit" value="review">
@@ -742,10 +744,13 @@
             var picture = $(".inputfile").val().trim();
             var bio = $("#bio").val().trim();
             var joined = $("#joined").val().trim();
-            var country = $("#country").trim().toUpperCase();
+            var country = $("#country").val().toUpperCase();
             var nickname = $("#nickname").val().trim();
             $.post("/updateInfo", { picture: picture, bio: bio, joined: joined, country: country, nickname: nickname })
             console.log(country)
+            console.log(bio)
+            console.log(nickname)
+            location.reload();
         })
 
     });
