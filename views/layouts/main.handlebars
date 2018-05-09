@@ -47,7 +47,7 @@
             <div class="column">
                 <div class="ui stackable doubling two column grid">
                     <div class="column">
-                        <div class="ui right floated column " id="root"></div>
+                        <div class="ui right floated column authBtn" id="root"></div>
                     </div>
                     <div class="column">
                         <!-- Right menu Search -->
@@ -231,7 +231,7 @@
             render() {
                 return(
                     <div>
-                        <button id="signinModal" className="ui animated button" role="button">
+                        <button id="signinModal" class="ui animated button" role="button">
                             <div className="visible content">Log in</div>
                             <div className="hidden content">
                                 <i aria-hidden="true" className="right ui inverted green arrow icon"></i>
@@ -244,16 +244,22 @@
 
         $.get("/isMember", function(user) {
             if(user !== null) {
-                ReactDOM.render(
-                    <LogOut />,
-                    document.getElementById('root')
-                );
+                $(".authBtn").empty().html("<button id='logOut' class='ui animated button' role='buttton'>"+
+                                            "<div class='visible content'>log Out</div>"+
+                                                "<div class='hidden content'>"+
+                                                "<i aria-hidden='true' class='right ui inverted green arrow icon'></i>"+
+                                                "</div>"+
+                                            "</div>"
+                                            )   
                 $("#welcome").remove();
             } else {
-                ReactDOM.render(
-                    <SignInOrUp />,
-                    document.getElementById('root')
-                );
+                $(".authBtn").empty().html("<button id='signinModal' class='ui animated button' role='buttton'>"+
+                                            "<div class='visible content'>log In</div>"+
+                                                "<div class='hidden content'>"+
+                                                "<i aria-hidden='true' class='right ui inverted green arrow icon'></i>"+
+                                                "</div>"+
+                                            "</div>"
+                                            )   
             }
         });
     </script>
