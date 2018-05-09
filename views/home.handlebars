@@ -89,6 +89,20 @@
     </div>
 </form>
 
+<div class="ui modal gameModal">
+    <i class="close icon"></i>
+    <div class="header gameHeader">
+        Summary
+    </div>
+    <div class="image content">
+        <div class="ui medium image gameImage">
+        </div>
+        <div class="description">
+            <div class="ui gameDescription">We've auto-chosen a profile image for you.</div>
+        </div>
+    </div>
+</div>
+
 
 <script>
 
@@ -107,30 +121,27 @@
                 }
 
                 var gameCard = $(
-                    "<div class='game' id='game-well-'" + data[i].id + ">" +
-                    "<div class='ui cards'>" +
-                    "<div class='ui card'>" +
-                    "<img class='ui rounded image gameImage' src=" +
-                    src + ">" +
+                    "<div class='ui raised link card' id='gameId-" + data[i].id + "'>" +
+                    "<div class='ui rounded image'>" +
+                    "<img class=' gameImage' src='" + src + "'></div>" +
                     "<div class='content'>" +
-
-                    "<div class='header gameHead'>" +
+                    "<p>" + data[i].name + "</p></div>" +
+                    "<div class='extra content'>" +
+                    "<button class='positive ui button' data-sum-id='" + data[i].summary + "' href='#' id='gameModal'>View Info</button>" +
+                    "<div class='ui divider'></div>" +
                     "<div class='ui animated fade button fluid addGame' data-id='" + data[i].id + "' tabindex='0' id='gameinfoModal'>" +
-                    "<div class='visible content'>" + data[i].name + "</div>" +
+                    "<div class='visible content'>Add Game</div>" +
                     "<div class='hidden content'>" +
                     "<i class='add icon'></i>" +
                     "Add Game" +
-                    "</div>" +
-                    "</div>" +
-                    "<div class='description'>" +
-                    data[i].summary +
-                    "</div></div>" +
-                    "</div></div></div></div>")
+                    "</div>")
 
                 $(".results-field").append(gameCard);
             }
 
         }
+
+
 
         let game;
         $(document).on("click", ".addGame", function () {
@@ -144,19 +155,25 @@
             event.preventDefault();
             var platform = $("#platform").val().trim();
             var condition = $("#condition").val().trim();
+            var copies = $("#copies").val();
             $.get("/currentuser", function (data) {
                 const user = data._id;
                 $.post("/currentuser", {
                     gameId: game,
                     platform: platform,
                     condition: condition,
+                    copies: copies,
                     user: user
                 })
             })
 
         })
 
-
+        $(document).on("click", "#gameModal", function () {
+            $(".gameModal").modal("show");
+            var gameSum = $(this).attr("data-sum-id");
+            $(".gameDescription").text(gameSum)
+        });
 
 
         $("#signinModal").click(function () {
