@@ -8,8 +8,8 @@ const GameSchema = new Schema({
     condition: String,
     Genre:  String,
     user: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
+        type: String
+        
     }
 });
 

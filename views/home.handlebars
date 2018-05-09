@@ -130,26 +130,28 @@
 
         }
 
-
+        let game;
         $(document).on("click", ".addGame", function () {
-            var game = $(this).attr("data-id");
+            game = $(this).attr("data-id");
             console.log(game);
             $(this).html("<i class='check icon'></i>");
-            $(document).on("click", "#gameInfoButton", function (event) {
-                event.preventDefault();
-                var platform = $("#platform").val().trim();
-                var condition = $("#condition").val().trim();
-                $.get("/currentuser", function (data) {
-                    const user = data._id;
-                    $.post("/currentuser", {
-                        gameId: game,
-                        platform: platform,
-                        condition: condition,
-                        user: user
-                    })
-                })
 
+        })
+
+        $(document).on("click", "#gameInfoButton", function (event) {
+            event.preventDefault();
+            var platform = $("#platform").val().trim();
+            var condition = $("#condition").val().trim();
+            $.get("/currentuser", function (data) {
+                const user = data._id;
+                $.post("/currentuser", {
+                    gameId: game,
+                    platform: platform,
+                    condition: condition,
+                    user: user
+                })
             })
+
         })
 
 
