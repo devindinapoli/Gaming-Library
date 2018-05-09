@@ -134,16 +134,11 @@
         </form>
 
         {{{body}}}
-
         <div class="ui section divider"></div>
-
         <div class="footer container">
-            {{!-- --}}
             <div class="ui black inverted vertical footer segment">
                 <div class="ui center aligned container">
-                    {{!-- --}}
-                    <div class="ui stackable inverted divided equal height stackable grid">
-                        {{!-- --}}
+                    <div class="ui stackable inverted  divided grid">
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">Team Members</h3>
                             <div class="ui inverted link list">
@@ -164,13 +159,11 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
-                        {{!-- --}}
                         <div class="ten wide column">
                             <h4 class="ui inverted header">Game collector</h4>
                             <p>The only and ultimate app that will make you happy and it will be fun to collect your games.</br>Yes!
                                 It is free!</p>
                         </div>
-                        {{!-- --}}
                         <div class="three wide column">
                             <h3 class="ui inverted orange header">LinkedIn</h3>
                             <div class="ui inverted link list">
@@ -191,16 +184,12 @@
                                     Jeffrey Easley</a>
                             </div>
                         </div>
-                        {{!-- --}}
                     </div>
-                    {{!-- --}}
                     <div class="footer copyright">
                         <p class="copyright">2018 Copyright and all legal stuff...</p>
                     </div>
-                    {{!-- --}}
                 </div>
             </div>
-            {{!-- --}}
         </div>
         
 
@@ -213,6 +202,8 @@
                 location.href = "/";
             })
         })
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
@@ -223,7 +214,7 @@
         class LogOut extends React.Component {
             render() {
                 return (
-                    <div >
+                    <div className="right menu sticky">
                         <button id="logOut" className="ui animated button" role="button">
                             <div className="visible content">Log Out</div>
                             <div className="hidden content">
@@ -239,7 +230,7 @@
         class SignInOrUp extends React.Component {
             render() {
                 return(
-                    <div>
+                    <div className="right menu sticky">
                         <button id="signinModal" className="ui animated button" role="button">
                             <div className="visible content">Log in</div>
                             <div className="hidden content">
@@ -257,6 +248,7 @@
                     <LogOut />,
                     document.getElementById('root')
                 );
+                $("#welcome").remove();
             } else {
                 ReactDOM.render(
                     <SignInOrUp />,

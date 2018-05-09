@@ -35,6 +35,10 @@ body {
   font-family: "Orbitron", sans-serif;
 }
 
+.font {
+  font-family: "Ubuntu", sans-serif;
+}
+
 .results-field {
   height: 800px;
   /* width: 100%; */
@@ -69,10 +73,10 @@ body {
   position: absolute;
   z-index: -1;
 }
-.edit{
-position: relative;
+.edit {
+  position: relative;
 }
-.editBtn{
+.editBtn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -88,6 +92,6 @@ position: relative;
   font-size: 24px;
 }
 .ui.card,
-.ui.cards>.card {
+.ui.cards > .card {
   background-color: gainsboro;
 }
