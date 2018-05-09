@@ -29,7 +29,7 @@ const UserSchema = new Schema({
   nickname: {
     type: String,
     required: false,
-    unique: true
+    unique: false
   },
   picture: {
     type: String,
