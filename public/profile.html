@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--  -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Quattrocento+Sans" rel="stylesheet">
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css">
+    <!--  -->
+    <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon">
+    <!--  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--  -->
+    <title>Profile</title>
+</head>
+
+<body>
+    <div class="ui main container">
+        <!-- Nav Bar -->
+        <div class="ui inverted menu">
+            <a class="item home header" href="/">Home</a>
+            <a class="item signup header" href="#" id="modal1">Log In</a>
+            <a class="item profile header" href="/profile">Profile</a>
+            <!-- Right menu Log out -->
+            <div class="right menu sticky">
+                <button class="ui animated button" role="button">
+                    <div class="visible content">Log Out</div>
+                    <div class="hidden content">
+                        <i aria-hidden="true" class="right ui inverted green arrow icon"></i>
+                    </div>
+                </button>
+            </div>
+            <!--  -->
+        </div>
+        <!-- Search -->
+        <div class="ui internally celled centered grid ">
+            <div class="ui action input">
+                <input type="text" placeholder="Search...">
+                <button class="ui fade animated button" role="button">
+                    <div class="visible content">
+                        <i class="ui inverted green search icon"></i>
+                    </div>
+                    <div class="hidden content">Search</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- UZar container -->
+        <div class="ui equal width grid">
+            <!-- UZar Card Info -->
+            <div class="ui four wide column">
+                <div class="ui medium card image">
+                    <H5 class="ui center aligned header">U-Zar</H5>
+                    <img class="ui medium rounded image" src="https://media.giphy.com/media/Q2w02BCP1Nvqg/giphy.gif">
+                    <div class="content">
+                        <div class="meta">
+                            <span class="date">Joined in 2013</span>
+                        </div>
+                        <div class="description">
+                            <h4>About:</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis a minima esse...</p>
+                        </div>
+                        <div class="extra">
+                            Rating:
+                            <div class="ui star rating"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Stats block -->
+            <div class="ui stats twelve wide column">
+                <div class="ui segment">
+                    PLACE YOUR STATS HERE
+                </div>
+            </div>
+        </div>
+
+        <!-- Fav Collection -->
+        <div class="ui container">
+            <div class="ui column ">
+                <div class="ui centered grid ">
+                    <H5 class="ui inverted green center aligned header centered grid">
+                        <i class="orange game icon"></i>
+                        Fav Games</H5>
+                </div>
+
+                <!-- Change how many cards to display on each row. -->
+                <div class=" ui container">
+                    <div class="ui three stackable cards">
+                        <!-- Game cards -->
+                        <a class="red card">
+                            <H3 class="ui center aligned header">Game 1</H3>
+                            <div class=" ui bordered image">
+                                <img src="./assets/images/grl.jpg">
+                                <div class="extra">
+                                    Rating:
+                                    <div class="ui heart rating"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <!--  -->
+                        <a class="orange card">
+                            <H3 class="ui  center aligned header">Game 2</H3>
+                            <div class="ui bordered image">
+                                <img src="assets/images/gamelogo.jpg">
+                                <div class="extra">
+                                    Rating:
+                                    <div class="ui heart rating"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <!--  -->
+                        <a class="yellow card">
+                            <H3 class="ui  center aligned header">Game 3</H3>
+                            <div class="ui bordered image">
+                                <img src="./assets/images/grl.jpg">
+                                <div class="extra">
+                                    Rating:
+                                    <div class="ui heart rating"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <!--  -->
+                    </div>
+
+                </div>
+                <button type="submit" class="ui blue button">My Game collection</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer container">
+            <div class="ui black inverted vertical footer segment">
+                <div class="ui center aligned container">
+                    <div class="ui stackable inverted  divided grid">
+                        <div class="three wide column">
+                            <h3 class="ui inverted orange header">Team Members</h3>
+                            <div class="ui inverted link list">
+                                <a href="https://github.com/mecaniser" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Sergio Burca</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Maxwell Robb</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Andrew Knowles</a>
+                                <a href="https://github.com/devindinapoli" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Devin Dinapoli</a>
+                                <a href="" class="item" target="_blank">
+                                    <i class="green git square icon"></i>
+                                    Jeffrey Easley</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS init. -->
+        <script>
+            $(document).ready(function () {
+                $('.ui.dropdown')
+                    .dropdown({
+                        allowCategorySelection: true
+                    });
+                $("#openmodal").click(function () {
+                    $('.ui.modal').modal('show');
+                });
+
+                $('.ui.sticky')
+                    .sticky({
+                        offset: 50,
+                        context: '#uzarSticky',
+                    });
+                $('.ui.rating')
+                    .rating({
+                        initialRating: 1,
+                        maxRating: 5
+                    });
+            });
+        </script>
+</body>
+
+</html>
