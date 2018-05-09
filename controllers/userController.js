@@ -23,6 +23,7 @@ module.exports = function(express, app, db, passport) {
   });
 
   app.post("/currentuser", function(req, res) {
+    console.log(req.body)
     db.Game.create(req.body)
       .then(function(game) {
         return db.User.findOneAndUpdate(
